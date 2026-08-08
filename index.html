@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaza Hope Workshop | ورشة أمل غزة</title>
     
-    <!-- Fonts & Icons -->
+    <!-- Google Fonts & FontAwesome Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -38,7 +38,6 @@
             line-height: 1.7;
         }
 
-        /* Language Switcher RTL/LTR adjustment */
         html[dir="ltr"] body {
             font-family: 'Plus Jakarta Sans', 'Cairo', sans-serif;
         }
@@ -86,13 +85,13 @@
         .btn-usdt-top { background: #0284c7; }
         .btn-gfm-top { background: var(--gofundme-color); }
 
-        /* Main Navigation */
+        /* Navigation */
         header {
             padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(18, 24, 36, 0.8);
+            background: rgba(18, 24, 36, 0.85);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
         }
@@ -111,6 +110,7 @@
             border-radius: 50%;
             border: 2px solid var(--primary);
             box-shadow: 0 0 15px var(--primary-glow);
+            object-fit: cover;
         }
 
         .brand-title h2 { font-size: 1.3rem; font-weight: 900; color: #fff; }
@@ -129,42 +129,38 @@
             gap: 8px;
         }
 
-        /* Hero Section */
+        /* Hero & Story Section */
         .hero-section {
-            padding: 60px 5% 40px;
+            padding: 50px 5% 30px;
             text-align: center;
             max-width: 1000px;
             margin: 0 auto;
-            position: relative;
         }
 
         .hero-title {
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             font-weight: 900;
             line-height: 1.3;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero-subtitle {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--text-muted);
             margin-bottom: 30px;
         }
 
-        /* Story Card Container */
         .story-container {
             background: linear-gradient(145deg, #121824, #1a2332);
             border: 1px solid var(--primary);
-            box-shadow: 0 0 30px rgba(232, 115, 26, 0.15);
+            box-shadow: 0 0 30px rgba(232, 115, 26, 0.2);
             border-radius: 24px;
             padding: 35px;
-            margin: 30px 0 50px;
+            margin: 25px 0 45px;
             text-align: right;
-            position: relative;
-            overflow: hidden;
         }
 
         html[dir="ltr"] .story-container { text-align: left; }
@@ -187,7 +183,43 @@
             font-weight: 600;
         }
 
-        /* Animated Counter Section */
+        /* Impact Cards Grid */
+        .impact-section {
+            max-width: 1100px;
+            margin: 30px auto 50px;
+            padding: 0 5%;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .impact-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .impact-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .impact-price {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .impact-card h3 { font-size: 1.2rem; margin-bottom: 8px; }
+        .impact-card p { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* Animated Stats */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -208,7 +240,6 @@
             font-weight: 900;
             color: var(--primary);
             margin-bottom: 5px;
-            text-shadow: 0 0 10px var(--primary-glow);
         }
 
         .stat-label {
@@ -217,22 +248,26 @@
             font-size: 0.95rem;
         }
 
-        /* Donation Section */
+        /* Donation Methods Section */
         .donation-section {
             max-width: 1100px;
-            margin: 50px auto;
+            margin: 40px auto;
             padding: 0 5%;
         }
 
-        .section-header {
+        .trust-banner {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--secondary);
+            color: var(--secondary);
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-weight: 800;
             text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .section-header h2 {
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: #fff;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
         .donation-grid {
@@ -247,7 +282,6 @@
             border-radius: 20px;
             padding: 30px;
             text-align: center;
-            position: relative;
         }
 
         .donate-card.featured {
@@ -256,12 +290,12 @@
         }
 
         .qr-code {
-            width: 180px;
-            height: 180px;
+            width: 170px;
+            height: 170px;
             border-radius: 12px;
             border: 3px solid #1e293b;
-            margin: 20px 0;
-            padding: 8px;
+            margin: 15px 0;
+            padding: 6px;
             background: #fff;
         }
 
@@ -299,12 +333,8 @@
         .btn-gfm { background: var(--gofundme-color); }
         .btn-gfm:hover { background: #028a4b; }
 
-        /* Social Media Section */
-        .social-section {
-            text-align: center;
-            margin: 60px 0 40px;
-        }
-
+        /* Social Icons */
+        .social-section { text-align: center; margin: 50px 0 30px; }
         .social-links {
             display: flex;
             justify-content: center;
@@ -328,10 +358,9 @@
         }
 
         .social-icon:hover {
-            transform: translateY(-5px);
             border-color: var(--primary);
             color: var(--primary);
-            box-shadow: 0 5px 15px var(--primary-glow);
+            transform: translateY(-5px);
         }
 
         /* Floating WhatsApp Button */
@@ -354,10 +383,7 @@
             animation: pulse 2s infinite;
         }
 
-        html[dir="ltr"] .whatsapp-float {
-            left: auto;
-            right: 25px;
-        }
+        html[dir="ltr"] .whatsapp-float { left: auto; right: 25px; }
 
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
@@ -365,7 +391,7 @@
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        /* Toast Notification */
+        /* Toast Alert */
         .toast {
             position: fixed;
             bottom: 30px;
@@ -377,7 +403,6 @@
             font-weight: 700;
             display: none;
             z-index: 2000;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
         @media (max-width: 768px) {
@@ -389,17 +414,17 @@
 </head>
 <body>
 
-    <!-- Toast Notification -->
-    <div id="toast" class="toast">تم نسخ عنوان USDT بنجاح!</div>
+    <!-- Toast Alert Notification -->
+    <div id="toast" class="toast">تم نسخ عنوان المحفظة بنجاح!</div>
 
-    <!-- Sticky Top Bar -->
+    <!-- Sticky Top Header Bar -->
     <div class="top-bar">
         <div class="top-bar-text" id="topBarText">
             <i class="fa-solid fa-fire"></i> طفل مبتور الأطراف ينتظر سريراً يرفعه عن برود الأرض الآن!
         </div>
         <div class="top-cta-btns">
             <a href="#donate" class="btn-sm btn-usdt-top"><i class="fa-solid fa-wallet"></i> USDT</a>
-            <a href="https://www.gofundme.com/f/my-hands-used-to-carve-beauty-now-they-dig-through-the-rub/donate" target="_blank" class="btn-sm btn-gfm-top"><i class="fa-solid fa-heart"></i> GoFundMe</a>
+            <a href="https://www.gofundme.com/f/my-hands-used-to-carve-beauty-now-they-dig-through-the-rub/donate?attribution_id=sl:53098633-b29f-451a-b1d6-5f779c0e0ac0&lang=en_US&ts=1785229147&utm_campaign=fp_sharesheet&utm_content=amp20_t1&utm_medium=customer&utm_source=copy_link&source=btn_donate" target="_blank" class="btn-sm btn-gfm-top"><i class="fa-solid fa-heart"></i> GoFundMe</a>
         </div>
     </div>
 
@@ -422,12 +447,33 @@
         <h1 class="hero-title" id="heroTitle">عزل أطفال غزة المبتورين عن التراب والبرد المباشر</h1>
         <p class="hero-subtitle" id="heroSub">نصنع الأسِرّة من تحت الركام للحفاظ على كرامة وأجساد جرحى الحرب داخل الخيام.</p>
 
-        <!-- Emotional Story Box -->
+        <!-- Emotional Story Card -->
         <div class="story-container">
             <span class="story-badge" id="storyBadge">🔥 القصة الحية للميدان</span>
             <p class="story-text" id="storyContent">
                 داخل خيام غزة المبتلة بالبرد، يعاني الأطفال وشبان البتر المواليد آلاماً لا تُطاق، حيث يُجبرون على النوم على التراب العاري فتواجه جروحهم العملية الخطر الدائم والالتهابات الحادة. رفضا لترك جرحانا يتألمون، ولدت "ورشة أمل غزة" من تحت الركام؛ ننتشل حديد المباني المدمرة، ونعيد تشكيله ولحامه يدوياً لإنتاج أسِرّة طوارئ مرتفعة ومتينة. كل سيخ حديد نعيده للحياة يصبح شرياناً يحمل جريحاً، ويمنحه مكاناً آخراً وصحياً للتعافي. مع كل سرير يُسلم، نرفق حزمة إغاثية من الطعام والماء الدافئ لنسترد الكرامة التي حاول الحصار محوها. جريح مبتور ينتظر في خيمته الباردة الآن—ساهم معنا في لحام سريراه اليوم ليتحول الركام إلى أمل.
             </p>
+        </div>
+
+        <!-- Impact Cards ($25 - $50 - $100) -->
+        <div class="impact-section">
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-price">$25</div>
+                    <h3 id="imp1Title">عزل حراري وتدفئة</h3>
+                    <p id="imp1Desc">توفير طبقات عزل حراري تحمي جسد الطفل من رطوبة الأرض والبرد المباشر.</p>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-price">$50</div>
+                    <h3 id="imp2Title">سرير طوارئ مكتمل</h3>
+                    <p id="imp2Desc">تغطية تكاليف الحديد والخشب واللحام اليدوي لسرير مرتفع كامل داخل الورشة.</p>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-price">$100</div>
+                    <h3 id="imp3Title">سريران + حزمة إغاثية</h3>
+                    <p id="imp3Desc">تصنيع سريرين وتوصيلهما فوراً لخيام النازحين مع حزمة طعام وماء دافئ.</p>
+                </div>
+            </div>
         </div>
 
         <!-- Animated Stats Counters -->
@@ -449,16 +495,18 @@
 
     <!-- Donation Section -->
     <section class="donation-section" id="donate">
-        <div class="section-header">
-            <h2 id="donateTitle">وسائل الدفع والتبرع المباشر</h2>
-            <p style="color: var(--text-muted);" id="donateSub">100% تبرع مباشر إلى ورشة العمل الميدانية بدون رسوم إدارية</p>
+        
+        <!-- Zero Fee & Direct Impact Guarantee -->
+        <div class="trust-banner" id="trustBanner">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>100% تبرع مباشر للميدان والورشة | صفر رسوم إدارية</span>
         </div>
 
         <div class="donation-grid">
-            <!-- USDT Card -->
+            <!-- USDT Crypto Box -->
             <div class="donate-card">
-                <h3 style="color: #38bdf8;"><i class="fa-solid fa-wallet"></i> Crypto (USDT - TRC20)</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;" id="usdtDesc">الوسيلة الأسرع للوصول وشراء المواد الخام فوراً</p>
+                <h3 style="color: #38bdf8;"><i class="fa-solid fa-wallet"></i> USDT (TRC20 Network)</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;" id="usdtDesc">الوسيلة الأسرع لشراء الحديد والمواد الخام فوراً</p>
                 
                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=TMC7JcAkXGDvYYBByPRUgX6rsZC5LZTa4T" alt="USDT QR Code" class="qr-code">
                 
@@ -471,8 +519,8 @@
 
             <!-- GoFundMe Card -->
             <div class="donate-card featured">
-                <h3 style="color: var(--gofundme-color);"><i class="fa-solid fa-credit-card"></i> GoFundMe / Visa & Mastercard</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;" id="gfmDesc">التبرع عبر بطاقات البنك والأبل باي بسهولة وأمان</p>
+                <h3 style="color: var(--gofundme-color);"><i class="fa-solid fa-credit-card"></i> GoFundMe / Card Payment</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;" id="gfmDesc">التبرع ببطاقة البنك أو الأبل باي بسهولة وأمان</p>
                 
                 <div style="margin: 35px 0;">
                     <i class="fa-brands fa-cc-visa fa-3x" style="color: #94a3b8; margin: 0 8px;"></i>
@@ -487,7 +535,7 @@
         </div>
     </section>
 
-    <!-- Social Media Section -->
+    <!-- Social Media Platforms -->
     <section class="social-section">
         <h3 id="socialTitle">تابع وثق إنجازات الورشة عبر المنصات</h3>
         <div class="social-links">
@@ -500,12 +548,15 @@
         </div>
     </section>
 
-    <!-- Floating WhatsApp -->
-    <a href="https://wa.me/972592290793?text=%D0%A1%D0%BB%D0%B0%D0%BC%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D9%87%D9%85%D8%A9%20%D9%88%D8%AF%D8%B9%D9%85%20%D8%B3%D8%B1%D9%8A%D8%B1%20%D8%B7%D9%81%D9%84%20%D9%81%D9%8A%20%D8%BA%D8%B2%D8%A9." class="whatsapp-float" target="_blank" title="تواصل عبر الواتساب">
+    <!-- Smart Floating WhatsApp Button -->
+    <a href="https://wa.me/972592290793?text=Hi%2C%20I%20would%20like%20to%20sponsor%20a%20bed%20and%20support%20children%20with%20Gaza%20Hope%20Workshop.%20How%20can%20I%20complete%20my%20donation%20today%3F" 
+       class="whatsapp-float" 
+       target="_blank" 
+       title="WhatsApp Support">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Scripts -->
+    <!-- Translation & Interaction Script -->
     <script>
         let currentLang = 'ar';
 
@@ -519,17 +570,22 @@
                 heroSub: 'نصنع الأسِرّة من تحت الركام للحفاظ على كرامة وأجساد جرحى الحرب داخل الخيام.',
                 storyBadge: '🔥 القصة الحية للميدان',
                 storyContent: 'داخل خيام غزة المبتلة بالبرد، يعاني الأطفال وشبان البتر المواليد آلاماً لا تُطاق، حيث يُجبرون على النوم على التراب العاري فتواجه جروحهم العملية الخطر الدائم والالتهابات الحادة. رفضا لترك جرحانا يتألمون، ولدت "ورشة أمل غزة" من تحت الركام؛ ننتشل حديد المباني المدمرة، ونعيد تشكيله ولحامه يدوياً لإنتاج أسِرّة طوارئ مرتفعة ومتينة. كل سيخ حديد نعيده للحياة يصبح شرياناً يحمل جريحاً، ويمنحه مكاناً آخراً وصحياً للتعافي. مع كل سرير يُسلم، نرفق حزمة إغاثية من الطعام والماء الدافئ لنسترد الكرامة التي حاول الحصار محوها. جريح مبتور ينتظر في خيمته الباردة الآن—ساهم معنا في لحام سريراه اليوم ليتحول الركام إلى أمل.',
+                imp1Title: 'عزل حراري وتدفئة',
+                imp1Desc: 'توفير طبقات عزل حراري تحمي جسد الطفل من رطوبة الأرض والبرد المباشر.',
+                imp2Title: 'سرير طوارئ مكتمل',
+                imp2Desc: 'تغطية تكاليف الحديد والخشب واللحام اليدوي لسرير مرتفع كامل داخل الورشة.',
+                imp3Title: 'سريران + حزمة إغاثية',
+                imp3Desc: 'تصنيع سريرين وتوصيلهما فوراً لخيام النازحين مع حزمة طعام وماء دافئ.',
                 stat1: 'سرير طوارئ مكتمل',
                 stat2: 'طفل ومبتور تم عزله',
                 stat3: 'حزمة إغاثية مرافقة',
-                donateTitle: 'وسائل الدفع والتبرع المباشر',
-                donateSub: '100% تبرع مباشر إلى ورشة العمل الميدانية بدون رسوم إدارية',
-                usdtDesc: 'الوسيلة الأسرع للوصول وشراء المواد الخام فوراً',
-                gfmDesc: 'التبرع عبر بطاقات البنك والأبل باي بسهولة وأمان',
+                trustBanner: '<i class="fa-solid fa-shield-halved"></i> 100% تبرع مباشر للميدان والورشة | صفر رسوم إدارية',
+                usdtDesc: 'الوسيلة الأسرع لشراء الحديد والمواد الخام فوراً',
+                gfmDesc: 'التبرع ببطاقة البنك أو الأبل باي بسهولة وأمان',
                 copyBtnText: 'نسخ عنوان المحفظة',
                 gfmBtnText: 'التبرع الفوري عبر GoFundMe',
                 socialTitle: 'تابع وثق إنجازات الورشة عبر المنصات',
-                toast: 'تم نسخ عنوان USDT بنجاح!'
+                toast: 'تم نسخ عنوان المحفظة بنجاح!'
             },
             en: {
                 topBarText: '<i class="fa-solid fa-fire"></i> A newly amputated child is waiting in a cold tent right now!',
@@ -540,12 +596,17 @@
                 heroSub: 'Reshaping rubble iron into sturdy emergency beds inside Gaza’s tent camps.',
                 storyBadge: '🔥 Live Field Story',
                 storyContent: 'Inside the freezing, damp tents of Gaza, newly amputated children and youth endure unimaginable pain, forced to sleep on the bare dirt where their open surgical wounds face constant danger of severe infection. Refusing to let our wounded suffer on the ground, Gaza Hope Workshop rose from the rubble—pulling buried iron bars from destroyed buildings to reshape and hand-weld them into sturdy, elevated emergency beds. Every iron bar we restore becomes a literal lifeline, lifting a wounded body off the dirt and creating a safe, clean space for their fragile body to heal. With every bed delivered, we provide an essential care pack of food, clean water, and warmth, striving to restore the human dignity that war tried to erase. A newly amputated survivor is waiting in a cold tent right now—help us weld their bed today and turn ashes into hope.',
+                imp1Title: 'Thermal Insulation Pack',
+                imp1Desc: 'Provides insulation layers keeping ground moisture away from surgical wounds.',
+                imp2Title: 'Full Emergency Bed Frame',
+                imp2Desc: 'Covers raw wood, iron cutting, and hand-welding for a complete elevated bed.',
+                imp3Title: '2 Beds + Emergency Relief Pack',
+                imp3Desc: 'Builds 2 beds delivered directly to tents with food and clean water packs.',
                 stat1: 'Emergency Beds Welded',
                 stat2: 'Amputees & Children Sheltered',
                 stat3: 'Care Packs Delivered',
-                donateTitle: 'Direct Donation Channels',
-                donateSub: '100% direct-to-workshop impact with zero administrative fees',
-                usdtDesc: 'Fastest method to buy raw iron & wood instantly',
+                trustBanner: '<i class="fa-solid fa-shield-halved"></i> 100% Direct Impact | Zero Platform Fees | Verified Field Workshop',
+                usdtDesc: 'Fastest method to purchase raw iron & wood instantly',
                 gfmDesc: 'Donate securely via Credit Card, Debit Card, or Apple Pay',
                 copyBtnText: 'Copy Wallet Address',
                 gfmBtnText: 'Donate Now on GoFundMe',
@@ -568,11 +629,16 @@
             document.getElementById('heroSub').innerText = langData.heroSub;
             document.getElementById('storyBadge').innerText = langData.storyBadge;
             document.getElementById('storyContent').innerText = langData.storyContent;
+            document.getElementById('imp1Title').innerText = langData.imp1Title;
+            document.getElementById('imp1Desc').innerText = langData.imp1Desc;
+            document.getElementById('imp2Title').innerText = langData.imp2Title;
+            document.getElementById('imp2Desc').innerText = langData.imp2Desc;
+            document.getElementById('imp3Title').innerText = langData.imp3Title;
+            document.getElementById('imp3Desc').innerText = langData.imp3Desc;
             document.getElementById('stat1').innerText = langData.stat1;
             document.getElementById('stat2').innerText = langData.stat2;
             document.getElementById('stat3').innerText = langData.stat3;
-            document.getElementById('donateTitle').innerText = langData.donateTitle;
-            document.getElementById('donateSub').innerText = langData.donateSub;
+            document.getElementById('trustBanner').innerHTML = langData.trustBanner;
             document.getElementById('usdtDesc').innerText = langData.usdtDesc;
             document.getElementById('gfmDesc').innerText = langData.gfmDesc;
             document.getElementById('copyBtnText').innerText = langData.copyBtnText;
