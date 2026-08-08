@@ -1,364 +1,448 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaza Hope Workshop | Direct Aid & Life-Saving Beds</title>
-    <!-- Google Fonts & FontAwesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <title>Gaza Hope Workshop — From Rubble to Relief</title>
+    <meta name="description" content="We hand-weld emergency beds from salvaged iron for amputated children in Gaza's freezing tents. Your donation saves lives.">
+    <meta property="og:title" content="Gaza Hope Workshop — From Rubble to Relief">
+    <meta property="og:description" content="Hand-welding emergency beds for Gaza's wounded children from the rubble of destroyed buildings.">
+    <meta property="og:image" content="https://z-cdn-media.chatglm.cn/files/e2b8410c-3347-4986-b9cd-55aaaa375c82.jpg?auth_key=1886102644-c30ca65bb1b14f87be01520b0f4f3cc7-0-6f3b30e6f9157528ea8252f3b243ae08">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="https://z-cdn-media.chatglm.cn/files/e2b8410c-3347-4986-b9cd-55aaaa375c82.jpg?auth_key=1886102644-c30ca65bb1b14f87be01520b0f4f3cc7-0-6f3b30e6f9157528ea8252f3b243ae08" type="image/jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"NGO","name":"Gaza Hope Workshop","description":"Hand-welding emergency beds from salvaged iron for amputated children in Gaza.","url":"https://gazahopeworkshop.github.io","sameAs":["https://www.facebook.com/profile.php?id=61592733151920","https://www.instagram.com/gaza_hope_workshop","https://www.tiktok.com/@gaza_hope_workshop","https://x.com/GazaHopeCraft","https://www.reddit.com/user/GazaHopeWorkshop","https://gofund.me/74e35a94b"]}
+    </script>
     <style>
-        :root {
-            --primary: #e8731a;
-            --primary-hover: #d16212;
-            --secondary: #10b981;
-            --dark-bg: #0d1117;
-            --card-bg: #161b22;
-            --border-color: #30363d;
-            --text-light: #f0f6fc;
-            --text-muted: #8b949e;
-            --whatsapp-color: #25d366;
-            --gofundme-color: #02a95c;
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --bg:#080810;--bg2:#0d0d18;--bg3:#12121f;
+            --card:rgba(255,255,255,0.03);--card-h:rgba(255,255,255,0.06);
+            --t1:#f0ece6;--t2:#9a9aaa;--t3:#5a5a6e;
+            --orange:#e8731a;--orange-l:#f4a261;--orange-d:#c45d10;
+            --green:#4caf50;--green-l:#66bb6a;
+            --teal:#00838f;--teal-l:#00acc1;
+            --whatsapp:#25d366;
+            --border:rgba(255,255,255,0.06);
+            --glow-o:rgba(232,115,26,0.25);--glow-g:rgba(76,175,80,0.15);
+            --font-d:'Playfair Display',Georgia,serif;
+            --font-b:'DM Sans',system-ui,sans-serif;
+            --nav-h:72px;--sticky-h:60px;
         }
+        html{scroll-behavior:smooth;font-size:16px}
+        body{font-family:var(--font-b);background:var(--bg);color:var(--t1);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+        html[dir="rtl"] body{font-family:'Cairo',var(--font-b)}
+        ::selection{background:var(--orange);color:#fff}
+        a{color:inherit;text-decoration:none}
+        img{max-width:100%;display:block}
+        .container{max-width:1200px;margin:0 auto;padding:0 24px}
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
+        /* ═══ NAV ═══ */
+        nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:14px 0;transition:all .4s ease}
+        nav.scrolled{background:rgba(8,8,16,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:10px 0}
+        .nav-inner{display:flex;align-items:center;justify-content:space-between}
+        .nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+        .nav-logo-img{height:52px;width:52px;border-radius:14px;object-fit:cover;border:2px solid rgba(232,115,26,0.25);box-shadow:0 0 20px rgba(232,115,26,0.15);transition:all .3s}
+        .nav-logo:hover .nav-logo-img{border-color:var(--orange);box-shadow:0 0 30px rgba(232,115,26,0.3)}
+        .nav-logo-text{display:flex;flex-direction:column;line-height:1.2}
+        .nav-logo-text .name-en{font-family:var(--font-d);font-size:1.15rem;font-weight:800;letter-spacing:-.02em;color:var(--t1)}
+        .nav-logo-text .name-ar{font-size:.65rem;color:var(--t3);font-weight:500;letter-spacing:.02em}
+        .nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+        .nav-links a{font-size:.9rem;font-weight:500;color:var(--t2);transition:color .3s;position:relative}
+        .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--orange);transition:width .3s}
+        .nav-links a:hover{color:var(--t1)}
+        .nav-links a:hover::after{width:100%}
+        .lang-btn{display:flex;align-items:center;gap:6px;padding:7px 16px;border:1px solid var(--border);border-radius:100px;background:transparent;color:var(--t2);font-size:.82rem;font-weight:500;cursor:pointer;transition:all .3s;font-family:var(--font-b)}
+        .lang-btn:hover{border-color:var(--orange);color:var(--orange)}
+        .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+        .hamburger span{width:24px;height:2px;background:var(--t1);border-radius:2px;transition:all .3s}
 
-        body {
-            background-color: var(--dark-bg);
-            color: var(--text-light);
-            line-height: 1.6;
-        }
+        /* ═══ STICKY DONATE BAR ═══ */
+        .sticky-donate{position:fixed;top:var(--nav-h);left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:center;gap:12px;background:linear-gradient(135deg,rgba(232,115,26,0.1),rgba(13,13,24,0.95));backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(232,115,26,0.12);transform:translateY(-100%);opacity:0;transition:all .5s cubic-bezier(.4,0,.2,1);padding:10px 50px 10px 24px}
+        .sticky-donate.visible{transform:translateY(0);opacity:1}
+        .sticky-text{font-size:.85rem;color:var(--orange-l);font-weight:500;white-space:nowrap;flex-shrink:0}
+        .sticky-text i{margin-right:6px;animation:pulse 1.5s ease-in-out infinite}
+        .sticky-divider{width:1px;height:28px;background:rgba(255,255,255,0.08);flex-shrink:0}
+        .sticky-btn{display:inline-flex;align-items:center;gap:8px;padding:9px 22px;border-radius:10px;font-family:var(--font-b);font-size:.84rem;font-weight:700;border:none;cursor:pointer;transition:all .35s;position:relative;overflow:hidden;white-space:nowrap;text-decoration:none;flex-shrink:0}
+        .sticky-btn-gfm{background:linear-gradient(135deg,var(--orange),var(--orange-d));color:#fff;box-shadow:0 3px 20px var(--glow-o)}
+        .sticky-btn-crypto{background:linear-gradient(135deg,var(--teal),#006064);color:#fff;box-shadow:0 3px 20px rgba(0,131,143,0.25)}
+        @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+        .sticky-close{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--t3);cursor:pointer;font-size:.95rem;padding:4px;transition:color .3s;line-height:1}
 
-        /* Announcement Bar */
-        .alert-banner {
-            background: linear-gradient(90deg, #b91c1c, #e8731a);
-            text-align: center;
-            padding: 10px 15px;
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: #fff;
-        }
+        /* ═══ HERO ═══ */
+        .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:140px 24px 100px;overflow:hidden}
+        .hero-orbs{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+        .orb{position:absolute;border-radius:50%;filter:blur(100px);opacity:.3;animation:orbFloat 14s ease-in-out infinite}
+        .orb-1{width:500px;height:500px;background:var(--orange);top:-12%;left:-8%;animation-delay:0s}
+        .orb-2{width:420px;height:420px;background:var(--teal);bottom:-12%;right:-8%;animation-delay:-5s}
+        .orb-3{width:280px;height:280px;background:var(--green);top:50%;left:50%;transform:translate(-50%,-50%);animation-delay:-9s;opacity:.12}
+        @keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-40px) scale(1.06)}66%{transform:translate(-25px,35px) scale(.94)}}
+        .sparks-container{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+        .spark{position:absolute;width:3px;height:3px;border-radius:50%;animation:sparkRise linear infinite}
+        @keyframes sparkRise{0%{opacity:0;transform:translateY(0) scale(1)}10%{opacity:1}80%{opacity:.5}100%{opacity:0;transform:translateY(-100vh) scale(0)}}
 
-        /* Header / Navbar */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            background: rgba(13, 17, 23, 0.95);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid var(--border-color);
-        }
+        .hero-logo-wrap{margin-bottom:36px;position:relative;display:inline-block}
+        .hero-logo{width:110px;height:110px;border-radius:22px;object-fit:cover;border:3px solid rgba(232,115,26,0.35);box-shadow:0 0 50px rgba(232,115,26,0.2),0 0 100px rgba(232,115,26,0.08);animation:logoFloat 6s ease-in-out infinite}
+        .hero-logo-glow{position:absolute;inset:-20px;border-radius:40px;background:radial-gradient(circle,var(--glow-o),transparent 70%);animation:glowPulse 4s ease-in-out infinite;z-index:-1}
+        @keyframes logoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+        @keyframes glowPulse{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:.8;transform:scale(1.08)}}
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 800;
-            font-size: 1.2rem;
-            color: var(--text-light);
-            text-decoration: none;
-        }
+        .hero-content{position:relative;z-index:2;max-width:850px}
+        .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 18px 6px 8px;border-radius:100px;background:rgba(232,115,26,0.08);border:1px solid rgba(232,115,26,0.2);margin-bottom:28px;font-size:.78rem;font-weight:600;color:var(--orange-l);text-transform:uppercase;letter-spacing:.12em}
+        .hero h1{font-family:var(--font-d);font-size:clamp(2.6rem,7vw,5.2rem);font-weight:900;line-height:1.06;letter-spacing:-.03em;margin-bottom:22px}
+        .hero h1 .line1{display:block;color:var(--t1);font-weight:700}
+        .hero h1 .line2{display:block;background:linear-gradient(135deg,var(--orange-l),var(--orange),var(--orange-d));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero-sub{font-size:clamp(1rem,2.2vw,1.2rem);color:var(--t2);max-width:620px;margin:0 auto 40px;line-height:1.8;font-weight:300}
+        .hero-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+        .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;border-radius:14px;font-family:var(--font-b);font-size:.95rem;font-weight:600;cursor:pointer;border:none;transition:all .35s ease;position:relative;overflow:hidden}
+        .btn-primary{background:linear-gradient(135deg,var(--orange),var(--orange-d));color:#fff;box-shadow:0 4px 30px var(--glow-o)}
+        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(232,115,26,0.4)}
+        .btn-outline{background:transparent;color:var(--t1);border:1px solid var(--border)}
+        .btn-outline:hover{border-color:var(--teal-l);color:var(--teal-l);transform:translateY(-2px)}
 
-        .logo img {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
+        /* ═══ SECTIONS ═══ */
+        section{padding:100px 0;position:relative}
+        .section-label{display:inline-flex;align-items:center;gap:8px;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.15em;color:var(--orange);margin-bottom:16px}
+        .section-label::before{content:'';width:24px;height:2px;background:var(--orange)}
+        .section-title{font-family:var(--font-d);font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;line-height:1.15;letter-spacing:-.02em;margin-bottom:20px}
+        .section-desc{font-size:1.05rem;color:var(--t2);max-width:620px;line-height:1.8}
 
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
+        /* ═══ STORY ═══ */
+        .story{background:var(--bg2)}
+        .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+        .story-quote{position:relative;padding-left:40px;border-left:3px solid var(--orange)}
+        .story-quote p{font-size:1.06rem;color:var(--t2);line-height:2;font-weight:300}
+        .story-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:40px;position:relative;overflow:hidden}
+        .story-card .icon-row{display:flex;gap:16px;margin-bottom:24px}
+        .icon-box{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.3rem}
+        .icon-box.orange{background:rgba(232,115,26,0.1);color:var(--orange)}
+        .icon-box.green{background:rgba(76,175,80,0.1);color:var(--green)}
+        .icon-box.teal{background:rgba(0,131,143,0.1);color:var(--teal-l)}
 
-        nav a:hover {
-            color: var(--primary);
-        }
+        /* ═══ GOALS ═══ */
+        .goals{text-align:center}
+        .goals-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+        .goal-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:36px 24px 32px;transition:all .4s;position:relative;overflow:hidden}
+        .goal-tag{display:inline-flex;align-items:center;gap:4px;padding:3px 12px;border-radius:100px;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;background:rgba(232,115,26,0.08);color:var(--orange-l);border:1px solid rgba(232,115,26,0.18);margin-bottom:18px}
+        .goal-number{font-family:var(--font-d);font-size:2.6rem;font-weight:900;line-height:1.2;margin-bottom:6px;color:var(--t1)}
+        .goal-bar-wrap{height:4px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden}
+        .goal-bar{height:100%;width:0;border-radius:4px;background:linear-gradient(90deg,var(--orange),var(--orange-l));transition:width 2s cubic-bezier(.4,0,.2,1)}
 
-        /* Hero Section */
-        .hero {
-            padding: 60px 5% 30px 5%;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-        }
+        /* ═══ HOW ═══ */
+        .how{background:var(--bg2)}
+        .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:60px;position:relative}
+        .step{text-align:center;position:relative;z-index:1}
+        .step-num{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-family:var(--font-d);font-size:1.4rem;font-weight:800;border:2px solid var(--border);background:var(--bg);color:var(--t2)}
 
-        .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        /* ═══ DONATE ═══ */
+        .donate{text-align:center}
+        .donate-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:900px;margin:0 auto}
+        .donate-card{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:40px;text-align:left;position:relative;overflow:hidden}
+        .wallet-box{background:rgba(0,0,0,0.3);border:1px solid var(--border);border-radius:14px;padding:14px 16px;display:flex;align-items:center;gap:12px;margin-bottom:16px}
+        .wallet-addr{flex:1;font-family:'Courier New',monospace;font-size:.82rem;color:var(--t2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+        .copy-btn{display:flex;align-items:center;gap:6px;padding:8px 18px;border-radius:10px;border:1px solid rgba(232,115,26,0.25);background:rgba(232,115,26,0.06);color:var(--orange-l);font-size:.8rem;font-weight:600;cursor:pointer}
 
-        .hero p {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            margin-bottom: 25px;
-        }
-
-        /* Quick Impact Bar (لمسة صغيرة ومميزة) */
-        .quick-stats {
-            display: inline-flex;
-            gap: 20px;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 10px 25px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .quick-stats span {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* Donate Section */
-        .donate-container {
-            max-width: 1000px;
-            margin: 0 auto 60px auto;
-            padding: 0 5%;
-        }
-
-        .trust-badge {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid var(--secondary);
-            color: var(--secondary);
-            padding: 12px 20px;
-            border-radius: 30px;
-            font-weight: 700;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .donate-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-        }
-
-        .donate-box {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-        }
-
-        .donate-box h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-        }
-
-        .crypto-address {
-            background: #0d1117;
-            border: 1px solid var(--border-color);
-            padding: 12px;
-            border-radius: 10px;
-            font-family: monospace;
-            font-size: 0.85rem;
-            color: #38bdf8;
-            word-break: break-all;
-            margin: 15px 0;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-            padding: 14px 24px;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 1rem;
-            text-decoration: none;
-            cursor: pointer;
-            border: none;
-            transition: 0.3s;
-        }
-
-        .btn-gfm {
-            background-color: var(--gofundme-color);
-            color: #fff;
-        }
-
-        .btn-gfm:hover {
-            background-color: #028a4b;
-        }
-
-        .btn-crypto {
-            background-color: #0284c7;
-            color: #fff;
-        }
-
-        .btn-crypto:hover {
-            background-color: #0369a1;
-        }
-
-        .qr-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 12px;
-            margin: 15px 0;
-            border: 2px solid var(--border-color);
-            padding: 5px;
-            background: #fff;
-        }
-
-        /* Floating WhatsApp Button */
+        /* ═══ FLOATING WHATSAPP BUTTON (زر الواتساب الذكي العائم) ═══ */
         .whatsapp-float {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background-color: var(--whatsapp-color);
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp);
             color: #fff;
-            width: 60px;
-            height: 60px;
+            width: 62px;
+            height: 62px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 32px;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            z-index: 9999;
             text-decoration: none;
             transition: all 0.3s ease;
-            animation: pulse 2s infinite;
+            animation: pulseWa 2s infinite;
         }
 
         .whatsapp-float:hover {
             transform: scale(1.1);
+            background-color: #20ba5a;
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.6);
         }
 
-        @keyframes pulse {
+        html[dir="rtl"] .whatsapp-float {
+            right: auto;
+            left: 30px;
+        }
+
+        @keyframes pulseWa {
             0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            nav { display: none; }
+        /* ═══ FOOTER ═══ */
+        footer{padding:60px 0 30px;border-top:1px solid var(--border)}
+        .footer-inner{display:flex;flex-direction:column;align-items:center;gap:32px}
+        .socials{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+        .socials a{width:46px;height:46px;border-radius:12px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--t3);background:var(--card)}
+
+        /* ═══ REVEAL & RTL ═══ */
+        .reveal{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.4,0,.2,1)}
+        .reveal.visible{opacity:1;transform:translateY(0)}
+        html[dir="rtl"] .story-quote{padding-left:0;padding-right:40px;border-left:none;border-right:3px solid var(--orange)}
+        html[dir="rtl"] .donate-card{text-align:right}
+
+        @media(max-width:768px){
             .whatsapp-float { bottom: 20px; right: 20px; width: 55px; height: 55px; font-size: 28px; }
+            html[dir="rtl"] .whatsapp-float { right: auto; left: 20px; }
+            .donate-grid, .goals-grid, .steps, .story-grid{grid-template-columns:1fr;gap:24px}
+            .donate-card{padding:28px 20px}
         }
     </style>
 </head>
 <body>
 
-    <!-- Alert Header -->
-    <div class="alert-banner">
-        🔥 A child is sleeping on freezing wet ground tonight. Help us weld a bed right now!
-    </div>
-
-    <!-- Header -->
-    <header>
-        <a href="#" class="logo">
-            <img src="49977ecc-2763-49fe-83de-a2de9d273613.jpg" alt="Gaza Hope Logo" onerror="this.src='https://gaza-hope-workshop.github.io/gaza-hope/logo.png'">
-            <span>Gaza Hope Workshop</span>
-        </a>
-        <nav>
-            <a href="#donate">Donate Now</a>
-            <a href="https://wa.me/972592290793?text=Hi%2C%20I%20would%20like%20to%20sponsor%20a%20bed%20and%20support%20children%20with%20Gaza%20Hope%20Workshop.%20How%20can%20I%20complete%20my%20donation%20today%3F" target="_blank">Contact Us</a>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Insulating Gaza’s Children From The Cold Ground</h1>
-        <p>100% direct-to-workshop impact. Zero platform fees, zero middleman delays. Every bed made saves a young amputee or child from freezing mud.</p>
-        
-        <!-- اللمسة الصغيرة والمميزة -->
-        <div class="quick-stats">
-            <span><i class="fa-solid fa-hammer"></i> 340+ Beds Welded</span>
-            <span><i class="fa-solid fa-child"></i> 1,200+ Children Sheltered</span>
-            <span><i class="fa-solid fa-check-circle"></i> 100% Direct Field Impact</span>
-        </div>
-    </section>
-
-    <!-- Donate Section -->
-    <section class="donate-container" id="donate">
-        
-        <div class="trust-badge">
-            <i class="fa-solid fa-shield-halved"></i>
-            <span>100% Direct Impact | Zero Platform Fees | Verified Field Workshop</span>
-        </div>
-
-        <div class="donate-grid">
-            
-            <!-- USDT Crypto Donation -->
-            <div class="donate-box">
-                <h3><i class="fa-solid fa-wallet" style="color:#38bdf8;"></i> Send USDT (TRC20)</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">Fastest & zero-fee method to fund materials today.</p>
-                
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=TMC7JcAkXGDvYYBByPRUgX6rsZC5LZTa4T" alt="TRC20 QR Code" class="qr-img">
-                
-                <div class="crypto-address" id="usdtAddress">TMC7JcAkXGDvYYBByPRUgX6rsZC5LZTa4T</div>
-                
-                <button class="btn btn-crypto" onclick="copyAddress()">
-                    <i class="fa-regular fa-copy"></i> Copy USDT Address
-                </button>
+<!-- NAVIGATION -->
+<nav id="navbar">
+    <div class="container nav-inner">
+        <a href="#" class="nav-logo">
+            <img class="nav-logo-img" src="https://z-cdn-media.chatglm.cn/files/e2b8410c-3347-4986-b9cd-55aaaa375c82.jpg?auth_key=1886102644-c30ca65bb1b14f87be01520b0f4f3cc7-0-6f3b30e6f9157528ea8252f3b243ae08" alt="Gaza Hope Workshop Logo">
+            <div class="nav-logo-text">
+                <span class="name-en">Gaza Hope</span>
+                <span class="name-ar">ورشة أمل غزة</span>
             </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#story" data-en="Our Mission" data-ar="معركتنا الميدانية">Our Mission</a></li>
+            <li><a href="#goals" data-en="Our Targets" data-ar="غاياتنا الحتمية">Our Targets</a></li>
+            <li><a href="#how" data-en="Execution" data-ar="خطة التنفيذ">Execution</a></li>
+            <li><a href="#donate" data-en="Rescue Now" data-ar="أنقذ جريحاً">Rescue Now</a></li>
+        </ul>
+        <div style="display:flex;align-items:center;gap:12px">
+            <button class="lang-btn" id="langToggle" aria-label="Toggle language">
+                <i class="fas fa-globe"></i>
+                <span id="langLabel">العربية</span>
+            </button>
+        </div>
+    </div>
+</nav>
 
-            <!-- GoFundMe Card Payment -->
-            <div class="donate-box">
-                <h3><i class="fa-solid fa-credit-card" style="color: var(--gofundme-color);"></i> Credit Card / GoFundMe</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">Donate securely via debit/credit card or Apple Pay.</p>
-                
-                <div style="margin: 40px 0;">
-                    <i class="fa-brands fa-cc-visa fa-2x" style="margin: 0 5px; color: #94a3b8;"></i>
-                    <i class="fa-brands fa-cc-mastercard fa-2x" style="margin: 0 5px; color: #94a3b8;"></i>
-                    <i class="fa-brands fa-apple-pay fa-2x" style="margin: 0 5px; color: #94a3b8;"></i>
+<!-- STICKY DUAL DONATE BAR -->
+<div class="sticky-donate" id="stickyDonate">
+    <span class="sticky-text"><i class="fas fa-heart"></i><span data-en="A child is freezing on cold ground now!" data-ar="طفل يرتجف على الأرض الباردة الآن!">A child is freezing on cold ground now!</span></span>
+    <div class="sticky-divider"></div>
+    <a href="https://www.gofundme.com/f/my-hands-used-to-carve-beauty-now-they-dig-through-the-rub/donate?attribution_id=sl:53098633-b29f-451a-b1d6-5f779c0e0ac0&lang=en_US&ts=1785229147&utm_campaign=fp_sharesheet&utm_content=amp20_t1&utm_medium=customer&utm_source=copy_link&source=btn_donate" target="_blank" rel="noopener" class="sticky-btn sticky-btn-gfm">
+        <i class="fas fa-fire"></i>
+        <span data-en="Weld a Bed Tonight" data-ar="الحم سريراً الليلة">Weld a Bed Tonight</span>
+    </a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+    <div class="hero-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    <div class="sparks-container" id="sparks"></div>
+    <div class="hero-content">
+        <div class="hero-logo-wrap">
+            <div class="hero-logo-glow"></div>
+            <img class="hero-logo" src="https://z-cdn-media.chatglm.cn/files/e2b8410c-3347-4986-b9cd-55aaaa375c82.jpg?auth_key=1886102644-c30ca65bb1b14f87be01520b0f4f3cc7-0-6f3b30e6f9157528ea8252f3b243ae08" alt="Gaza Hope Workshop Logo">
+        </div>
+        <div class="hero-badge">
+            <i class="fas fa-fire"></i>
+            <span data-en="Urgent Action Required" data-ar="استغاثة ميدانية عاجلة">Urgent Action Required</span>
+        </div>
+        <h1>
+            <span class="line1" data-en="From Rubble" data-ar="من تحت الأنقاض">From Rubble</span>
+            <span class="line2" data-en="We Forge Life" data-ar="نصنع الحياة">We Forge Life</span>
+        </h1>
+        <p class="hero-sub" data-en="We pull buried rebar from destroyed homes to hand-weld emergency beds for amputated children forced to sleep on open dirt. Your support is their only shield." data-ar="نسحب حديد التسليح من تحت المباني المدمّرة لنلحم يدوياً أسرّة طوارئ تنتشل الأطفال المبتورين من قسوة التراب والرطوبة. تبرعك هو درعهم الوحيد!">We pull buried rebar from destroyed homes to hand-weld emergency beds for amputated children forced to sleep on open dirt. Your support is their only shield.</p>
+        <div class="hero-btns">
+            <a href="https://www.gofundme.com/f/my-hands-used-to-carve-beauty-now-they-dig-through-the-rub/donate?attribution_id=sl:53098633-b29f-451a-b1d6-5f779c0e0ac0&lang=en_US&ts=1785229147&utm_campaign=fp_sharesheet&utm_content=amp20_t1&utm_medium=customer&utm_source=copy_link&source=btn_donate" target="_blank" rel="noopener" class="btn btn-primary">
+                <i class="fas fa-heart"></i>
+                <span data-en="Save a Child via GoFundMe" data-ar="أنقذ طفلاً عبر GoFundMe">Save a Child via GoFundMe</span>
+            </a>
+            <a href="#donate" class="btn btn-outline">
+                <i class="fab fa-bitcoin"></i>
+                <span data-en="Crypto Direct Aid" data-ar="تبرع مباشر USDT">Crypto Direct Aid</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- STORY -->
+<section class="story" id="story">
+    <div class="container story-grid">
+        <div class="story-quote reveal">
+            <p data-en="Inside freezing, damp tents across Gaza, newly amputated children lie helplessly on bare dirt. Their open surgical wounds face constant threat of severe, fatal infection. <strong>We refuse to stand by and watch them bleed on the earth.</strong> Born from the ashes, Gaza Hope Workshop digs through shattered concrete with bare hands to extract buried steel rebar. We hammer, bend, and hand-weld each bar into sturdy, elevated medical beds. Every single bed we build lifts a fragile, broken body off the dirt, providing a clean space to heal. Along with each bed, we deliver essential survival packs of food, clean water, and thermal warmth. <strong>An amputated child is crying out in pain right now</strong> — help us weld their bed tonight and turn despair into victory." data-ar="داخل الخيام الرطبة والباردة في غزة، يرقد أطفال مبتورو الأطراف على التراب المباشر، وتواجه جروحهم الجراحية المفتوحة التلوث والتعفن القاتل كل ثانية. <strong>رفضنا الوقوف مكتوفي الأيدي أمام هذا الجرم الإنساني!</strong> انطلقت ورشة أمل غزة من قلب الأنقاض — نحفر بين الركام بأيدينا لنستخرج حديد المباني المدمرة، ثم نصقله ونلحمه يدوياً ليصبح أسرّة طبية مرتفعة وقوية. كل سرير ننجزه يمثل معجزة حقيقية تنتشل جسداً ممزقاً من التراب إلى الكرامة. ونرفق معه حزمة إغاثة طارئة تضم الغذاء والماء النظيف والدفء. <strong>طفل مبتور يصرخ من الألم في خيمته الآن</strong> — كن شريكاً في معركة إنقاذه واصلح قدره الليلة!">Inside freezing, damp tents across Gaza, newly amputated children lie helplessly on bare dirt. Their open surgical wounds face constant threat of severe, fatal infection. <strong>We refuse to stand by and watch them bleed on the earth.</strong> Born from the ashes, Gaza Hope Workshop digs through shattered concrete with bare hands to extract buried steel rebar. We hammer, bend, and hand-weld each bar into sturdy, elevated medical beds. Every single bed we build lifts a fragile, broken body off the dirt, providing a clean space to heal. Along with each bed, we deliver essential survival packs of food, clean water, and thermal warmth. <strong>An amputated child is crying out in pain right now</strong> — help us weld their bed tonight and turn despair into victory.</p>
+        </div>
+        <div class="story-visual reveal">
+            <div class="story-card">
+                <div class="icon-row">
+                    <div class="icon-box orange"><i class="fas fa-hammer"></i></div>
+                    <div class="icon-box green"><i class="fas fa-shield-halved"></i></div>
+                    <div class="icon-box teal"><i class="fas fa-hand-holding-medical"></i></div>
                 </div>
-                
-                <a href="https://www.gofundme.com/f/my-hands-used-to-carve-beauty-now-they-dig-through-the-rub/donate?attribution_id=sl:53098633-b29f-451a-b1d6-5f779c0e0ac0&lang=en_US&ts=1785229147&utm_campaign=fp_sharesheet&utm_content=amp20_t1&utm_medium=customer&utm_source=copy_link&source=btn_donate" target="_blank" class="btn btn-gfm">
-                    <i class="fa-solid fa-heart"></i> Save a Child Now on GoFundMe
+                <h3 data-en="Defying Destruction" data-ar="صنّاع الكرامة من قلب الركام">Defying Destruction</h3>
+                <p data-en="We turn instruments of war into weapons of mercy. Every bed we forge is pulled from the very rubble that shattered these children's lives. We don't offer sympathy — we deliver real, tangible protection, warmth, and life-saving dignity." data-ar="نحن لا ننتظر المعجزات، بل نصنعها بأيدينا! نحوّل أدوات الدمار إلى ملاذ حماية. كل سرير نلحمه هو صرخة تحدٍ في وجه المعاناة. نحن لا نقدم مجرد تعاطف، بل نوفر حماية حقيقية وكرامة ترفع الجرحى عن التراب.">We turn instruments of war into weapons of mercy. Every bed we forge is pulled from the very rubble that shattered these children's lives. We don't offer sympathy — we deliver real, tangible protection, warmth, and life-saving dignity.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GOALS -->
+<section class="goals" id="goals">
+    <div class="container">
+        <div class="section-label reveal" data-en="Our Targets" data-ar="غاياتنا الحتمية">Our Targets</div>
+        <h2 class="section-title reveal" data-en="Targets We Will Crush — With Your Fire" data-ar="لا ننتظر المعجزات.. سنحقق هذه الأهداف بدعمكم!">Targets We Will Crush — With Your Fire</h2>
+        <div class="goals-grid">
+            <div class="goal-card reveal">
+                <div class="goal-tag"><i class="fas fa-fire"></i> <span data-en="Target" data-ar="هدف حتمي">Target</span></div>
+                <div class="goal-number"><span class="num-val" data-target="500">0</span> <span class="num-unit" data-en="beds" data-ar="سرير">beds</span></div>
+                <div class="goal-label" data-en="Emergency Beds to Hand-Weld" data-ar="سرير طوارئ ينتزع الجرحى من قسوة الأرض">Emergency Beds to Hand-Weld</div>
+                <div class="goal-bar-wrap"><div class="goal-bar" data-width="6"></div></div>
+            </div>
+            <div class="goal-card reveal">
+                <div class="goal-tag"><i class="fas fa-fire"></i> <span data-en="Target" data-ar="هدف حتمي">Target</span></div>
+                <div class="goal-number"><span class="num-val" data-target="500">0</span> <span class="num-unit" data-en="families" data-ar="عائلة">families</span></div>
+                <div class="goal-label" data-en="Desperate Families to Shelter" data-ar="عائلة ننتشل كرامتها ونوفر لها المأوى">Desperate Families to Shelter</div>
+                <div class="goal-bar-wrap"><div class="goal-bar" data-width="4"></div></div>
+            </div>
+            <div class="goal-card reveal">
+                <div class="goal-tag"><i class="fas fa-fire"></i> <span data-en="Target" data-ar="هدف حتمي">Target</span></div>
+                <div class="goal-number"><span class="num-val" data-target="4000">0</span> <span class="num-unit" data-en="bars" data-ar="حديدة">bars</span></div>
+                <div class="goal-label" data-en="Iron Bars to Extract & Reshape" data-ar="حديدة نتحدى الخطر لنصنع منها الأمل">Iron Bars to Extract & Reshape</div>
+                <div class="goal-bar-wrap"><div class="goal-bar" data-width="3"></div></div>
+            </div>
+            <div class="goal-card reveal">
+                <div class="goal-tag"><i class="fas fa-fire"></i> <span data-en="Target" data-ar="هدف حتمي">Target</span></div>
+                <div class="goal-number"><span class="num-val" data-target="500">0</span> <span class="num-unit" data-en="packs" data-ar="حزمة">packs</span></div>
+                <div class="goal-label" data-en="Lifesaving Kits to Deliver" data-ar="حزمة إغاثة نكسر بها الحصار ونوصلها لشرايين الحياة">Lifesaving Kits to Deliver</div>
+                <div class="goal-bar-wrap"><div class="goal-bar" data-width="4"></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DONATE -->
+<section class="donate" id="donate">
+    <div class="container">
+        <div class="section-label reveal" data-en="Immediate Action" data-ar="تحرّك الآن">Immediate Action</div>
+        <h2 class="section-title reveal" data-en="Your Donation Welds a Bed TONIGHT" data-ar="تبرعك يلحم سريراً وينقذ جريحاً الليلة!">Your Donation Welds a Bed TONIGHT</h2>
+        <div class="donate-grid">
+            <div class="donate-card reveal">
+                <h3>USDT (TRC20 Network)</h3>
+                <p data-en="100% direct to the workshop floor. Zero platform fees." data-ar="أرسل USDT مباشرة لورشة العمل — بلا رسوم، بلا روتين.">100% direct to the workshop floor. Zero platform fees.</p>
+                <div class="wallet-box">
+                    <span class="wallet-addr" id="walletAddr">TMC7JcAkXGDvYYBByPRUgX6rsZC5LZTa4T</span>
+                    <button class="copy-btn" id="copyBtn" onclick="copyAddress()">
+                        <i class="fas fa-copy"></i> <span data-en="Copy" data-ar="نسخ">Copy</span>
+                    </button>
+                </div>
+            </div>
+            <div class="donate-card reveal">
+                <h3>GoFundMe / Credit Card</h3>
+                <p data-en="Fast, 100% secure payment through global platform." data-ar="طريقة آمنة ومضمونة عبر بطاقات الفيزا والماستركارد والأبل باي.">Fast, 100% secure payment through global platform.</p>
+                <a href="https://www.gofundme.com/f/my-hands-used-to-carve-beauty-now-they-dig-through-the-rub/donate?attribution_id=sl:53098633-b29f-451a-b1d6-5f779c0e0ac0&lang=en_US&ts=1785229147&utm_campaign=fp_sharesheet&utm_content=amp20_t1&utm_medium=customer&utm_source=copy_link&source=btn_donate" target="_blank" class="btn btn-primary" style="width:100%;margin-top:15px;">
+                    <i class="fas fa-heart"></i> <span data-en="SAVE A LIFE NOW" data-ar="تبرع الآن">SAVE A LIFE NOW</span>
                 </a>
             </div>
-
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/972592290793?text=Hi%2C%20I%20would%20like%20to%20sponsor%20a%20bed%20and%20support%20children%20with%20Gaza%20Hope%20Workshop.%20How%20can%20I%20complete%20my%20donation%20today%3F" 
-       class="whatsapp-float" 
-       target="_blank" 
-       title="Chat with Gaza Hope Workshop on WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
+<!-- FOOTER -->
+<footer>
+    <div class="container footer-inner">
+        <div class="socials">
+            <a href="https://www.facebook.com/profile.php?id=61592733151920" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/gaza_hope_workshop" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@gaza_hope_workshop" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://x.com/GazaHopeCraft" target="_blank" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.reddit.com/user/GazaHopeWorkshop" target="_blank" aria-label="Reddit"><i class="fab fa-reddit-alien"></i></a>
+            <a href="https://gofund.me/74e35a94b" target="_blank" aria-label="GoFundMe"><i class="fas fa-hand-holding-heart"></i></a>
+        </div>
+    </div>
+</footer>
 
-    <!-- JavaScript Copy Function -->
-    <script>
-        function copyAddress() {
-            const address = document.getElementById("usdtAddress").innerText;
-            navigator.clipboard.writeText(address);
-            alert("USDT Address copied successfully!");
-        }
-    </script>
+<!-- SMART FLOATING WHATSAPP BUTTON (بديل Tawk.to) -->
+<a href="https://wa.me/972592290793?text=Hi%2C%20I%20would%20like%20to%20sponsor%20a%20bed%20and%20support%20children%20with%20Gaza%20Hope%20Workshop.%20How%20can%20I%20complete%20my%20donation%20today%3F" 
+   class="whatsapp-float" 
+   target="_blank" 
+   title="Chat with Gaza Hope Workshop on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- SCRIPTS -->
+<script>
+(function(){
+    /* SPARKS */
+    var sc = document.getElementById('sparks');
+    var colors = ['#e8731a','#f4a261','#ffb347','#ffffff'];
+    for(var i=0;i<25;i++){
+        var s = document.createElement('div');
+        s.className = 'spark';
+        var sz = Math.random()*3+1;
+        s.style.cssText = 'left:'+Math.random()*100+'%;bottom:'+(-Math.random()*20)+'%;width:'+sz+'px;height:'+sz+'px;background:'+colors[Math.floor(Math.random()*colors.length)]+';animation-duration:'+(Math.random()*6+4)+'s;animation-delay:'+Math.random()*6+'s;opacity:0;';
+        sc.appendChild(s);
+    }
+
+    /* NAV & STICKY */
+    var nav = document.getElementById('navbar');
+    var sticky = document.getElementById('stickyDonate');
+    window.addEventListener('scroll', function(){
+        var y = window.scrollY;
+        nav.classList.toggle('scrolled', y > 50);
+        if(y > 400) sticky.classList.add('visible');
+        else sticky.classList.remove('visible');
+    });
+
+    /* REVEAL */
+    var revEls = document.querySelectorAll('.reveal');
+    var revObs = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+            if(e.isIntersecting){ e.target.classList.add('visible'); revObs.unobserve(e.target); }
+        });
+    }, {threshold:0.1});
+    revEls.forEach(function(el){ revObs.observe(el); });
+
+    /* COUNTERS */
+    var counters = document.querySelectorAll('.num-val');
+    counters.forEach(function(c){
+        var target = +c.getAttribute('data-target');
+        c.textContent = target;
+    });
+
+    /* COPY ADDRESS */
+    window.copyAddress = function(){
+        var addr = 'TMC7JcAkXGDvYYBByPRUgX6rsZC5LZTa4T';
+        navigator.clipboard.writeText(addr);
+        alert(document.documentElement.lang === 'ar' ? 'تم نسخ عنوان المحفظة بنجاح!' : 'USDT Address copied successfully!');
+    };
+
+    /* TRANSLATION */
+    var currentLang = 'en';
+    var langToggle = document.getElementById('langToggle');
+    var langLabel = document.getElementById('langLabel');
+
+    langToggle.addEventListener('click', function(){
+        currentLang = currentLang === 'en' ? 'ar' : 'en';
+        document.documentElement.lang = currentLang;
+        document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+        langLabel.textContent = currentLang === 'ar' ? 'English' : 'العربية';
+
+        document.querySelectorAll('[data-en][data-ar]').forEach(function(el){
+            el.innerHTML = el.getAttribute('data-' + currentLang);
+        });
+    });
+})();
+</script>
+
 </body>
 </html>
