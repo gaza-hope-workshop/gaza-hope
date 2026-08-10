@@ -1,4 +1,4 @@
-html_content = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -18,6 +18,7 @@ html_content = """<!DOCTYPE html>
             --primary-glow: rgba(232, 115, 26, 0.4);
             --green: #10b981;
             --green-glow: rgba(16, 185, 129, 0.3);
+            --red: #ef4444;
             --teal: #0284c7;
             --purple: #8b5cf6;
             --text-light: #f8fafc;
@@ -33,12 +34,11 @@ html_content = """<!DOCTYPE html>
             font-family: 'Cairo', 'Plus Jakarta Sans', sans-serif;
             overflow-x: hidden;
             line-height: 1.7;
-            padding-bottom: 110px; /* مسافة أمان لعدم تغطية الشريط السفلي لأي محتوى */
+            padding-bottom: 110px;
         }
 
         html[dir="ltr"] body { font-family: 'Plus Jakarta Sans', 'Cairo', sans-serif; }
 
-        /* Top Alert Bar */
         .top-alert {
             background: linear-gradient(90deg, #991b1b, #e8731a, #991b1b);
             background-size: 200% 200%;
@@ -52,7 +52,6 @@ html_content = """<!DOCTYPE html>
 
         @keyframes gradientMove { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
 
-        /* Header */
         header {
             padding: 12px 5%;
             display: flex;
@@ -85,7 +84,6 @@ html_content = """<!DOCTYPE html>
             gap: 6px;
         }
 
-        /* Top Actions Bar */
         .top-hero-actions {
             background: rgba(15, 22, 34, 0.6);
             border-bottom: 1px solid var(--border);
@@ -114,37 +112,36 @@ html_content = """<!DOCTYPE html>
         .btn-gfm { background: var(--green); }
         .btn-share { background: linear-gradient(135deg, var(--purple), #6d28d9); box-shadow: 0 0 20px rgba(139, 92, 246, 0.4); }
 
-        /* Hero & Goal Bar */
         .hero { position: relative; padding: 35px 5% 20px; text-align: center; max-width: 950px; margin: 0 auto; }
         .hero h1 { font-size: clamp(1.8rem, 5vw, 3.2rem); font-weight: 900; line-height: 1.25; margin-bottom: 15px; }
         .hero h1 span.gradient { background: linear-gradient(180deg, #fdba74 0%, #e8731a 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        /* Progress / Goal Bar Section ($50,000 Target) */
-        .goal-container {
+        /* URGENCY PROGRESS BAR */
+        .urgency-container {
             background: var(--card-bg);
-            border: 1px solid var(--border);
+            border: 1px solid rgba(239, 68, 68, 0.4);
             border-radius: 20px;
             padding: 22px 25px;
             margin: 25px auto 35px;
             max-width: 750px;
             text-align: right;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(239, 68, 68, 0.15);
         }
 
-        .goal-header {
+        .urgency-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 12px;
-            font-weight: 800;
+            font-weight: 900;
         }
 
-        .goal-header .raised { font-size: 1.3rem; color: var(--green); }
-        .goal-header .target { font-size: 1.05rem; color: var(--text-muted); }
+        .urgency-header .urgency-title { font-size: 1.15rem; color: var(--red); display: flex; align-items: center; gap: 8px; }
+        .urgency-header .beds-count { font-size: 1.05rem; color: var(--primary); }
 
         .progress-bar-bg {
             width: 100%;
-            height: 16px;
+            height: 18px;
             background: #1e293b;
             border-radius: 10px;
             overflow: hidden;
@@ -152,23 +149,23 @@ html_content = """<!DOCTYPE html>
         }
 
         .progress-bar-fill {
-            width: 12%; /* نسبة إنجاز متناسقة للبداية */
+            width: 68%;
             height: 100%;
-            background: linear-gradient(90deg, #10b981, #34d399);
+            background: linear-gradient(90deg, #e8731a, #ef4444);
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
         }
 
-        .goal-footer {
+        .urgency-footer {
             display: flex;
             justify-content: space-between;
             margin-top: 10px;
-            font-size: 0.85rem;
-            color: var(--text-muted);
+            font-size: 0.88rem;
+            color: var(--text-light);
             font-weight: 700;
         }
 
-        /* Tiers Section */
+        /* TIERS SECTION */
         .tiers-section { max-width: 1000px; margin: 30px auto; padding: 0 5%; }
         .tiers-title { text-align: center; font-size: 1.4rem; font-weight: 900; margin-bottom: 20px; color: #f8fafc; }
         
@@ -211,13 +208,11 @@ html_content = """<!DOCTYPE html>
         .tier-amount { font-size: 2.2rem; font-weight: 900; color: var(--primary); margin: 8px 0; }
         .tier-impact { font-size: 0.88rem; color: #e2e8f0; font-weight: 700; margin-bottom: 15px; line-height: 1.5; }
 
-        /* Counters Grid */
         .counters-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; margin: 35px 0; }
         .counter-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 18px; padding: 20px; text-align: center; }
         .counter-number { font-size: 2.4rem; font-weight: 900; color: var(--primary); }
         .counter-label { color: var(--text-muted); font-size: 0.85rem; font-weight: 700; margin-top: 5px; }
 
-        /* Social / Follow Section */
         .social-section {
             background: var(--card-bg);
             border: 1px solid var(--border);
@@ -253,10 +248,9 @@ html_content = """<!DOCTYPE html>
         .btn-wa-direct { background: #25d366; }
         .btn-ig-direct { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
 
-        /* LIVE DONATION POPUP (رفع الموضع أعلى لعدم التغطية) */
         .donation-popup {
             position: fixed;
-            bottom: 82px; /* تم رفعها أعلى الشريط السفلي تماماً */
+            bottom: 82px;
             right: 15px;
             background: rgba(15, 22, 34, 0.98);
             border: 1px solid var(--primary);
@@ -266,7 +260,7 @@ html_content = """<!DOCTYPE html>
             display: flex;
             align-items: center;
             gap: 12px;
-            z-index: 9990; /* أقل من الشريط السفلي وأزرار التحكم */
+            z-index: 9990;
             backdrop-filter: blur(10px);
             max-width: calc(100vw - 30px);
             animation: slideUp 0.5s ease-out;
@@ -290,7 +284,6 @@ html_content = """<!DOCTYPE html>
         .popup-content p { font-size: 0.82rem; font-weight: 800; color: #fff; line-height: 1.3; }
         .popup-content span { font-size: 0.72rem; color: var(--text-muted); font-weight: 600; }
 
-        /* STICKY BOTTOM BAR */
         .sticky-bottom-bar {
             position: fixed;
             bottom: 0;
@@ -347,7 +340,6 @@ html_content = """<!DOCTYPE html>
         </button>
     </header>
 
-    <!-- Top Action Buttons -->
     <div class="top-hero-actions">
         <a href="#donate" class="btn-top-action btn-usdt">
             <i class="fa-solid fa-wallet"></i> <span>تبرع USDT</span>
@@ -360,7 +352,6 @@ html_content = """<!DOCTYPE html>
         </button>
     </div>
 
-    <!-- Hero Section -->
     <section class="hero">
         <h1>
             <span>من تحت الأنقاض..</span><br>
@@ -370,22 +361,21 @@ html_content = """<!DOCTYPE html>
             ننتشل حديد التسليح من المباني المدمّرة لنلحم يدوياً أسرّة طوارئ مرتفعة ترفع الأطفال والمبتورين عن برودة التراب داخل الخيام.
         </p>
 
-        <!-- Dynamic Goal Progress Bar ($50,000 Real Target) -->
-        <div class="goal-container">
-            <div class="goal-header">
-                <span class="raised" id="raisedText">المبلغ المجموع حتى الآن: $6,250</span>
-                <span class="target" id="targetText">الهدف المعلن: $50,000</span>
+        <!-- URGENCY PROGRESS BAR -->
+        <div class="urgency-container">
+            <div class="urgency-header">
+                <span class="urgency-title"><i class="fa-solid fa-triangle-exclamation"></i> أنقذ طفلاً مبتوراً قبل فوات الأوان</span>
+                <span class="beds-count">الاستجابة العاجلة: 68%</span>
             </div>
             <div class="progress-bar-bg">
-                <div class="progress-bar-fill" style="width: 12.5%;"></div>
+                <div class="progress-bar-fill" style="width: 68%;"></div>
             </div>
-            <div class="goal-footer">
-                <span>نسبة الإنجاز: 12.5%</span>
-                <span>هدف الكفالة الكلية: 500+ سرير طوارئ</span>
+            <div class="urgency-footer">
+                <span>⚠️ أطفال جرحى ينتظرون رفعهم عن التراب المباشر</span>
+                <span>الهدف: كفالة سرير طوارئ لكل طفل محتاج</span>
             </div>
         </div>
 
-        <!-- Impact Tiers -->
         <div class="tiers-section">
             <h3 class="tiers-title" id="tiersHeader">⚡ حدد مساهمتك المباشرة الآن:</h3>
             <div class="tiers-grid">
@@ -418,7 +408,6 @@ html_content = """<!DOCTYPE html>
             </div>
         </div>
 
-        <!-- Ongoing Field Targets -->
         <div class="counters-grid">
             <div class="counter-card">
                 <div class="counter-number">500+</div>
@@ -438,7 +427,6 @@ html_content = """<!DOCTYPE html>
             </div>
         </div>
 
-        <!-- Follow & Direct Social Section (واضحة وبدون أي تغطية) -->
         <div class="social-section">
             <h3 id="socialHeader">📲 تابع وثّق إنجازات الورشة الميدانية</h3>
             <p style="color: var(--text-muted); font-size: 0.9rem;">تواصل معنا مباشرة أو تابع الفيديوهات والتوثيق الميداني اليومي عبر حسابتنا الرسمية:</p>
@@ -454,7 +442,6 @@ html_content = """<!DOCTYPE html>
 
     </section>
 
-    <!-- LIVE POPUP NOTIFICATION (متموضعة بدقة أعلى الشريط لتجنب التغطية) -->
     <div class="donation-popup" id="donationPopup">
         <div class="popup-icon">
             <i class="fa-solid fa-heart"></i>
@@ -465,7 +452,6 @@ html_content = """<!DOCTYPE html>
         </div>
     </div>
 
-    <!-- Sticky Bottom Navigation Bar -->
     <div class="sticky-bottom-bar">
         <a href="#donate" class="btn-sticky btn-usdt">
             <i class="fa-solid fa-wallet"></i> <span>USDT</span>
@@ -487,9 +473,4 @@ html_content = """<!DOCTYPE html>
     </script>
 
 </body>
-</html>"""
-
-with open('index.html', 'w', encoding='utf-8') as f:
-    f.write(html_content)
-
-print("NEW_INDEX_FILE_UPDATED")
+</html>
