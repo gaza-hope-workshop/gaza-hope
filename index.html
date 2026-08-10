@@ -286,7 +286,7 @@
             padding: 10px 20px; border-radius: 8px; font-weight: 800; display: none; z-index: 10000; box-shadow: 0 5px 20px rgba(0,0,0,0.5);
         }
 
-        /* LIVE RANDOM DONATION POPUP (تصميم انسيابي وجمالي) */
+        /* LIVE RANDOM DONATION POPUP */
         .donation-popup {
             position: fixed;
             bottom: 82px;
@@ -415,7 +415,6 @@
                 </div>
             </div>
 
-            <!-- بطاقة $25 معدلة بالكامل لتطابق الحملة (أسيّاخ حديد وعزل حراري) -->
             <div class="tier-card popular">
                 <div class="tier-badge">الأكثر تأثيراً 🔥</div>
                 <div class="tier-amount">$25</div>
@@ -738,7 +737,7 @@
             { title: "فاعل خير من قطر 🇶🇦", desc: "تبرع بـ $50 لكفالة سرير طوارئ" }
         ];
 
-        // تايمر انسيابي وعشوائي عالي الجمالية والمصداقية
+        // تايمر انسيابي وعشوائي جمالي
         function triggerRandomNotification() {
             const randomItem = donationsList[Math.floor(Math.random() * donationsList.length)];
             document.getElementById('popupTitle').innerText = randomItem.title;
@@ -752,21 +751,21 @@
                 popup.classList.add('active');
             }, 50);
             
-            // إخفاء التنبيه بسلاسة بعد 6 ثوانٍ
+            // إخفاء التنبيه بسلاسة بعد 5 ثوانٍ
             setTimeout(() => {
                 popup.classList.remove('active');
                 setTimeout(() => {
                     popup.style.display = 'none';
                 }, 500);
-            }, 6000);
+            }, 5000);
 
-            // حساب الموعد القادم بشكل عشوائي (بين 15 إلى 35 دقيقة بالمللي ثانية)
-            const nextInterval = Math.floor(Math.random() * (35 - 15 + 1) + 15) * 60 * 1000;
+            // حساب الموعد القادم بشكل عشوائي (بين 5 إلى 30 ثانية بالمللي ثانية)
+            const nextInterval = Math.floor(Math.random() * (30 - 5 + 1) + 5) * 1000;
             setTimeout(triggerRandomNotification, nextInterval);
         }
 
-        // تشغيل التنبيه الأول بعد 90 ثانية (دقيقة ونصف) من دخول الزائر
-        setTimeout(triggerRandomNotification, 90000);
+        // تشغيل التنبيه الأول بعد 30 ثانية من دخول الزائر للموقع
+        setTimeout(triggerRandomNotification, 30000);
     </script>
 </body>
 </html>
