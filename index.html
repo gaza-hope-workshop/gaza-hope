@@ -286,6 +286,7 @@
             padding: 10px 20px; border-radius: 8px; font-weight: 800; display: none; z-index: 10000; box-shadow: 0 5px 20px rgba(0,0,0,0.5);
         }
 
+        /* LIVE RANDOM DONATION POPUP (تصميم انسيابي وجمالي) */
         .donation-popup {
             position: fixed;
             bottom: 82px;
@@ -301,10 +302,15 @@
             z-index: 9990;
             backdrop-filter: blur(10px);
             max-width: calc(100vw - 30px);
-            animation: slideUp 0.5s ease-out;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .donation-popup.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         .popup-icon {
             width: 40px;
@@ -409,10 +415,11 @@
                 </div>
             </div>
 
+            <!-- بطاقة $25 معدلة بالكامل لتطابق الحملة (أسيّاخ حديد وعزل حراري) -->
             <div class="tier-card popular">
                 <div class="tier-badge">الأكثر تأثيراً 🔥</div>
                 <div class="tier-amount">$25</div>
-                <div class="tier-impact" id="t2Text">يوفر لوح خشب محمي وحزمة عزل حراري كاملة عن التراب</div>
+                <div class="tier-impact" id="t2Text">يوفر أسيّاخ حديد تسليح إضافية وحزمة عزل حراري كاملة للسرير عن التراب</div>
                 <div class="tier-btn-group">
                     <a href="https://www.gofundme.com/f/my-hands-used-to-carve-beauty-now-they-dig-through-the-rub/donate" target="_blank" class="btn-tier-pay btn-gfm">
                         <i class="fa-solid fa-credit-card"></i> بالبطاقة
@@ -578,7 +585,7 @@
                 storyText: 'داخل خيام غزة المبتلة بالبرد، يعاني الأطفال وشبان البتر المواليد آلاماً لا تُطاق، حيث يُجبرون على النوم على التراب العاري فتواجه جروحهم العملية الخطر الدائم والالتهابات الحادة. رفضا لترك جرحانا يتألمون، ولدت مبادرة "أمل غزة" من تحت الركام؛ ننتشل حديد المباني المدمرة، ونعيد تشكيله ولحامه يدوياً لإنتاج أسِرّة طوارئ مرتفعة ومتينة. كل سيخ حديد نعيده للحياة يصبح شرياناً يحمل جريحاً، ويمنحه مكاناً آخراً وصحياً للتعافي. مع كل سرير يُسلم، نرفق حزمة إغاثية من الطعام والماء الدافئ لنسترد الكرامة التي حاول الحصار محوها. جريح مبتور ينتظر في خيمته الباردة الآن—ساهم معنا في لحام سريراه اليوم ليتحول الركام إلى أمل.',
                 tiersHeader: '⚡ حدد مساهمتك المباشرة بأسلوب الدفع المناسب لك:',
                 t1Text: 'يوفر قطع وقود ولحام لاستخراج وتجهيز الحديد من الركام',
-                t2Text: 'يوفر لوح خشب محمي وحزمة عزل حراري كاملة عن التراب',
+                t2Text: 'يوفر أسيّاخ حديد تسليح إضافية وحزمة عزل حراري كاملة للسرير عن التراب',
                 t3Text: 'تكفّل بتصنيع ولحام سرير طوارئ مرتفع بالكامل لطفل جريح',
                 t4Text: 'كفالة سرير مكتمل + حزمة إغاثية وغذائية مرافقة للعائلة',
                 c1: 'سرير طوارئ قيد التصنيع المستهدف',
@@ -610,7 +617,7 @@
                 storyText: 'Inside the freezing, damp tents of Gaza, newly amputated children and youth endure unimaginable pain, forced to sleep on the bare dirt where their open surgical wounds face constant danger of severe infection. Refusing to let our wounded suffer on the ground, Gaza Hope rose from the rubble—pulling buried iron bars from destroyed buildings to reshape and hand-weld them into sturdy, elevated emergency beds. Every iron bar we restore becomes a literal lifeline, lifting a wounded body off the dirt and creating a safe, clean space for their fragile body to heal. With every bed delivered, we provide an essential care pack of food, clean water, and warmth, striving to restore the human dignity that war tried to erase. A newly amputated survivor is waiting in a cold tent right now—help us weld their bed today and turn ashes into hope.',
                 tiersHeader: '⚡ Select Your Direct Impact Tier & Preferred Payment Method:',
                 t1Text: 'Provides welding fuel & cutting blades to extract iron from rubble',
-                t2Text: 'Provides a protected wooden sheet & thermal insulation bed pack',
+                t2Text: 'Provides extra rebar iron bars & thermal insulation pack for the bed',
                 t3Text: 'Sponsor the full welding & fabrication of an emergency bed',
                 t4Text: 'Full bed sponsorship + complete family food & relief care package',
                 c1: 'Emergency Beds Target Goal',
@@ -722,6 +729,7 @@
             }
         });
 
+        // قائمة التبرعات الحية الواقعية
         const donationsList = [
             { title: "داعم من فرنسا 🇫🇷", desc: "تبرع بـ $100 لكفالة سرير وحزمة غذائية" },
             { title: "Anonymous Donor 🇨🇦", desc: "Donated $50 for emergency beds" },
@@ -730,22 +738,34 @@
             { title: "فاعل خير من قطر 🇶🇦", desc: "تبرع بـ $50 لكفالة سرير طوارئ" }
         ];
 
+        // تايمر انسيابي وعشوائي عالي الجمالية والمصداقية
         function triggerRandomNotification() {
             const randomItem = donationsList[Math.floor(Math.random() * donationsList.length)];
             document.getElementById('popupTitle').innerText = randomItem.title;
             document.getElementById('popupDesc').innerText = randomItem.desc + " • قبل قليل";
             
             const popup = document.getElementById('donationPopup');
-            popup.style.display = 'flex';
             
+            // إظهار التنبيه بانسيابية وعنصر جمالي
+            popup.style.display = 'flex';
             setTimeout(() => {
-                popup.style.display = 'none';
+                popup.classList.add('active');
+            }, 50);
+            
+            // إخفاء التنبيه بسلاسة بعد 6 ثوانٍ
+            setTimeout(() => {
+                popup.classList.remove('active');
+                setTimeout(() => {
+                    popup.style.display = 'none';
+                }, 500);
             }, 6000);
 
+            // حساب الموعد القادم بشكل عشوائي (بين 15 إلى 35 دقيقة بالمللي ثانية)
             const nextInterval = Math.floor(Math.random() * (35 - 15 + 1) + 15) * 60 * 1000;
             setTimeout(triggerRandomNotification, nextInterval);
         }
 
+        // تشغيل التنبيه الأول بعد 90 ثانية (دقيقة ونصف) من دخول الزائر
         setTimeout(triggerRandomNotification, 90000);
     </script>
 </body>
