@@ -3,44 +3,45 @@ html_content = """<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أمل غزة | Gaza Hope</title>
-    <meta name="description" content="ننتشل حديد المباني المدمرة لنلحم يدوياً أسرّة طوارئ مرتفعة تحمي أطفال غزة الجرحى والمبتورين من برودة التراب.">
+    <title>Gaza Hope | أمل غزة</title>
+    <meta name="description" content="مبادرة أمل غزة - ننتشل حديد التسليح من المباني المدمرة لنلحم يدوياً أسرّة طوارئ مرتفعة تحمي أطفال غزة الجرحى والمبتورين من برودة التراب.">
     
+    <!-- Google Fonts & FontAwesome -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
         :root {
-            --bg: #070a0f;
-            --card-bg: #0f1622;
-            --border: #1e293b;
-            --primary: #e8731a;
-            --primary-glow: rgba(232, 115, 26, 0.4);
-            --green: #10b981;
-            --green-glow: rgba(16, 185, 129, 0.3);
-            --teal: #0284c7;
-            --purple: #8b5cf6;
+            --brand-green: #488237;     /* أخضر أوراق الشجر */
+            --brand-orange: #e58226;    /* برتقالي السرير والركام */
+            --brand-blue: #3b82b6;      /* أزرق القوس العلوي */
+            --brand-dark: #090e17;      /* خلفية كحلية داكنة جداً */
+            --card-bg: rgba(15, 23, 42, 0.85);
+            --border: rgba(229, 130, 38, 0.25);
             --text-light: #f8fafc;
             --text-muted: #94a3b8;
             --whatsapp: #25d366;
+            --purple-share: #8b5cf6;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; transition: all 0.25s ease-in-out; }
 
         body {
-            background-color: var(--bg);
+            background-color: var(--brand-dark);
             color: var(--text-light);
             font-family: 'Cairo', 'Plus Jakarta Sans', sans-serif;
             overflow-x: hidden;
             line-height: 1.7;
-            padding-bottom: 110px; /* مسافة أمان لعدم تغطية الشريط السفلي لأي محتوى */
+            padding-bottom: 95px;
         }
 
         html[dir="ltr"] body { font-family: 'Plus Jakarta Sans', 'Cairo', sans-serif; }
 
+        ::selection { background: var(--brand-orange); color: #fff; }
+
         /* Top Alert Bar */
         .top-alert {
-            background: linear-gradient(90deg, #991b1b, #e8731a, #991b1b);
+            background: linear-gradient(90deg, #991b1b, var(--brand-orange), var(--brand-green));
             background-size: 200% 200%;
             animation: gradientMove 4s ease infinite;
             text-align: center;
@@ -48,17 +49,24 @@ html_content = """<!DOCTYPE html>
             font-size: 0.95rem;
             font-weight: 800;
             color: #fff;
+            position: relative;
+            z-index: 1001;
+            box-shadow: 0 4px 15px rgba(229, 130, 38, 0.3);
         }
 
-        @keyframes gradientMove { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-        /* Header */
+        /* Navbar Header */
         header {
             padding: 12px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(15, 22, 34, 0.95);
+            background: rgba(9, 14, 23, 0.92);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
             position: sticky;
@@ -67,206 +75,243 @@ html_content = """<!DOCTYPE html>
         }
 
         .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff; }
-        .brand img { width: 45px; height: 45px; border-radius: 50%; border: 2px solid var(--primary); object-fit: cover; }
-        .brand-text h2 { font-size: 1.1rem; font-weight: 900; }
-        .brand-text span { font-size: 0.7rem; color: var(--primary); font-weight: 700; }
+        .brand img { width: 48px; height: 48px; border-radius: 50%; border: 2px solid var(--brand-green); object-fit: cover; box-shadow: 0 0 15px rgba(72, 130, 55, 0.4); }
+        .brand-text h2 { font-size: 1.2rem; font-weight: 900; color: #fff; }
+        .brand-text span { font-size: 0.72rem; color: var(--brand-orange); font-weight: 700; }
 
         .lang-btn {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid var(--border);
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid var(--brand-blue);
             color: #fff;
-            padding: 6px 14px;
+            padding: 8px 16px;
             border-radius: 20px;
-            font-size: 0.82rem;
-            font-weight: 700;
             cursor: pointer;
+            font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+            font-size: 0.85rem;
         }
 
-        /* Top Actions Bar */
+        /* Top Action Buttons */
         .top-hero-actions {
-            background: rgba(15, 22, 34, 0.6);
+            background: rgba(15, 23, 42, 0.7);
             border-bottom: 1px solid var(--border);
-            padding: 12px 5%;
+            padding: 14px 5%;
             display: flex;
             justify-content: center;
-            gap: 10px;
+            align-items: center;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
         .btn-top-action {
-            padding: 10px 18px;
-            border-radius: 12px;
+            flex: 1;
+            min-width: 160px;
+            max-width: 220px;
+            height: 48px;
+            padding: 0 16px;
+            border-radius: 14px;
             font-weight: 800;
-            font-size: 0.88rem;
+            font-size: 0.92rem;
             color: #fff;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
             border: none;
             cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            white-space: nowrap;
         }
 
-        .btn-usdt { background: var(--teal); }
-        .btn-gfm { background: var(--green); }
-        .btn-share { background: linear-gradient(135deg, var(--purple), #6d28d9); box-shadow: 0 0 20px rgba(139, 92, 246, 0.4); }
+        .btn-usdt { background: var(--brand-blue); }
+        .btn-usdt:hover { background: #2b6893; }
 
-        /* Hero & Goal Bar */
-        .hero { position: relative; padding: 35px 5% 20px; text-align: center; max-width: 950px; margin: 0 auto; }
-        .hero h1 { font-size: clamp(1.8rem, 5vw, 3.2rem); font-weight: 900; line-height: 1.25; margin-bottom: 15px; }
-        .hero h1 span.gradient { background: linear-gradient(180deg, #fdba74 0%, #e8731a 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .btn-gfm { background: var(--brand-green); }
+        .btn-gfm:hover { background: #366329; }
 
-        /* Progress / Goal Bar Section ($50,000 Target) */
-        .goal-container {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 22px 25px;
-            margin: 25px auto 35px;
-            max-width: 750px;
-            text-align: right;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
+        .btn-share { background: linear-gradient(135deg, var(--purple-share), #6d28d9); box-shadow: 0 0 18px rgba(139, 92, 246, 0.4); }
+        .btn-share:hover { background: #5b21b6; }
 
-        .goal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 12px;
-            font-weight: 800;
-        }
-
-        .goal-header .raised { font-size: 1.3rem; color: var(--green); }
-        .goal-header .target { font-size: 1.05rem; color: var(--text-muted); }
-
-        .progress-bar-bg {
-            width: 100%;
-            height: 16px;
-            background: #1e293b;
-            border-radius: 10px;
-            overflow: hidden;
+        /* Hero Section */
+        .hero-wrapper {
             position: relative;
+            background: linear-gradient(180deg, rgba(9, 14, 23, 0.72) 0%, rgba(9, 14, 23, 0.95) 100%), 
+                        url('d35e1436-1e62-4217-ba5d-e19277fcc971.jpg') center center / cover no-repeat fixed;
+            padding: 50px 5% 40px;
         }
 
-        .progress-bar-fill {
-            width: 12%; /* نسبة إنجاز متناسقة للبداية */
-            height: 100%;
-            background: linear-gradient(90deg, #10b981, #34d399);
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+        .hero { position: relative; max-width: 950px; margin: 0 auto; text-align: center; z-index: 2; }
+        
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px; padding: 6px 18px; border-radius: 30px;
+            background: rgba(229, 130, 38, 0.15); border: 1px solid var(--brand-orange); color: #fdba74;
+            font-size: 0.85rem; font-weight: 800; margin-bottom: 20px; box-shadow: 0 0 20px rgba(229, 130, 38, 0.25);
         }
 
-        .goal-footer {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-weight: 700;
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; line-height: 1.25; margin-bottom: 15px; }
+        .hero h1 span.gradient { background: linear-gradient(180deg, #fde047 0%, var(--brand-orange) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* Story Box */
+        .story-box {
+            background: rgba(15, 23, 42, 0.88);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--brand-orange);
+            border-radius: 24px; padding: 30px; text-align: right; margin: 30px 0 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6); position: relative;
         }
 
-        /* Tiers Section */
-        .tiers-section { max-width: 1000px; margin: 30px auto; padding: 0 5%; }
-        .tiers-title { text-align: center; font-size: 1.4rem; font-weight: 900; margin-bottom: 20px; color: #f8fafc; }
+        html[dir="ltr"] .story-box { text-align: left; }
+        .story-tag { background: var(--brand-orange); color: #fff; padding: 4px 14px; border-radius: 12px; font-size: 0.8rem; font-weight: 800; display: inline-block; margin-bottom: 15px; }
+        .story-text { font-size: 1.05rem; color: #e2e8f0; line-height: 1.9; font-weight: 600; }
+
+        /* Impact Donation Tiers */
+        .tiers-section { max-width: 1000px; margin: 35px auto; padding: 0 5%; }
+        .tiers-title { text-align: center; font-size: 1.5rem; font-weight: 900; margin-bottom: 22px; color: #f8fafc; }
         
         .tiers-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-            gap: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
         }
 
         .tier-card {
             background: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 22px 18px;
-            text-align: center;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            border-radius: 22px; padding: 24px 18px; text-align: center; position: relative;
+            display: flex; flex-direction: column; justify-content: space-between;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
         }
 
         .tier-card.popular {
-            border-color: var(--primary);
-            box-shadow: 0 0 25px rgba(232, 115, 26, 0.25);
+            border-color: var(--brand-orange);
+            box-shadow: 0 0 30px rgba(229, 130, 38, 0.3);
         }
 
         .tier-badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary);
-            color: #fff;
-            padding: 2px 12px;
-            border-radius: 10px;
-            font-size: 0.72rem;
-            font-weight: 800;
+            position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+            background: var(--brand-orange); color: #fff; padding: 2px 14px; border-radius: 10px;
+            font-size: 0.75rem; font-weight: 800;
         }
 
-        .tier-amount { font-size: 2.2rem; font-weight: 900; color: var(--primary); margin: 8px 0; }
-        .tier-impact { font-size: 0.88rem; color: #e2e8f0; font-weight: 700; margin-bottom: 15px; line-height: 1.5; }
+        .tier-amount { font-size: 2.3rem; font-weight: 900; color: var(--brand-orange); margin: 8px 0; }
+        .tier-impact { font-size: 0.88rem; color: #e2e8f0; font-weight: 700; margin-bottom: 18px; line-height: 1.5; min-height: 52px; }
 
-        /* Counters Grid */
-        .counters-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; margin: 35px 0; }
-        .counter-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 18px; padding: 20px; text-align: center; }
-        .counter-number { font-size: 2.4rem; font-weight: 900; color: var(--primary); }
-        .counter-label { color: var(--text-muted); font-size: 0.85rem; font-weight: 700; margin-top: 5px; }
-
-        /* Social / Follow Section */
-        .social-section {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 22px;
-            padding: 30px 20px;
-            max-width: 800px;
-            margin: 40px auto 60px;
-            text-align: center;
-        }
-
-        .social-section h3 { font-size: 1.3rem; font-weight: 900; margin-bottom: 15px; }
-
-        .social-links {
+        .tier-btn-group {
             display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 15px;
+            gap: 8px;
+            margin-top: auto;
         }
 
-        .social-btn {
-            padding: 12px 22px;
-            border-radius: 14px;
-            text-decoration: none;
-            color: #fff;
+        .btn-tier-pay {
+            flex: 1;
+            padding: 10px 6px;
+            border-radius: 12px;
+            font-size: 0.78rem;
             font-weight: 800;
-            font-size: 0.9rem;
+            color: #fff;
+            text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
+            gap: 4px;
+            border: none;
+            cursor: pointer;
         }
 
-        .btn-wa-direct { background: #25d366; }
-        .btn-ig-direct { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        /* Fast Counters */
+        .counters-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 35px 0; }
+        .counter-card {
+            background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px;
+            padding: 24px 15px; text-align: center; position: relative; overflow: hidden;
+        }
+        .counter-icon {
+            font-size: 2rem; color: var(--brand-orange); margin-bottom: 8px; display: block;
+        }
+        .counter-number { font-size: 2.3rem; font-weight: 900; color: #fff; text-shadow: 0 0 15px rgba(229, 130, 38, 0.4); }
+        .counter-label { color: var(--text-muted); font-size: 0.88rem; font-weight: 700; margin-top: 5px; }
 
-        /* LIVE DONATION POPUP (رفع الموضع أعلى لعدم التغطية) */
+        /* Donation Section */
+        .donate-section { max-width: 1000px; margin: 40px auto; padding: 0 5%; }
+        .donate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .donate-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 24px; padding: 30px; text-align: center; position: relative; }
+        .donate-card.featured { border-color: var(--brand-green); box-shadow: 0 0 30px rgba(72, 130, 55, 0.3); }
+
+        .qr-box { width: 180px; height: 180px; background: #fff; padding: 8px; border-radius: 16px; margin: 15px auto; border: 2px solid var(--border); }
+        .qr-box img { width: 100%; height: 100%; object-fit: contain; }
+
+        .wallet-address-box {
+            background: #070a0f; border: 1px dashed var(--brand-blue); border-radius: 12px;
+            padding: 10px; font-family: monospace; font-size: 0.82rem; color: #38bdf8; word-break: break-all; margin: 12px 0;
+        }
+
+        .btn-action {
+            display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+            width: 100%; padding: 14px; border-radius: 14px; font-size: 0.95rem; font-weight: 800;
+            text-decoration: none; border: none; cursor: pointer; color: #fff;
+        }
+
+        /* Sticky Bottom Bar */
+        .sticky-bottom-bar {
+            position: fixed; bottom: 0; left: 0; right: 0;
+            background: rgba(9, 14, 23, 0.95); backdrop-filter: blur(15px);
+            border-top: 1px solid var(--border); padding: 10px 4%; z-index: 9999;
+            display: flex; justify-content: center; align-items: center; gap: 8px; box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.8);
+        }
+
+        .btn-sticky {
+            flex: 1; max-width: 220px; height: 46px; font-size: 0.85rem; border-radius: 12px;
+            font-weight: 800; color: #fff; border: none; cursor: pointer; text-decoration: none;
+            display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+        }
+
+        /* Social Section */
+        .social-section { text-align: center; margin: 40px 0 20px; }
+        .social-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+        .social-icon {
+            width: 44px; height: 44px; border-radius: 50%; background: var(--card-bg);
+            border: 1px solid var(--border); color: #fff; display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; text-decoration: none;
+        }
+        .social-icon:hover { border-color: var(--brand-orange); color: var(--brand-orange); transform: translateY(-4px); }
+
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed; bottom: 80px; left: 20px; background-color: var(--whatsapp); color: #fff;
+            width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 28px; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); z-index: 9998; text-decoration: none; animation: pulse 2s infinite;
+        }
+
+        html[dir="ltr"] .whatsapp-float { left: auto; right: 20px; }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* Toast Alert */
+        .toast {
+            position: fixed; bottom: 90px; right: 20px; background: var(--brand-green); color: #fff;
+            padding: 10px 20px; border-radius: 8px; font-weight: 800; display: none; z-index: 10000; box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+        }
+
+        /* LIVE RANDOM DONATION POPUP */
         .donation-popup {
             position: fixed;
-            bottom: 82px; /* تم رفعها أعلى الشريط السفلي تماماً */
+            bottom: 82px;
             right: 15px;
-            background: rgba(15, 22, 34, 0.98);
-            border: 1px solid var(--primary);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            background: rgba(15, 23, 42, 0.98);
+            border: 1px solid var(--brand-orange);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
             border-radius: 16px;
             padding: 12px 16px;
-            display: flex;
+            display: none;
             align-items: center;
             gap: 12px;
-            z-index: 9990; /* أقل من الشريط السفلي وأزرار التحكم */
+            z-index: 9990;
             backdrop-filter: blur(10px);
             max-width: calc(100vw - 30px);
             animation: slideUp 0.5s ease-out;
@@ -277,12 +322,12 @@ html_content = """<!DOCTYPE html>
         .popup-icon {
             width: 40px;
             height: 40px;
-            background: rgba(232, 115, 26, 0.15);
+            background: rgba(229, 130, 38, 0.15);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--primary);
+            color: var(--brand-orange);
             font-size: 1.1rem;
             flex-shrink: 0;
         }
@@ -290,56 +335,32 @@ html_content = """<!DOCTYPE html>
         .popup-content p { font-size: 0.82rem; font-weight: 800; color: #fff; line-height: 1.3; }
         .popup-content span { font-size: 0.72rem; color: var(--text-muted); font-weight: 600; }
 
-        /* STICKY BOTTOM BAR */
-        .sticky-bottom-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(15, 22, 34, 0.98);
-            backdrop-filter: blur(15px);
-            border-top: 1px solid var(--border);
-            padding: 10px 4%;
-            z-index: 9999;
-            display: flex;
-            justify-content: center;
-            gap: 8px;
+        @media (max-width: 768px) {
+            .btn-top-action { min-width: 100px; font-size: 0.8rem; padding: 0 8px; }
+            .hero h1 { font-size: 1.8rem; }
+            .story-box { padding: 20px; }
+            .sticky-bottom-bar { padding: 8px 4px; }
+            .tier-btn-group { flex-direction: column; }
         }
-
-        .btn-sticky {
-            flex: 1;
-            max-width: 200px;
-            padding: 10px 4px;
-            font-size: 0.82rem;
-            border-radius: 10px;
-            font-weight: 800;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-        }
-
-        .toast { position: fixed; top: 80px; right: 20px; background: var(--green); color: #fff; padding: 10px 20px; border-radius: 8px; font-weight: 800; display: none; z-index: 10000; }
     </style>
 </head>
 <body>
 
+    <!-- Toast Success Notification -->
     <div id="toast" class="toast">تم النسخ بنجاح!</div>
 
-    <div class="top-alert">
-        🔥 طفل يرتجف على التراب الآن! | 🔥 A child is freezing on the wet ground right now!
+    <!-- Top Urgent Alert Bar -->
+    <div class="top-alert" id="topAlert">
+        🔥 طفل يرتجف على الأرض الباردة الآن! | 🔥 A child is freezing on the cold ground right now!
     </div>
 
+    <!-- Header Navigation with Official Logo -->
     <header>
         <a href="#" class="brand">
-            <img src="49977ecc-2763-49fe-83de-a2de9d273613.jpg" alt="Gaza Hope Logo" onerror="this.src='https://gaza-hope-workshop.github.io/gaza-hope/logo.png'">
+            <img src="4a6a58eb-6ea0-47b7-be15-ed1999252516.jpg" alt="أمل غزة - Gaza Hope Logo" onerror="this.src='https://gaza-hope-workshop.github.io/gaza-hope/logo.png'">
             <div class="brand-text">
-                <h2>أمل غزة</h2>
-                <span>GAZA HOPE</span>
+                <h2 id="brandTitle">أمل غزة</h2>
+                <span id="brandSub">GAZA HOPE</span>
             </div>
         </a>
         <button class="lang-btn" onclick="toggleLanguage()">
@@ -352,144 +373,421 @@ html_content = """<!DOCTYPE html>
         <a href="#donate" class="btn-top-action btn-usdt">
             <i class="fa-solid fa-wallet"></i> <span>تبرع USDT</span>
         </a>
-        <a href="https://www.gofundme.com/f/my-hands-used-to-carve-beauty-now-they-dig-through-the-rub/donate" target="_blank" class="btn-top-action btn-gfm">
-            <i class="fa-solid fa-heart"></i> <span>تبرع بالبطاقة (GoFundMe)</span>
+        <a href="https://www.gofundme.com/f/my-hands-used-to-carve-beauty-now-they-dig-through-the-rub/donate?attribution_id=sl:53098633-b29f-451a-b1d6-5f779c0e0ac0&lang=en_US&ts=1785229147&utm_campaign=fp_sharesheet&utm_content=amp20_t1&utm_medium=customer&utm_source=copy_link&source=btn_donate" target="_blank" class="btn-top-action btn-gfm">
+            <i class="fa-solid fa-heart"></i> <span>تبرع بالبطاقة</span>
         </a>
         <button onclick="shareCampaign()" class="btn-top-action btn-share">
-            <i class="fa-solid fa-share-nodes"></i> <span id="topShareText">أنشر الحملة 🔗</span>
+            <i class="fa-solid fa-share-nodes"></i> <span id="topShareText">أنشر الحملة</span>
         </button>
     </div>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <h1>
-            <span>من تحت الأنقاض..</span><br>
-            <span class="gradient">نصنع أسرّة تحمي أجساد أطفالنا الجرحى</span>
-        </h1>
-        <p style="color: var(--text-muted); font-size: 1.02rem; margin-top: 10px;">
-            ننتشل حديد التسليح من المباني المدمّرة لنلحم يدوياً أسرّة طوارئ مرتفعة ترفع الأطفال والمبتورين عن برودة التراب داخل الخيام.
-        </p>
-
-        <!-- Dynamic Goal Progress Bar ($50,000 Real Target) -->
-        <div class="goal-container">
-            <div class="goal-header">
-                <span class="raised" id="raisedText">المبلغ المجموع حتى الآن: $6,250</span>
-                <span class="target" id="targetText">الهدف المعلن: $50,000</span>
-            </div>
-            <div class="progress-bar-bg">
-                <div class="progress-bar-fill" style="width: 12.5%;"></div>
-            </div>
-            <div class="goal-footer">
-                <span>نسبة الإنجاز: 12.5%</span>
-                <span>هدف الكفالة الكلية: 500+ سرير طوارئ</span>
-            </div>
-        </div>
-
-        <!-- Impact Tiers -->
-        <div class="tiers-section">
-            <h3 class="tiers-title" id="tiersHeader">⚡ حدد مساهمتك المباشرة الآن:</h3>
-            <div class="tiers-grid">
+    <div class="hero-wrapper">
+        <section class="hero">
+            <div class="hero-content">
                 
-                <div class="tier-card">
-                    <div class="tier-amount">$10</div>
-                    <div class="tier-impact" id="t1Text">يوفر قطع وقود ولحام لاستخراج وتجهيز الحديد من الركام</div>
-                    <a href="#donate" class="btn-top-action btn-usdt" style="justify-content:center;">ادفع $10 الآن</a>
+                <div class="hero-badge" id="heroBadge">
+                    <i class="fa-solid fa-fire"></i> استغاثة ميدانية عاجلة لإنقاذ الأطفال والمبتورين
                 </div>
 
-                <div class="tier-card popular">
-                    <div class="tier-badge">الأكثر تأثيراً 🔥</div>
-                    <div class="tier-amount">$25</div>
-                    <div class="tier-impact" id="t2Text">يوفر لوح خشب محمي وحزمة عزل حراري كاملة عن التراب</div>
-                    <a href="https://www.gofundme.com/f/my-hands-used-to-carve-beauty-now-they-dig-through-the-rub/donate" target="_blank" class="btn-top-action btn-gfm" style="justify-content:center;">ادفع $25 الآن</a>
-                </div>
+                <h1>
+                    <span id="title1">من تحت الأنقاض..</span><br>
+                    <span class="gradient" id="title2">نصنع أسرّة تحمي أجساد أطفالنا الجرحى</span>
+                </h1>
 
-                <div class="tier-card">
-                    <div class="tier-amount">$50</div>
-                    <div class="tier-impact" id="t3Text">تكفّل بتصنيع ولحام سرير طوارئ مرتفع بالكامل لطفل جريح</div>
-                    <a href="#donate" class="btn-top-action btn-usdt" style="justify-content:center;">ادفع $50 الآن</a>
-                </div>
+                <p class="lead" id="leadText" style="color: #cbd5e1; font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
+                    مشروع ميداني قيد التطوير والعمل المستمر؛ نستخرج حديد التسليح من المباني المدمرة بنيران الحرب، ونعيد صقله ولحامه يدوياً لنصنع أسرّة طوارئ مرتفعة تحمي الأطفال والمبتورين في غزة من الموت برداً على التراب المباشر.
+                </p>
 
-                <div class="tier-card">
-                    <div class="tier-amount">$100</div>
-                    <div class="tier-impact" id="t4Text">كفالة سرير مكتمل + حزمة إغاثية وغذائية مرافقة للعائلة</div>
-                    <a href="https://www.gofundme.com/f/my-hands-used-to-carve-beauty-now-they-dig-through-the-rub/donate" target="_blank" class="btn-top-action btn-gfm" style="justify-content:center;">ادفع $100 الآن</a>
+                <!-- Emotional Story Box -->
+                <div class="story-box">
+                    <span class="story-tag" id="storyTag">🔥 المعركة الحية من قلب الخيام</span>
+                    <p class="story-text" id="storyText">
+                        داخل خيام غزة المبتلة بالبرد، يعاني الأطفال وشبان البتر المواليد آلاماً لا تُطاق، حيث يُجبرون على النوم على التراب العاري فتواجه جروحهم العملية الخطر الدائم والالتهابات الحادة. رفضا لترك جرحانا يتألمون، ولدت مبادرة "أمل غزة" من تحت الركام؛ ننتشل حديد المباني المدمرة، ونعيد تشكيله ولحامه يدوياً لإنتاج أسِرّة طوارئ مرتفعة ومتينة. كل سيخ حديد نعيده للحياة يصبح شرياناً يحمل جريحاً، ويمنحه مكاناً آخراً وصحياً للتعافي. مع كل سرير يُسلم، نرفق حزمة إغاثية من الطعام والماء الدافئ لنسترد الكرامة التي حاول الحصار محوها. جريح مبتور ينتظر في خيمته الباردة الآن—ساهم معنا في لحام سريراه اليوم ليتحول الركام إلى أمل.
+                    </p>
                 </div>
 
             </div>
-        </div>
+        </section>
+    </div>
 
-        <!-- Ongoing Field Targets -->
-        <div class="counters-grid">
+    <!-- Dynamic Impact Tiers -->
+    <div class="tiers-section">
+        <h3 class="tiers-title" id="tiersHeader">⚡ حدد مساهمتك المباشرة بأسلوب الدفع المناسب لك:</h3>
+        <div class="tiers-grid">
+            
+            <div class="tier-card">
+                <div class="tier-amount">$10</div>
+                <div class="tier-impact" id="t1Text">يوفر قطع وقود ولحام لاستخراج وتجهيز الحديد من الركام</div>
+                <div class="tier-btn-group">
+                    <a href="https://www.gofundme.com/f/my-hands-used-to-carve-beauty-now-they-dig-through-the-rub/donate" target="_blank" class="btn-tier-pay btn-gfm">
+                        <i class="fa-solid fa-credit-card"></i> بالبطاقة
+                    </a>
+                    <a href="#donate" class="btn-tier-pay btn-usdt">
+                        <i class="fa-solid fa-wallet"></i> USDT
+                    </a>
+                </div>
+            </div>
+
+            <div class="tier-card popular">
+                <div class="tier-badge">الأكثر تأثيراً 🔥</div>
+                <div class="tier-amount">$25</div>
+                <div class="tier-impact" id="t2Text">يوفر لوح خشب محمي وحزمة عزل حراري كاملة عن التراب</div>
+                <div class="tier-btn-group">
+                    <a href="https://www.gofundme.com/f/my-hands-used-to-carve-beauty-now-they-dig-through-the-rub/donate" target="_blank" class="btn-tier-pay btn-gfm">
+                        <i class="fa-solid fa-credit-card"></i> بالبطاقة
+                    </a>
+                    <a href="#donate" class="btn-tier-pay btn-usdt">
+                        <i class="fa-solid fa-wallet"></i> USDT
+                    </a>
+                </div>
+            </div>
+
+            <div class="tier-card">
+                <div class="tier-amount">$50</div>
+                <div class="tier-impact" id="t3Text">تكفّل بتصنيع ولحام سرير طوارئ مرتفع بالكامل لطفل جريح</div>
+                <div class="tier-btn-group">
+                    <a href="https://www.gofundme.com/f/my-hands-used-to-carve-beauty-now-they-dig-through-the-rub/donate" target="_blank" class="btn-tier-pay btn-gfm">
+                        <i class="fa-solid fa-credit-card"></i> بالبطاقة
+                    </a>
+                    <a href="#donate" class="btn-tier-pay btn-usdt">
+                        <i class="fa-solid fa-wallet"></i> USDT
+                    </a>
+                </div>
+            </div>
+
+            <div class="tier-card">
+                <div class="tier-amount">$100</div>
+                <div class="tier-impact" id="t4Text">كفالة سرير مكتمل + حزمة إغاثية وغذائية مرافقة للعائلة</div>
+                <div class="tier-btn-group">
+                    <a href="https://www.gofundme.com/f/my-hands-used-to-carve-beauty-now-they-dig-through-the-rub/donate" target="_blank" class="btn-tier-pay btn-gfm">
+                        <i class="fa-solid fa-credit-card"></i> بالبطاقة
+                    </a>
+                    <a href="#donate" class="btn-tier-pay btn-usdt">
+                        <i class="fa-solid fa-wallet"></i> USDT
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Fast Counters -->
+    <div style="max-width: 1000px; margin: 0 auto; padding: 0 5%;">
+        <div class="counters-grid" id="countersGrid">
+            
             <div class="counter-card">
-                <div class="counter-number">500+</div>
+                <i class="fa-solid fa-bed counter-icon"></i>
+                <div class="counter-number"><span class="counter" data-target="500">0</span>+</div>
                 <div class="counter-label" id="c1">سرير طوارئ قيد التصنيع المستهدف</div>
             </div>
+
             <div class="counter-card">
-                <div class="counter-number">1,200+</div>
-                <div class="counter-label" id="c2">طفل ومبتور نستهدف حمايتهم عن البرد</div>
+                <i class="fa-solid fa-wheelchair counter-icon"></i>
+                <div class="counter-number"><span class="counter" data-target="1200">0</span>+</div>
+                <div class="counter-label" id="c2">طفل ومبتور نستهدف حمياتهم عن البرد</div>
             </div>
+
             <div class="counter-card">
-                <div class="counter-number">4,000+</div>
+                <i class="fa-solid fa-hammer counter-icon"></i>
+                <div class="counter-number"><span class="counter" data-target="4000">0</span>+</div>
                 <div class="counter-label" id="c3">حديدة تسليح نواصل استخراجها ولحامها</div>
             </div>
+
             <div class="counter-card">
-                <div class="counter-number">850+</div>
+                <i class="fa-solid fa-box-tissue counter-icon"></i>
+                <div class="counter-number"><span class="counter" data-target="850">0</span>+</div>
                 <div class="counter-label" id="c4">حزمة إغاثية مرافقة نستهدف توزيعها</div>
             </div>
-        </div>
 
-        <!-- Follow & Direct Social Section (واضحة وبدون أي تغطية) -->
-        <div class="social-section">
-            <h3 id="socialHeader">📲 تابع وثّق إنجازات الورشة الميدانية</h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem;">تواصل معنا مباشرة أو تابع الفيديوهات والتوثيق الميداني اليومي عبر حسابتنا الرسمية:</p>
-            <div class="social-links">
-                <a href="https://wa.me/972592290793" target="_blank" class="social-btn btn-wa-direct">
-                    <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> <span>واتساب المبادرة المباشر</span>
-                </a>
-                <a href="https://www.instagram.com" target="_blank" class="social-btn btn-ig-direct">
-                    <i class="fa-brands fa-instagram" style="font-size: 1.2rem;"></i> <span>إنستغرام التوثيق الميداني</span>
-                </a>
+        </div>
+    </div>
+
+    <!-- Donation Methods Section -->
+    <section class="donate-section" id="donate">
+        <div class="donate-grid">
+            
+            <!-- USDT Crypto Card -->
+            <div class="donate-card">
+                <h3 style="color: #38bdf8;"><i class="fa-solid fa-wallet"></i> USDT (TRC20 Network)</h3>
+                <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 5px;" id="usdtDesc">الوسيلة الأسرع لشراء الحديد والمواد الخام فوراً</p>
+                
+                <div class="qr-box">
+                    <img src="لقطة الشاشة 2026-07-22 152620لل.jpg" alt="USDT TRC20 QR Code" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=TMC7JcAkXGDvYYBByPRUgX6rsZC5LZTa4T'">
+                </div>
+
+                <div class="wallet-address-box" id="usdtAddress">TMC7JcAkXGDvYYBByPRUgX6rsZC5LZTa4T</div>
+
+                <button class="btn-action btn-usdt" onclick="copyCryptoAddress()">
+                    <i class="fa-regular fa-copy"></i> <span id="copyBtnText">نسخ عنوان المحفظة</span>
+                </button>
             </div>
-        </div>
 
+            <!-- GoFundMe Card -->
+            <div class="donate-card featured">
+                <h3 style="color: var(--brand-green);"><i class="fa-solid fa-credit-card"></i> GoFundMe / Visa & Apple Pay</h3>
+                <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 5px;" id="gfmDesc">التبرع عبر بطاقات البنك والأبل باي بسهولة وأمان 100%</p>
+                
+                <div style="margin: 20px 0;">
+                    <i class="fa-brands fa-cc-visa fa-3x" style="color: #94a3b8; margin: 0 6px;"></i>
+                    <i class="fa-brands fa-cc-mastercard fa-3x" style="color: #94a3b8; margin: 0 6px;"></i>
+                    <i class="fa-brands fa-apple-pay fa-3x" style="color: #94a3b8; margin: 0 6px;"></i>
+                </div>
+
+                <a href="https://www.gofundme.com/f/my-hands-used-to-carve-beauty-now-they-dig-through-the-rub/donate?attribution_id=sl:53098633-b29f-451a-b1d6-5f779c0e0ac0&lang=en_US&ts=1785229147&utm_campaign=fp_sharesheet&utm_content=amp20_t1&utm_medium=customer&utm_source=copy_link&source=btn_donate" target="_blank" class="btn-action btn-gfm">
+                    <i class="fa-solid fa-heart"></i> <span id="gfmBtnText">التبرع الفوري عبر GoFundMe</span>
+                </a>
+
+                <button class="btn-action btn-share" onclick="shareCampaign()">
+                    <i class="fa-solid fa-share-nodes"></i> <span id="shareBtnMainText">أنشر الحملة وكن سبباً في النجاة</span>
+                </button>
+            </div>
+
+        </div>
     </section>
 
-    <!-- LIVE POPUP NOTIFICATION (متموضعة بدقة أعلى الشريط لتجنب التغطية) -->
+    <!-- Social Media Section -->
+    <section class="social-section">
+        <h3 id="socialTitle">تابع وثّق إنجازات الورشة الميدانية</h3>
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61592733151920" target="_blank" class="social-icon" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/gaza_hope_workshop" target="_blank" class="social-icon" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@gaza_hope_workshop" target="_blank" class="social-icon" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://x.com/GazaHopeCraft" target="_blank" class="social-icon" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.reddit.com/user/GazaHopeWorkshop" target="_blank" class="social-icon" title="Reddit"><i class="fa-brands fa-reddit-alien"></i></a>
+            <a href="https://gofund.me/74e35a94b" target="_blank" class="social-icon" title="GoFundMe Campaign"><i class="fa-solid fa-hand-holding-heart"></i></a>
+        </div>
+    </section>
+
+    <!-- LIVE RANDOM DONATION POPUP -->
     <div class="donation-popup" id="donationPopup">
         <div class="popup-icon">
             <i class="fa-solid fa-heart"></i>
         </div>
         <div class="popup-content">
             <p id="popupTitle">داعم من فرنسا 🇫🇷</p>
-            <span id="popupDesc">تبرع بـ $100 لكفالة سرير وحزمة غذائية • قبل 15 دقيقة</span>
+            <span id="popupDesc">تبرع بـ $100 لكفالة سرير وحزمة غذائية • قبل قليل</span>
         </div>
     </div>
 
-    <!-- Sticky Bottom Navigation Bar -->
+    <!-- FIXED BOTTOM BAR -->
     <div class="sticky-bottom-bar">
         <a href="#donate" class="btn-sticky btn-usdt">
-            <i class="fa-solid fa-wallet"></i> <span>USDT</span>
+            <i class="fa-solid fa-wallet"></i> <span id="stickyUsdt">USDT</span>
         </a>
-        <a href="https://www.gofundme.com/f/my-hands-used-to-carve-beauty-now-they-dig-through-the-rub/donate" target="_blank" class="btn-sticky btn-gfm">
-            <i class="fa-solid fa-heart"></i> <span>GoFundMe</span>
+        <a href="https://www.gofundme.com/f/my-hands-used-to-carve-beauty-now-they-dig-through-the-rub/donate?attribution_id=sl:53098633-b29f-451a-b1d6-5f779c0e0ac0&lang=en_US&ts=1785229147&utm_campaign=fp_sharesheet&utm_content=amp20_t1&utm_medium=customer&utm_source=copy_link&source=btn_donate" target="_blank" class="btn-sticky btn-gfm">
+            <i class="fa-solid fa-heart"></i> <span id="stickyGfm">GoFundMe</span>
         </a>
         <button onclick="shareCampaign()" class="btn-sticky btn-share">
-            <i class="fa-solid fa-share-nodes"></i> <span>أنشر الحملة</span>
+            <i class="fa-solid fa-share-nodes"></i> <span id="stickyShare">أنشر الحملة</span>
         </button>
     </div>
 
-    <script>
-        function shareCampaign() {
-            const shareData = { title: 'أمل غزة | Gaza Hope', text: 'ساهم في لحام أسرّة طوارئ لحماية الأطفال والمبتورين في غزة!', url: window.location.href };
-            if (navigator.share) { navigator.share(shareData).catch(() => {}); } 
-            else { navigator.clipboard.writeText(window.location.href); alert("تم نسخ رابط الحملة بنجاح!"); }
-        }
-    </script>
+    <!-- Smart Floating WhatsApp -->
+    <a href="https://wa.me/972592290793?text=Hi%2C%20I%20would%20like%20to%20sponsor%20a%20bed%20and%20support%20children%20with%20Gaza%20Hope%20Workshop.%20How%20can%20I%20complete%20my%20donation%20today%3F" 
+       class="whatsapp-float" 
+       target="_blank" 
+       title="WhatsApp Support">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
+    <!-- Scripts -->
+    <script>
+        // Translation Data
+        let currentLang = 'ar';
+        const translations = {
+            ar: {
+                brandTitle: 'أمل غزة',
+                brandSub: 'GAZA HOPE',
+                langLabel: 'English',
+                heroBadge: '<i class="fa-solid fa-fire"></i> استغاثة ميدانية عاجلة لإنقاذ الأطفال والمبتورين',
+                title1: 'من تحت الأنقاض..',
+                title2: 'نصنع أسرّة تحمي أجساد أطفالنا الجرحى',
+                leadText: 'مشروع ميداني قيد التطوير والعمل المستمر؛ نستخرج حديد التسليح من المباني المدمرة بنيران الحرب، ونعيد صقله ولحامه يدوياً لنصنع أسرّة طوارئ مرتفعة تحمي الأطفال والمبتورين في غزة من الموت برداً على التراب المباشر.',
+                storyTag: '🔥 المعركة الحية من قلب الخيام',
+                storyText: 'داخل خيام غزة المبتلة بالبرد، يعاني الأطفال وشبان البتر المواليد آلاماً لا تُطاق، حيث يُجبرون على النوم على التراب العاري فتواجه جروحهم العملية الخطر الدائم والالتهابات الحادة. رفضا لترك جرحانا يتألمون، ولدت مبادرة "أمل غزة" من تحت الركام؛ ننتشل حديد المباني المدمرة، ونعيد تشكيله ولحامه يدوياً لإنتاج أسِرّة طوارئ مرتفعة ومتينة. كل سيخ حديد نعيده للحياة يصبح شرياناً يحمل جريحاً، ويمنحه مكاناً آخراً وصحياً للتعافي. مع كل سرير يُسلم، نرفق حزمة إغاثية من الطعام والماء الدافئ لنسترد الكرامة التي حاول الحصار محوها. جريح مبتور ينتظر في خيمته الباردة الآن—ساهم معنا في لحام سريراه اليوم ليتحول الركام إلى أمل.',
+                tiersHeader: '⚡ حدد مساهمتك المباشرة بأسلوب الدفع المناسب لك:',
+                t1Text: 'يوفر قطع وقود ولحام لاستخراج وتجهيز الحديد من الركام',
+                t2Text: 'يوفر لوح خشب محمي وحزمة عزل حراري كاملة عن التراب',
+                t3Text: 'تكفّل بتصنيع ولحام سرير طوارئ مرتفع بالكامل لطفل جريح',
+                t4Text: 'كفالة سرير مكتمل + حزمة إغاثية وغذائية مرافقة للعائلة',
+                c1: 'سرير طوارئ قيد التصنيع المستهدف',
+                c2: 'طفل ومبتور نستهدف حمياتهم عن البرد',
+                c3: 'حديدة تسليح نواصل استخراجها ولحامها',
+                c4: 'حزمة إغاثية مرافقة نستهدف توزيعها',
+                usdtDesc: 'الوسيلة الأسرع لشراء الحديد والمواد الخام فوراً',
+                gfmDesc: 'التبرع عبر بطاقات البنك والأبل باي بسهولة وأمان 100%',
+                copyBtnText: 'نسخ عنوان المحفظة',
+                gfmBtnText: 'التبرع الفوري عبر GoFundMe',
+                shareBtnMainText: 'أنشر الحملة وكن سبباً في النجاة 🔗',
+                topShareText: 'أنشر الحملة 🔗',
+                socialTitle: 'تابع وثّق إنجازات الورشة الميدانية',
+                stickyUsdt: 'USDT',
+                stickyGfm: 'GoFundMe',
+                stickyShare: 'أنشر الحملة',
+                toastUsdt: 'تم نسخ عنوان المحفظة بنجاح!',
+                toastShare: 'تم نسخ رابط الحملة بنجاح! شاركه مع أصدقائك.'
+            },
+            en: {
+                brandTitle: 'GAZA HOPE',
+                brandSub: 'Emergency Beds Initiative',
+                langLabel: 'العربية',
+                heroBadge: '<i class="fa-solid fa-fire"></i> Urgent Field Appeal to Save Amputated Children',
+                title1: 'From the Rubble..',
+                title2: 'We Forge Beds to Shield Wounded Children',
+                leadText: 'An active field project under development; we extract buried iron rebar from destroyed homes to hand-weld elevated emergency beds that lift amputated children in Gaza off the freezing wet ground.',
+                storyTag: '🔥 Live Field Battle From Tent Camps',
+                storyText: 'Inside the freezing, damp tents of Gaza, newly amputated children and youth endure unimaginable pain, forced to sleep on the bare dirt where their open surgical wounds face constant danger of severe infection. Refusing to let our wounded suffer on the ground, Gaza Hope rose from the rubble—pulling buried iron bars from destroyed buildings to reshape and hand-weld them into sturdy, elevated emergency beds. Every iron bar we restore becomes a literal lifeline, lifting a wounded body off the dirt and creating a safe, clean space for their fragile body to heal. With every bed delivered, we provide an essential care pack of food, clean water, and warmth, striving to restore the human dignity that war tried to erase. A newly amputated survivor is waiting in a cold tent right now—help us weld their bed today and turn ashes into hope.',
+                tiersHeader: '⚡ Select Your Direct Impact Tier & Preferred Payment Method:',
+                t1Text: 'Provides welding fuel & cutting blades to extract iron from rubble',
+                t2Text: 'Provides a protected wooden sheet & thermal insulation bed pack',
+                t3Text: 'Sponsor the full welding & fabrication of an emergency bed',
+                t4Text: 'Full bed sponsorship + complete family food & relief care package',
+                c1: 'Emergency Beds Target Goal',
+                c2: 'Amputees & Children to Shelter',
+                c3: 'Rebar Iron Bars Being Salvaged',
+                c4: 'Relief Packs Target Goal',
+                usdtDesc: 'Fastest direct method to buy raw iron and wood instantly',
+                gfmDesc: 'Donate 100% securely via Credit Card or Apple Pay',
+                copyBtnText: 'Copy Wallet Address',
+                gfmBtnText: 'Donate Now on GoFundMe',
+                shareBtnMainText: 'Share Campaign & Save a Child 🔗',
+                topShareText: 'Share Campaign 🔗',
+                socialTitle: 'Follow Our Daily Field Achievements',
+                stickyUsdt: 'USDT',
+                stickyGfm: 'GoFundMe',
+                stickyShare: 'Share Campaign',
+                toastUsdt: 'USDT Address copied successfully!',
+                toastShare: 'Campaign link copied! Share it with your friends.'
+            }
+        };
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            document.documentElement.lang = currentLang;
+
+            const data = translations[currentLang];
+            document.getElementById('brandTitle').innerText = data.brandTitle;
+            document.getElementById('brandSub').innerText = data.brandSub;
+            document.getElementById('langLabel').innerText = data.langLabel;
+            document.getElementById('heroBadge').innerHTML = data.heroBadge;
+            document.getElementById('title1').innerText = data.title1;
+            document.getElementById('title2').innerText = data.title2;
+            document.getElementById('leadText').innerText = data.leadText;
+            document.getElementById('storyTag').innerText = data.storyTag;
+            document.getElementById('storyText').innerText = data.storyText;
+            document.getElementById('tiersHeader').innerText = data.tiersHeader;
+            document.getElementById('t1Text').innerText = data.t1Text;
+            document.getElementById('t2Text').innerText = data.t2Text;
+            document.getElementById('t3Text').innerText = data.t3Text;
+            document.getElementById('t4Text').innerText = data.t4Text;
+            document.getElementById('c1').innerText = data.c1;
+            document.getElementById('c2').innerText = data.c2;
+            document.getElementById('c3').innerText = data.c3;
+            document.getElementById('c4').innerText = data.c4;
+            document.getElementById('usdtDesc').innerText = data.usdtDesc;
+            document.getElementById('gfmDesc').innerText = data.gfmDesc;
+            document.getElementById('copyBtnText').innerText = data.copyBtnText;
+            document.getElementById('gfmBtnText').innerText = data.gfmBtnText;
+            document.getElementById('shareBtnMainText').innerText = data.shareBtnMainText;
+            document.getElementById('topShareText').innerText = data.topShareText;
+            document.getElementById('socialTitle').innerText = data.socialTitle;
+            document.getElementById('stickyUsdt').innerText = data.stickyUsdt;
+            document.getElementById('stickyGfm').innerText = data.stickyGfm;
+            document.getElementById('stickyShare').innerText = data.stickyShare;
+        }
+
+        function copyCryptoAddress() {
+            const address = document.getElementById('usdtAddress').innerText;
+            navigator.clipboard.writeText(address);
+            showToast(translations[currentLang].toastUsdt);
+        }
+
+        function shareCampaign() {
+            const shareData = {
+                title: 'GAZA HOPE | أمل غزة',
+                text: 'ساهم معنا في لحام أسرّة طوارئ لحماية الأطفال والمبتورين في غزة من برودة التراب!',
+                url: window.location.href
+            };
+
+            if (navigator.share) {
+                navigator.share(shareData).catch(() => {});
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+                showToast(translations[currentLang].toastShare);
+            }
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.innerText = message;
+            toast.style.display = 'block';
+            setTimeout(() => { toast.style.display = 'none'; }, 3500);
+        }
+
+        // Fast Animated Counters
+        const counters = document.querySelectorAll('.counter');
+        let counterDone = false;
+
+        window.addEventListener('scroll', () => {
+            const gridPos = document.getElementById('countersGrid').getBoundingClientRect().top;
+            if (gridPos < window.innerHeight && !counterDone) {
+                counterDone = true;
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    let count = 0;
+                    const speed = Math.ceil(target / 25);
+
+                    const update = () => {
+                        count += speed;
+                        if (count < target) {
+                            counter.innerText = count;
+                            setTimeout(update, 20);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    update();
+                });
+            }
+        });
+
+        // قائمة إشعارات واقعية ومتنوعة
+        const donationsList = [
+            { title: "داعم من فرنسا 🇫🇷", desc: "تبرع بـ $100 لكفالة سرير وحزمة غذائية" },
+            { title: "Anonymous Donor 🇨🇦", desc: "Donated $50 for emergency beds" },
+            { title: "فاعل خير من ألمانيا 🇩🇪", desc: "تبرع بـ $25 لحزمة العزل الحراري" },
+            { title: "Supporter from UK 🇬🇧", desc: "Donated $100 to Gaza Hope" },
+            { title: "فاعل خير من قطر 🇶🇦", desc: "تبرع بـ $50 لكفالة سرير طوارئ" }
+        ];
+
+        // تايمر عشوائي ذكي ومباعد للإشعارات المنبثقة
+        function triggerRandomNotification() {
+            const randomItem = donationsList[Math.floor(Math.random() * donationsList.length)];
+            document.getElementById('popupTitle').innerText = randomItem.title;
+            document.getElementById('popupDesc').innerText = randomItem.desc + " • قبل قليل";
+            
+            const popup = document.getElementById('donationPopup');
+            popup.style.display = 'flex';
+            
+            // إخفاء الإشعار بعد 6 ثوانٍ
+            setTimeout(() => {
+                popup.style.display = 'none';
+            }, 6000);
+
+            // تحديد الموعد القادم بشكل عشوائي (بين 15 إلى 35 دقيقة)
+            const nextInterval = Math.floor(Math.random() * (35 - 15 + 1) + 15) * 60 * 1000;
+            setTimeout(triggerRandomNotification, nextInterval);
+        }
+
+        // تشغيل الإشعار الأول بعد دقيقة ونصف من دخول الزائر للموقع
+        setTimeout(triggerRandomNotification, 90000);
+    </script>
 </body>
 </html>"""
 
 with open('index.html', 'w', encoding='utf-8') as f:
     f.write(html_content)
 
-print("NEW_INDEX_FILE_UPDATED")
+print("FILE_UPDATED_WITH_RANDOM_TIMER_AND_CLEAN_OUTPUT")
