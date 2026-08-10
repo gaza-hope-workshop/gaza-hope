@@ -1,5 +1,4 @@
-# إعادة كتابة وتوليد الملف نقي 100% بدون أي طباعة نصية نهايتها أو بدايتها
-html_content = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -136,7 +135,7 @@ html_content = """<!DOCTYPE html>
         .hero-wrapper {
             position: relative;
             background: linear-gradient(180deg, rgba(9, 14, 23, 0.72) 0%, rgba(9, 14, 23, 0.95) 100%), 
-                        url('d35e1436-1e62-4217-ba5d-e19277fcc971.jpg') center center / cover no-repeat fixed;
+                        url('hero-bg.jpg') center center / cover no-repeat fixed;
             padding: 50px 5% 40px;
         }
 
@@ -342,7 +341,7 @@ html_content = """<!DOCTYPE html>
 
     <header>
         <a href="#" class="brand">
-            <img src="4a6a58eb-6ea0-47b7-be15-ed1999252516.jpg" alt="أمل غزة - Gaza Hope Logo" onerror="this.src='https://gaza-hope-workshop.github.io/gaza-hope/logo.png'">
+            <img src="logo.jpg" alt="أمل غزة - Gaza Hope Logo" onerror="this.src='https://gaza-hope-workshop.github.io/gaza-hope/logo.png'">
             <div class="brand-text">
                 <h2 id="brandTitle">أمل غزة</h2>
                 <span id="brandSub">GAZA HOPE</span>
@@ -491,7 +490,7 @@ html_content = """<!DOCTYPE html>
                 <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 5px;" id="usdtDesc">الوسيلة الأسرع لشراء الحديد والمواد الخام فوراً</p>
                 
                 <div class="qr-box">
-                    <img src="لقطة الشاشة 2026-07-22 152620لل.jpg" alt="USDT TRC20 QR Code" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=TMC7JcAkXGDvYYBByPRUgX6rsZC5LZTa4T'">
+                    <img src="qr.jpg" alt="USDT TRC20 QR Code" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=TMC7JcAkXGDvYYBByPRUgX6rsZC5LZTa4T'">
                 </div>
 
                 <div class="wallet-address-box" id="usdtAddress">TMC7JcAkXGDvYYBByPRUgX6rsZC5LZTa4T</div>
@@ -750,7 +749,4 @@ html_content = """<!DOCTYPE html>
         setTimeout(triggerRandomNotification, 90000);
     </script>
 </body>
-</html>"""
-
-with open('index.html', 'w', encoding='utf-8') as f:
-    f.write(html_content)
+</html>
