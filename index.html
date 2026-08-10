@@ -136,7 +136,7 @@
         .btn-share { background: linear-gradient(135deg, var(--purple-share), #6d28d9); box-shadow: 0 0 18px rgba(139, 92, 246, 0.4); }
         .btn-share:hover { background: #5b21b6; }
 
-        /* Hero Section */
+        /* Hero Section مع خلفية مائية للرجل المبتور والسرير */
         .hero-wrapper {
             position: relative;
             background: linear-gradient(180deg, rgba(9, 14, 23, 0.72) 0%, rgba(9, 14, 23, 0.95) 100%), 
@@ -167,6 +167,20 @@
         html[dir="ltr"] .story-box { text-align: left; }
         .story-tag { background: var(--brand-orange); color: #fff; padding: 4px 14px; border-radius: 12px; font-size: 0.8rem; font-weight: 800; display: inline-block; margin-bottom: 15px; }
         .story-text { font-size: 1.05rem; color: #e2e8f0; line-height: 1.9; font-weight: 600; }
+
+        /* Trust Badge Line */
+        .trust-badge-box {
+            background: rgba(72, 130, 55, 0.12);
+            border: 1px solid var(--brand-green);
+            border-radius: 14px;
+            padding: 12px 20px;
+            margin: 20px auto 0;
+            max-width: 800px;
+            text-align: center;
+            font-size: 0.88rem;
+            color: #86efac;
+            font-weight: 700;
+        }
 
         /* Impact Donation Tiers */
         .tiers-section { max-width: 1000px; margin: 35px auto; padding: 0 5%; }
@@ -371,6 +385,11 @@
                     </p>
                 </div>
 
+                <!-- Trust Badge Line -->
+                <div class="trust-badge-box" id="trustBadge">
+                    🔒 جميع التبرعات موجهة مباشرة لشراء أسياخ الحديد ومعدات اللحام والوقود الميداني في غزة.
+                </div>
+
             </div>
         </section>
     </div>
@@ -396,7 +415,7 @@
             <div class="tier-card popular">
                 <div class="tier-badge">الأكثر تأثيراً 🔥</div>
                 <div class="tier-amount">$25</div>
-                <div class="tier-impact" id="t2Text">يوفر لوح خشب محمي وحزمة عزل حراري كاملة عن التراب</div>
+                <div class="tier-impact" id="t2Text">يوفر أسياخ حديد تسليح إضافية وحزمة عزل حراري كاملة عن التراب</div>
                 <div class="tier-btn-group">
                     <a href="https://www.gofundme.com/f/my-hands-used-to-carve-beauty-now-they-dig-through-the-rub/donate" target="_blank" class="btn-tier-pay btn-gfm">
                         <i class="fa-solid fa-credit-card"></i> بالبطاقة
@@ -559,9 +578,10 @@
                 leadText: 'مشروع ميداني قيد التطوير والعمل المستمر؛ نستخرج حديد التسليح من المباني المدمرة بنيران الحرب، ونعيد صقله ولحامه يدوياً لنصنع أسرّة طوارئ مرتفعة تحمي الأطفال والمبتورين في غزة من الموت برداً على التراب المباشر.',
                 storyTag: '🔥 المعركة الحية من قلب الخيام',
                 storyText: 'داخل خيام غزة المبتلة بالبرد، يعاني الأطفال وشبان البتر المواليد آلاماً لا تُطاق، حيث يُجبرون على النوم على التراب العاري فتواجه جروحهم العملية الخطر الدائم والالتهابات الحادة. رفضا لترك جرحانا يتألمون، ولدت مبادرة "أمل غزة" من تحت الركام؛ ننتشل حديد المباني المدمرة، ونعيد تشكيله ولحامه يدوياً لإنتاج أسِرّة طوارئ مرتفعة ومتينة. كل سيخ حديد نعيده للحياة يصبح شرياناً يحمل جريحاً، ويمنحه مكاناً آخراً وصحياً للتعافي. مع كل سرير يُسلم، نرفق حزمة إغاثية من الطعام والماء الدافئ لنسترد الكرامة التي حاول الحصار محوها. جريح مبتور ينتظر في خيمته الباردة الآن—ساهم معنا في لحام سريراه اليوم ليتحول الركام إلى أمل.',
+                trustBadge: '🔒 جميع التبرعات موجهة مباشرة لشراء أسياخ الحديد ومعدات اللحام والوقود الميداني في غزة.',
                 tiersHeader: '⚡ حدد مساهمتك المباشرة بأسلوب الدفع المناسب لك:',
                 t1Text: 'يوفر قطع وقود ولحام لاستخراج وتجهيز الحديد من الركام',
-                t2Text: 'يوفر لوح خشب محمي وحزمة عزل حراري كاملة عن التراب',
+                t2Text: 'يوفر أسياخ حديد تسليح إضافية وحزمة عزل حراري كاملة عن التراب',
                 t3Text: 'تكفّل بتصنيع ولحام سرير طوارئ مرتفع بالكامل لطفل جريح',
                 t4Text: 'كفالة سرير مكتمل + حزمة إغاثية وغذائية مرافقة للعائلة',
                 c1: 'سرير طوارئ قيد التصنيع المستهدف',
@@ -591,16 +611,17 @@
                 leadText: 'An active field project under development; we extract buried iron rebar from destroyed homes to hand-weld elevated emergency beds that lift amputated children in Gaza off the freezing wet ground.',
                 storyTag: '🔥 Live Field Battle From Tent Camps',
                 storyText: 'Inside the freezing, damp tents of Gaza, newly amputated children and youth endure unimaginable pain, forced to sleep on the bare dirt where their open surgical wounds face constant danger of severe infection. Refusing to let our wounded suffer on the ground, Gaza Hope rose from the rubble—pulling buried iron bars from destroyed buildings to reshape and hand-weld them into sturdy, elevated emergency beds. Every iron bar we restore becomes a literal lifeline, lifting a wounded body off the dirt and creating a safe, clean space for their fragile body to heal. With every bed delivered, we provide an essential care pack of food, clean water, and warmth, striving to restore the human dignity that war tried to erase. A newly amputated survivor is waiting in a cold tent right now—help us weld their bed today and turn ashes into hope.',
+                trustBadge: '🔒 100% of donations directly buy iron rebar, welding supplies & field fuel in Gaza.',
                 tiersHeader: '⚡ Select Your Direct Impact Tier & Preferred Payment Method:',
                 t1Text: 'Provides welding fuel & cutting blades to extract iron from rubble',
-                t2Text: 'Provides a protected wooden sheet & thermal insulation bed pack',
+                t2Text: 'Provides extra iron rebar bars & thermal insulation bed pack',
                 t3Text: 'Sponsor the full welding & fabrication of an emergency bed',
                 t4Text: 'Full bed sponsorship + complete family food & relief care package',
                 c1: 'Emergency Beds Target Goal',
                 c2: 'Amputees & Children to Shelter',
                 c3: 'Rebar Iron Bars Being Salvaged',
                 c4: 'Relief Packs Target Goal',
-                usdtDesc: 'Fastest direct method to buy raw iron and wood instantly',
+                usdtDesc: 'Fastest direct method to buy raw iron and tools instantly',
                 gfmDesc: 'Donate 100% securely via Credit Card or Apple Pay',
                 copyBtnText: 'Copy Wallet Address',
                 gfmBtnText: 'Donate Now on GoFundMe',
@@ -630,6 +651,7 @@
             document.getElementById('leadText').innerText = data.leadText;
             document.getElementById('storyTag').innerText = data.storyTag;
             document.getElementById('storyText').innerText = data.storyText;
+            document.getElementById('trustBadge').innerText = data.trustBadge;
             document.getElementById('tiersHeader').innerText = data.tiersHeader;
             document.getElementById('t1Text').innerText = data.t1Text;
             document.getElementById('t2Text').innerText = data.t2Text;
