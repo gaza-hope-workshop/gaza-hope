@@ -126,8 +126,8 @@
         .btn-usdt { background: var(--brand-blue); }
         .btn-usdt:hover { background: #2b6893; }
 
-        .btn-gfm { background: var(--brand-green); }
-        .btn-gfm:hover { background: #366329; }
+        .btn-card-pay { background: var(--brand-green); }
+        .btn-card-pay:hover { background: #366329; }
 
         .btn-share { background: linear-gradient(135deg, var(--purple-share), #6d28d9); box-shadow: 0 0 18px rgba(139, 92, 246, 0.4); }
         .btn-share:hover { background: #5b21b6; }
@@ -242,8 +242,18 @@
         .btn-action {
             display: inline-flex; align-items: center; justify-content: center; gap: 10px;
             width: 100%; padding: 14px; border-radius: 14px; font-size: 0.95rem; font-weight: 800;
-            text-decoration: none; border: none; cursor: pointer; color: #fff;
+            text-decoration: none; border: none; cursor: pointer; color: #fff; margin-bottom: 8px;
         }
+
+        .gateway-providers {
+            display: flex; justify-content: center; gap: 8px; margin: 12px 0; flex-wrap: wrap;
+        }
+        .provider-link {
+            background: rgba(30, 41, 59, 0.9); border: 1px solid var(--border); color: #cbd5e1;
+            padding: 6px 12px; border-radius: 10px; font-size: 0.78rem; font-weight: 700; text-decoration: none;
+            display: inline-flex; align-items: center; gap: 4px;
+        }
+        .provider-link:hover { border-color: var(--brand-orange); color: #fff; }
 
         .sticky-bottom-bar {
             position: fixed; bottom: 0; left: 0; right: 0;
@@ -362,8 +372,8 @@
         <a href="#donate" class="btn-top-action btn-usdt">
             <i class="fa-solid fa-wallet"></i> <span>تبرع USDT</span>
         </a>
-        <a href="https://www.gofundme.com/f/my-hands-used-to-carve-beauty-now-they-dig-through-the-rub/donate?attribution_id=sl:53098633-b29f-451a-b1d6-5f779c0e0ac0&lang=en_US&ts=1785229147&utm_campaign=fp_sharesheet&utm_content=amp20_t1&utm_medium=customer&utm_source=copy_link&source=btn_donate" target="_blank" class="btn-top-action btn-gfm">
-            <i class="fa-solid fa-heart"></i> <span>تبرع بالبطاقة</span>
+        <a href="#card-donate" class="btn-top-action btn-card-pay">
+            <i class="fa-solid fa-credit-card"></i> <span>دفع بالبطاقة</span>
         </a>
         <button onclick="shareCampaign()" class="btn-top-action btn-share">
             <i class="fa-solid fa-share-nodes"></i> <span id="topShareText">أنشر الحملة</span>
@@ -406,7 +416,7 @@
                 <div class="tier-amount">$10</div>
                 <div class="tier-impact" id="t1Text">يوفر قطع وقود ولحام لاستخراج وتجهيز الحديد من الركام</div>
                 <div class="tier-btn-group">
-                    <a href="https://www.gofundme.com/f/my-hands-used-to-carve-beauty-now-they-dig-through-the-rub/donate" target="_blank" class="btn-tier-pay btn-gfm">
+                    <a href="https://www.moonpay.com/buy/usdt" target="_blank" class="btn-tier-pay btn-card-pay">
                         <i class="fa-solid fa-credit-card"></i> بالبطاقة
                     </a>
                     <a href="#donate" class="btn-tier-pay btn-usdt">
@@ -420,7 +430,7 @@
                 <div class="tier-amount">$25</div>
                 <div class="tier-impact" id="t2Text">يوفر أسيّاخ حديد تسليح إضافية وحزمة عزل حراري كاملة للسرير عن التراب</div>
                 <div class="tier-btn-group">
-                    <a href="https://www.gofundme.com/f/my-hands-used-to-carve-beauty-now-they-dig-through-the-rub/donate" target="_blank" class="btn-tier-pay btn-gfm">
+                    <a href="https://www.moonpay.com/buy/usdt" target="_blank" class="btn-tier-pay btn-card-pay">
                         <i class="fa-solid fa-credit-card"></i> بالبطاقة
                     </a>
                     <a href="#donate" class="btn-tier-pay btn-usdt">
@@ -433,7 +443,7 @@
                 <div class="tier-amount">$50</div>
                 <div class="tier-impact" id="t3Text">تكفّل بتصنيع ولحام سرير طوارئ مرتفع بالكامل لطفل جريح</div>
                 <div class="tier-btn-group">
-                    <a href="https://www.gofundme.com/f/my-hands-used-to-carve-beauty-now-they-dig-through-the-rub/donate" target="_blank" class="btn-tier-pay btn-gfm">
+                    <a href="https://www.moonpay.com/buy/usdt" target="_blank" class="btn-tier-pay btn-card-pay">
                         <i class="fa-solid fa-credit-card"></i> بالبطاقة
                     </a>
                     <a href="#donate" class="btn-tier-pay btn-usdt">
@@ -446,7 +456,7 @@
                 <div class="tier-amount">$100</div>
                 <div class="tier-impact" id="t4Text">كفالة سرير مكتمل + حزمة إغاثية وغذائية مرافقة للعائلة</div>
                 <div class="tier-btn-group">
-                    <a href="https://www.gofundme.com/f/my-hands-used-to-carve-beauty-now-they-dig-through-the-rub/donate" target="_blank" class="btn-tier-pay btn-gfm">
+                    <a href="https://www.moonpay.com/buy/usdt" target="_blank" class="btn-tier-pay btn-card-pay">
                         <i class="fa-solid fa-credit-card"></i> بالبطاقة
                     </a>
                     <a href="#donate" class="btn-tier-pay btn-usdt">
@@ -506,21 +516,27 @@
                 </button>
             </div>
 
-            <div class="donate-card featured">
-                <h3 style="color: var(--brand-green);"><i class="fa-solid fa-credit-card"></i> GoFundMe / Visa & Apple Pay</h3>
-                <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 5px;" id="gfmDesc">التبرع عبر بطاقات البنك والأبل باي بسهولة وأمان 100%</p>
+            <div class="donate-card featured" id="card-donate">
+                <h3 style="color: var(--brand-green);"><i class="fa-solid fa-credit-card"></i> Visa / Mastercard / Apple Pay</h3>
+                <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 5px;" id="cardDesc">تبرع بالبطاقة البنكية أو Apple Pay مباشرة وبأمان 100% دون حساب معقد</p>
                 
-                <div style="margin: 20px 0;">
+                <div style="margin: 15px 0;">
                     <i class="fa-brands fa-cc-visa fa-3x" style="color: #94a3b8; margin: 0 6px;"></i>
                     <i class="fa-brands fa-cc-mastercard fa-3x" style="color: #94a3b8; margin: 0 6px;"></i>
                     <i class="fa-brands fa-apple-pay fa-3x" style="color: #94a3b8; margin: 0 6px;"></i>
                 </div>
 
-                <a href="https://www.gofundme.com/f/my-hands-used-to-carve-beauty-now-they-dig-through-the-rub/donate?attribution_id=sl:53098633-b29f-451a-b1d6-5f779c0e0ac0&lang=en_US&ts=1785229147&utm_campaign=fp_sharesheet&utm_content=amp20_t1&utm_medium=customer&utm_source=copy_link&source=btn_donate" target="_blank" class="btn-action btn-gfm">
-                    <i class="fa-solid fa-heart"></i> <span id="gfmBtnText">التبرع الفوري عبر GoFundMe</span>
+                <a href="https://www.moonpay.com/buy/usdt" target="_blank" class="btn-action btn-card-pay">
+                    <i class="fa-solid fa-shield-halved"></i> <span id="cardBtnText">الدفع بالبطاقة عبر MoonPay</span>
                 </a>
 
-                <button class="btn-action btn-share" onclick="shareCampaign()">
+                <div class="gateway-providers">
+                    <span style="font-size: 0.75rem; color: var(--text-muted); width: 100%; text-align: center; margin-bottom: 4px;" id="altGatewaysText">بوابات دفع إضافية مدمجة:</span>
+                    <a href="https://banxa.com/" target="_blank" class="provider-link"><i class="fa-solid fa-bolt"></i> Banxa</a>
+                    <a href="https://transak.com/" target="_blank" class="provider-link"><i class="fa-solid fa-globe"></i> Transak</a>
+                </div>
+
+                <button class="btn-action btn-share" onclick="shareCampaign()" style="margin-top: 10px;">
                     <i class="fa-solid fa-share-nodes"></i> <span id="shareBtnMainText">أنشر الحملة وكن سبباً في النجاة</span>
                 </button>
             </div>
@@ -536,7 +552,6 @@
             <a href="https://www.tiktok.com/@gaza_hope_workshop" target="_blank" class="social-icon" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
             <a href="https://x.com/GazaHopeCraft" target="_blank" class="social-icon" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
             <a href="https://www.reddit.com/user/GazaHopeWorkshop" target="_blank" class="social-icon" title="Reddit"><i class="fa-brands fa-reddit-alien"></i></a>
-            <a href="https://gofund.me/74e35a94b" target="_blank" class="social-icon" title="GoFundMe Campaign"><i class="fa-solid fa-hand-holding-heart"></i></a>
         </div>
     </section>
 
@@ -554,8 +569,8 @@
         <a href="#donate" class="btn-sticky btn-usdt">
             <i class="fa-solid fa-wallet"></i> <span id="stickyUsdt">USDT</span>
         </a>
-        <a href="https://www.gofundme.com/f/my-hands-used-to-carve-beauty-now-they-dig-through-the-rub/donate?attribution_id=sl:53098633-b29f-451a-b1d6-5f779c0e0ac0&lang=en_US&ts=1785229147&utm_campaign=fp_sharesheet&utm_content=amp20_t1&utm_medium=customer&utm_source=copy_link&source=btn_donate" target="_blank" class="btn-sticky btn-gfm">
-            <i class="fa-solid fa-heart"></i> <span id="stickyGfm">GoFundMe</span>
+        <a href="#card-donate" class="btn-sticky btn-card-pay">
+            <i class="fa-solid fa-credit-card"></i> <span id="stickyCard">دفع بالبطاقة</span>
         </a>
         <button onclick="shareCampaign()" class="btn-sticky btn-share">
             <i class="fa-solid fa-share-nodes"></i> <span id="stickyShare">أنشر الحملة</span>
@@ -590,14 +605,15 @@
                 c3: 'حديدة تسليح نواصل استخراجها ولحامها',
                 c4: 'حزمة إغاثية مرافقة نستهدف توزيعها',
                 usdtDesc: 'الوسيلة الأسرع لشراء الحديد والمواد الخام فوراً',
-                gfmDesc: 'التبرع عبر بطاقات البنك والأبل باي بسهولة وأمان 100%',
+                cardDesc: 'تبرع بالبطاقة البنكية أو Apple Pay مباشرة وبأمان 100% دون حساب معقد',
                 copyBtnText: 'نسخ عنوان المحفظة',
-                gfmBtnText: 'التبرع الفوري عبر GoFundMe',
+                cardBtnText: 'الدفع بالبطاقة عبر MoonPay',
+                altGatewaysText: 'بوابات دفع إضافية مدمجة:',
                 shareBtnMainText: 'أنشر الحملة وكن سبباً في النجاة 🔗',
                 topShareText: 'أنشر الحملة 🔗',
                 socialTitle: 'تابع وثّق إنجازات الورشة الميدانية',
                 stickyUsdt: 'USDT',
-                stickyGfm: 'GoFundMe',
+                stickyCard: 'دفع بالبطاقة',
                 stickyShare: 'أنشر الحملة',
                 toastUsdt: 'تم نسخ عنوان المحفظة بنجاح!',
                 toastShare: 'تم نسخ رابط الحملة بنجاح! شاركه مع أصدقائك.'
@@ -622,14 +638,15 @@
                 c3: 'Rebar Iron Bars Being Salvaged',
                 c4: 'Relief Packs Target Goal',
                 usdtDesc: 'Fastest direct method to buy raw iron and wood instantly',
-                gfmDesc: 'Donate 100% securely via Credit Card or Apple Pay',
+                cardDesc: 'Donate 100% securely via Credit Card or Apple Pay without complex registration',
                 copyBtnText: 'Copy Wallet Address',
-                gfmBtnText: 'Donate Now on GoFundMe',
+                cardBtnText: 'Donate via Card (MoonPay)',
+                altGatewaysText: 'Additional Card Gateways:',
                 shareBtnMainText: 'Share Campaign & Save a Child 🔗',
                 topShareText: 'Share Campaign 🔗',
                 socialTitle: 'Follow Our Daily Field Achievements',
                 stickyUsdt: 'USDT',
-                stickyGfm: 'GoFundMe',
+                stickyCard: 'Pay with Card',
                 stickyShare: 'Share Campaign',
                 toastUsdt: 'USDT Address copied successfully!',
                 toastShare: 'Campaign link copied! Share it with your friends.'
@@ -661,14 +678,15 @@
             document.getElementById('c3').innerText = data.c3;
             document.getElementById('c4').innerText = data.c4;
             document.getElementById('usdtDesc').innerText = data.usdtDesc;
-            document.getElementById('gfmDesc').innerText = data.gfmDesc;
+            document.getElementById('cardDesc').innerText = data.cardDesc;
             document.getElementById('copyBtnText').innerText = data.copyBtnText;
-            document.getElementById('gfmBtnText').innerText = data.gfmBtnText;
+            document.getElementById('cardBtnText').innerText = data.cardBtnText;
+            document.getElementById('altGatewaysText').innerText = data.altGatewaysText;
             document.getElementById('shareBtnMainText').innerText = data.shareBtnMainText;
             document.getElementById('topShareText').innerText = data.topShareText;
             document.getElementById('socialTitle').innerText = data.socialTitle;
             document.getElementById('stickyUsdt').innerText = data.stickyUsdt;
-            document.getElementById('stickyGfm').innerText = data.stickyGfm;
+            document.getElementById('stickyCard').innerText = data.stickyCard;
             document.getElementById('stickyShare').innerText = data.stickyShare;
         }
 
