@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaza Hope | أمل غزة</title>
-    <meta name="description" content="مبادرة أمل غزة - ننتشل حديد التسليح من المباني المدمرة لنلحم يدوياً أسرّة طوارئ مرتفعة تحمي أطفال غزة الجرحى والمبتورين من برودة التراب.">
+    <meta name="description" content="مبادرة أمل غزة - ننتشل حديد التسليح من المباني المدمرة لنربطه يدوياً بإتقان متين ونبني أسرّة طوارئ مرتفعة تحمي أطفال غزة الجرحى والمبتورين من برودة التراب.">
     
     <!-- Google Fonts & FontAwesome -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -255,6 +255,14 @@
         }
         .provider-link:hover { border-color: var(--brand-orange); color: #fff; }
 
+        .faq-section { max-width: 900px; margin: 40px auto; padding: 0 5%; }
+        .faq-container { display: flex; flex-direction: column; gap: 15px; }
+        .faq-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 18px; cursor: pointer; }
+        .faq-card.featured-crypto { border-color: var(--brand-blue); }
+        .faq-card summary { font-weight: 800; font-size: 1rem; color: #fff; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        .faq-card.featured-crypto summary { color: #38bdf8; }
+        .faq-card p { margin-top: 12px; color: #cbd5e1; font-size: 0.92rem; line-height: 1.8; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px; }
+
         .sticky-bottom-bar {
             position: fixed; bottom: 0; left: 0; right: 0;
             background: rgba(9, 14, 23, 0.95); backdrop-filter: blur(15px);
@@ -296,7 +304,6 @@
             padding: 10px 20px; border-radius: 8px; font-weight: 800; display: none; z-index: 10000; box-shadow: 0 5px 20px rgba(0,0,0,0.5);
         }
 
-        /* LIVE RANDOM DONATION POPUP */
         .donation-popup {
             position: fixed;
             bottom: 82px;
@@ -317,22 +324,12 @@
             transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .donation-popup.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .donation-popup.active { opacity: 1; transform: translateY(0); }
 
         .popup-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(229, 130, 38, 0.15);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--brand-orange);
-            font-size: 1.1rem;
-            flex-shrink: 0;
+            width: 40px; height: 40px; background: rgba(229, 130, 38, 0.15); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; color: var(--brand-orange);
+            font-size: 1.1rem; flex-shrink: 0;
         }
 
         .popup-content p { font-size: 0.82rem; font-weight: 800; color: #fff; line-height: 1.3; }
@@ -394,13 +391,13 @@
                 </h1>
 
                 <p class="lead" id="leadText" style="color: #cbd5e1; font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
-                    مشروع ميداني قيد التطوير والعمل المستمر؛ نستخرج حديد التسليح من المباني المدمرة بنيران الحرب، ونعيد صقله ولحامه يدوياً لنصنع أسرّة طوارئ مرتفعة تحمي الأطفال والمبتورين في غزة من الموت برداً على التراب المباشر.
+                    مشروع ميداني قيد التطوير والعمل المستمر؛ نستخرج حديد التسليح من المباني المدمرة بنيران الحرب، ونعيد تشكيله وتربيطه يدوياً بإتقان متين لنصنع أسرّة طوارئ مرتفعة تحمي الأطفال والمبتورين في غزة من الموت برداً على التراب المباشر.
                 </p>
 
                 <div class="story-box">
                     <span class="story-tag" id="storyTag">🔥 المعركة الحية من قلب الخيام</span>
                     <p class="story-text" id="storyText">
-                        داخل خيام غزة المبتلة بالبرد، يعاني الأطفال وشبان البتر المواليد آلاماً لا تُطاق، حيث يُجبرون على النوم على التراب العاري فتواجه جروحهم العملية الخطر الدائم والالتهابات الحادة. رفضا لترك جرحانا يتألمون، ولدت مبادرة "أمل غزة" من تحت الركام؛ ننتشل حديد المباني المدمرة، ونعيد تشكيله ولحامه يدوياً لإنتاج أسِرّة طوارئ مرتفعة ومتينة. كل سيخ حديد نعيده للحياة يصبح شرياناً يحمل جريحاً، ويمنحه مكاناً آخراً وصحياً للتعافي. مع كل سرير يُسلم، نرفق حزمة إغاثية من الطعام والماء الدافئ لنسترد الكرامة التي حاول الحصار محوها. جريح مبتور ينتظر في خيمته الباردة الآن—ساهم معنا في لحام سريراه اليوم ليتحول الركام إلى أمل.
+                        داخل خيام غزة المبتلة بالبرد، يعاني الأطفال وشبان البتر آلاماً لا تُطاق، حيث يُجبرون على النوم على التراب العاري فتواجه جروحهم العملية الخطر الدائم والالتهابات الحادة. رفضا لترك جرحانا يتألمون، ولدت مبادرة "أمل غزة" من تحت الركام؛ ننتشل حديد المباني المدمرة، ونعيد تشكيله وتربيطه يدوياً بكل إتقان لإنتاج أسِرّة طوارئ مرتفعة ومتينة. كل سيخ حديد نعيده للحياة يصبح شرياناً يحمل جريحاً، ويمنحه مكاناً آخراً وصحياً للتعافي. مع كل سرير يُسلم، نرفق حزمة إغاثية من الطعام والماء الدافئ لنسترد الكرامة التي حاول الحصار محوها. جريح مبتور ينتظر في خيمته الباردة الآن—ساهم معنا في تجهيز سريراه اليوم ليتحول الركام إلى أمل.
                     </p>
                 </div>
 
@@ -414,7 +411,7 @@
             
             <div class="tier-card">
                 <div class="tier-amount">$10</div>
-                <div class="tier-impact" id="t1Text">يوفر قطع وقود ولحام لاستخراج وتجهيز الحديد من الركام</div>
+                <div class="tier-impact" id="t1Text">يوفر أدوات التقطيع والشد اليدوي لاستخراج وتجهيز الحديد من الركام</div>
                 <div class="tier-btn-group">
                     <a href="https://www.moonpay.com/buy/usdt" target="_blank" class="btn-tier-pay btn-card-pay">
                         <i class="fa-solid fa-credit-card"></i> بالبطاقة
@@ -428,7 +425,7 @@
             <div class="tier-card popular">
                 <div class="tier-badge">الأكثر تأثيراً 🔥</div>
                 <div class="tier-amount">$25</div>
-                <div class="tier-impact" id="t2Text">يوفر أسيّاخ حديد تسليح إضافية وحزمة عزل حراري كاملة للسرير عن التراب</div>
+                <div class="tier-impact" id="t2Text">يوفر أسيّاخ حديد إضافية وأسلاك تربيط مقواة وحزمة عزل حراري للسرير</div>
                 <div class="tier-btn-group">
                     <a href="https://www.moonpay.com/buy/usdt" target="_blank" class="btn-tier-pay btn-card-pay">
                         <i class="fa-solid fa-credit-card"></i> بالبطاقة
@@ -441,7 +438,7 @@
 
             <div class="tier-card">
                 <div class="tier-amount">$50</div>
-                <div class="tier-impact" id="t3Text">تكفّل بتصنيع ولحام سرير طوارئ مرتفع بالكامل لطفل جريح</div>
+                <div class="tier-impact" id="t3Text">تكفّل بتصنيع وتربيط سرير طوارئ مرتفع بالكامل يدوياً لطفل جريح</div>
                 <div class="tier-btn-group">
                     <a href="https://www.moonpay.com/buy/usdt" target="_blank" class="btn-tier-pay btn-card-pay">
                         <i class="fa-solid fa-credit-card"></i> بالبطاقة
@@ -486,7 +483,7 @@
             <div class="counter-card">
                 <i class="fa-solid fa-hammer counter-icon"></i>
                 <div class="counter-number"><span class="counter" data-target="4000">0</span>+</div>
-                <div class="counter-label" id="c3">حديدة تسليح نواصل استخراجها ولحامها</div>
+                <div class="counter-label" id="c3">حديدة تسليح نواصل استخراجها وتربيطها</div>
             </div>
 
             <div class="counter-card">
@@ -503,7 +500,7 @@
             
             <div class="donate-card">
                 <h3 style="color: #38bdf8;"><i class="fa-solid fa-wallet"></i> USDT (TRC20 Network)</h3>
-                <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 5px;" id="usdtDesc">الوسيلة الأسرع لشراء الحديد والمواد الخام فوراً</p>
+                <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 5px;" id="usdtDesc">الوسيلة الأسرع لشراء أسلاك التربيط والمواد الخام فوراً</p>
                 
                 <div class="qr-box">
                     <img src="qr.jpg" alt="USDT TRC20 QR Code" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=TMC7JcAkXGDvYYBByPRUgX6rsZC5LZTa4T'">
@@ -540,6 +537,48 @@
                     <i class="fa-solid fa-share-nodes"></i> <span id="shareBtnMainText">أنشر الحملة وكن سبباً في النجاة</span>
                 </button>
             </div>
+
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section">
+        <h3 style="text-align: center; font-size: 1.5rem; font-weight: 900; margin-bottom: 25px; color: var(--brand-orange);" id="faqHeader">
+            ❓ Frequently Asked Questions / الأسئلة الشائعة
+        </h3>
+        
+        <div class="faq-container">
+            
+            <details class="faq-card">
+                <summary>
+                    <span id="faqQ1">🛏️ How are the emergency beds produced? / كيف يتم تصنيع الأسِرّة؟</span>
+                    <i class="fa-solid fa-chevron-down" style="color: var(--brand-orange);"></i>
+                </summary>
+                <p id="faqA1">
+                    ننتشل حديد التسليح مباشرة من تحت أنقاض المباني المدمرة في غزة. يقوم فريقنا المحلي بتقويم الحديد وقطعه وتربيطه يدوياً بأسلاك مقواة وبإتقان متين جداً لإنشاء هياكل أسرّة مرتفعة ومتينة، مزودة بقواعد معزولة لرفع الأطفال المبتورين والرجال الجرحى عن التراب البارد والمبتل، وذلك في ظل انقطاع الكهرباء التام.
+                </p>
+            </details>
+
+            <details class="faq-card">
+                <summary>
+                    <span id="faqQ2">🚚 How do you ensure direct delivery? / كيف تضمنون التوزيع المباشر؟</span>
+                    <i class="fa-solid fa-chevron-down" style="color: var(--brand-orange);"></i>
+                </summary>
+                <p id="faqA2">
+                    يعمل فريقنا الميداني مباشرة داخل مخيمات النزوح. نُجري تقييمات يومية لتحديد حالات البتر الجديدة والأطفال الجرحى الذين يُجبرون على النوم على التراب العاري. يتم تسليم الأسِرّة وتركيبها يدوياً داخل خيامهم مباشرة برفقة حزمة إغاثية مرافقة للعائلة.
+                </p>
+            </details>
+
+            <details class="faq-card featured-crypto" open>
+                <summary>
+                    <span id="faqQ3">💡 Why USDT / Crypto Donations? / لماذا التبرع بالكريبتو (USDT)؟</span>
+                    <i class="fa-solid fa-chevron-down" style="color: var(--brand-blue);"></i>
+                </summary>
+                <p id="faqA3">
+                    <strong>سيولة ميدانية فورية وصفر قيود بنكية:</strong><br>
+                    بسبب الانهيار الشديد في النظام البنكي والقيود الصارمة على التحويلات إلى غزة، تتعرض الأموال التقليدية لتعطيل طويل أو حظر على المنصات. يوفر USDT سيولة فورية ومباشرة لمحفظتنا المحلية، مما يتيح لنا سحب الكاش فوراً في الميدان لشراء أدوات الشد، أسلاك التربيط، والمواد الخام دون الاعتماد على وسطاء أو التعرض لمخاطر حظر الحملة.
+                </p>
+            </details>
 
         </div>
     </section>
@@ -592,19 +631,19 @@
                 heroBadge: '<i class="fa-solid fa-fire"></i> استغاثة ميدانية عاجلة لإنقاذ الأطفال والمبتورين',
                 title1: 'من تحت الأنقاض..',
                 title2: 'نصنع أسرّة تحمي أجساد أطفالنا الجرحى',
-                leadText: 'مشروع ميداني قيد التطوير والعمل المستمر؛ نستخرج حديد التسليح من المباني المدمرة بنيران الحرب، ونعيد صقله ولحامه يدوياً لنصنع أسرّة طوارئ مرتفعة تحمي الأطفال والمبتورين في غزة من الموت برداً على التراب المباشر.',
+                leadText: 'مشروع ميداني قيد التطوير والعمل المستمر؛ نستخرج حديد التسليح من المباني المدمرة بنيران الحرب، ونعيد تشكيله وتربيطه يدوياً بإتقان متين لنصنع أسرّة طوارئ مرتفعة تحمي الأطفال والمبتورين في غزة من الموت برداً على التراب المباشر.',
                 storyTag: '🔥 المعركة الحية من قلب الخيام',
-                storyText: 'داخل خيام غزة المبتلة بالبرد، يعاني الأطفال وشبان البتر المواليد آلاماً لا تُطاق، حيث يُجبرون على النوم على التراب العاري فتواجه جروحهم العملية الخطر الدائم والالتهابات الحادة. رفضا لترك جرحانا يتألمون، ولدت مبادرة "أمل غزة" من تحت الركام؛ ننتشل حديد المباني المدمرة، ونعيد تشكيله ولحامه يدوياً لإنتاج أسِرّة طوارئ مرتفعة ومتينة. كل سيخ حديد نعيده للحياة يصبح شرياناً يحمل جريحاً، ويمنحه مكاناً آخراً وصحياً للتعافي. مع كل سرير يُسلم، نرفق حزمة إغاثية من الطعام والماء الدافئ لنسترد الكرامة التي حاول الحصار محوها. جريح مبتور ينتظر في خيمته الباردة الآن—ساهم معنا في لحام سريراه اليوم ليتحول الركام إلى أمل.',
+                storyText: 'داخل خيام غزة المبتلة بالبرد، يعاني الأطفال وشبان البتر آلاماً لا تُطاق، حيث يُجبرون على النوم على التراب العاري فتواجه جروحهم العملية الخطر الدائم والالتهابات الحادة. رفضا لترك جرحانا يتألمون، ولدت مبادرة "أمل غزة" من تحت الركام؛ ننتشل حديد المباني المدمرة، ونعيد تشكيله وتربيطه يدوياً بكل إتقان لإنتاج أسِرّة طوارئ مرتفعة ومتينة. كل سيخ حديد نعيده للحياة يصبح شرياناً يحمل جريحاً، ويمنحه مكاناً آخراً وصحياً للتعافي. مع كل سرير يُسلم، نرفق حزمة إغاثية من الطعام والماء الدافئ لنسترد الكرامة التي حاول الحصار محوها. جريح مبتور ينتظر في خيمته الباردة الآن—ساهم معنا في تجهيز سريراه اليوم ليتحول الركام إلى أمل.',
                 tiersHeader: '⚡ حدد مساهمتك المباشرة بأسلوب الدفع المناسب لك:',
-                t1Text: 'يوفر قطع وقود ولحام لاستخراج وتجهيز الحديد من الركام',
-                t2Text: 'يوفر أسيّاخ حديد تسليح إضافية وحزمة عزل حراري كاملة للسرير عن التراب',
-                t3Text: 'تكفّل بتصنيع ولحام سرير طوارئ مرتفع بالكامل لطفل جريح',
+                t1Text: 'يوفر أدوات التقطيع والشد اليدوي لاستخراج وتجهيز الحديد من الركام',
+                t2Text: 'يوفر أسيّاخ حديد إضافية وأسلاك تربيط مقواة وحزمة عزل حراري للسرير',
+                t3Text: 'تكفّل بتصنيع وتربيط سرير طوارئ مرتفع بالكامل يدوياً لطفل جريح',
                 t4Text: 'كفالة سرير مكتمل + حزمة إغاثية وغذائية مرافقة للعائلة',
                 c1: 'سرير طوارئ قيد التصنيع المستهدف',
                 c2: 'طفل ومبتور نستهدف حمياتهم عن البرد',
-                c3: 'حديدة تسليح نواصل استخراجها ولحامها',
+                c3: 'حديدة تسليح نواصل استخراجها وتربيطها',
                 c4: 'حزمة إغاثية مرافقة نستهدف توزيعها',
-                usdtDesc: 'الوسيلة الأسرع لشراء الحديد والمواد الخام فوراً',
+                usdtDesc: 'الوسيلة الأسرع لشراء أسلاك التربيط والمواد الخام فوراً',
                 cardDesc: 'تبرع بالبطاقة البنكية أو Apple Pay مباشرة وبأمان 100% دون حساب معقد',
                 copyBtnText: 'نسخ عنوان المحفظة',
                 cardBtnText: 'الدفع بالبطاقة عبر MoonPay',
@@ -615,6 +654,13 @@
                 stickyUsdt: 'USDT',
                 stickyCard: 'دفع بالبطاقة',
                 stickyShare: 'أنشر الحملة',
+                faqHeader: '❓ الأسئلة الشائعة / Frequently Asked Questions',
+                faqQ1: '🛏️ كيف يتم تصنيع الأسِرّة؟ / How are the emergency beds produced?',
+                faqA1: 'ننتشل حديد التسليح مباشرة من تحت أنقاض المباني المدمرة في غزة. يقوم فريقنا المحلي بتقويم الحديد وقطعه وتربيطه يدوياً بأسلاك مقواة وبإتقان متين جداً لإنشاء هياكل أسرّة مرتفعة ومتينة، مزودة بقواعد معزولة لرفع الأطفال المبتورين والرجال الجرحى عن التراب البارد والمبتل، وذلك في ظل انقطاع الكهرباء التام.',
+                faqQ2: '🚚 كيف تضمنون التوزيع المباشر؟ / How do you ensure direct delivery?',
+                faqA2: 'يعمل فريقنا الميداني مباشرة داخل مخيمات النزوح. نُجري تقييمات يومية لتحديد حالات البتر الجديدة والأطفال الجرحى الذين يُجبرون على النوم على التراب العاري. يتم تسليم الأسِرّة وتركيبها يدوياً داخل خيامهم مباشرة برفقة حزمة إغاثية مرافقة للعائلة.',
+                faqQ3: '💡 لماذا التبرع بالكريبتو (USDT)؟ / Why USDT / Crypto Donations?',
+                faqA3: '<strong>سيولة ميدانية فورية وصفر قيود بنكية:</strong><br>بسبب الانهيار الشديد في النظام البنكي والقيود الصارمة على التحويلات إلى غزة، تتعرض الأموال التقليدية لتعطيل طويل أو حظر على المنصات. يوفر USDT سيولة فورية ومباشرة لمحفظتنا المحلية، مما يتيح لنا سحب الكاش فوراً في الميدان لشراء أدوات الشد، أسلاك التربيط، والمواد الخام دون الاعتماد على وسطاء أو التعرض لمخاطر حظر الحملة.',
                 toastUsdt: 'تم نسخ عنوان المحفظة بنجاح!',
                 toastShare: 'تم نسخ رابط الحملة بنجاح! شاركه مع أصدقائك.'
             },
@@ -625,19 +671,19 @@
                 heroBadge: '<i class="fa-solid fa-fire"></i> Urgent Field Appeal to Save Amputated Children',
                 title1: 'From the Rubble..',
                 title2: 'We Forge Beds to Shield Wounded Children',
-                leadText: 'An active field project under development; we extract buried iron rebar from destroyed homes to hand-weld elevated emergency beds that lift amputated children in Gaza off the freezing wet ground.',
+                leadText: 'An active field project under development; we extract buried iron rebar from destroyed homes to hand-bind and reinforce elevated emergency beds that lift amputated children in Gaza off the freezing wet ground.',
                 storyTag: '🔥 Live Field Battle From Tent Camps',
-                storyText: 'Inside the freezing, damp tents of Gaza, newly amputated children and youth endure unimaginable pain, forced to sleep on the bare dirt where their open surgical wounds face constant danger of severe infection. Refusing to let our wounded suffer on the ground, Gaza Hope rose from the rubble—pulling buried iron bars from destroyed buildings to reshape and hand-weld them into sturdy, elevated emergency beds. Every iron bar we restore becomes a literal lifeline, lifting a wounded body off the dirt and creating a safe, clean space for their fragile body to heal. With every bed delivered, we provide an essential care pack of food, clean water, and warmth, striving to restore the human dignity that war tried to erase. A newly amputated survivor is waiting in a cold tent right now—help us weld their bed today and turn ashes into hope.',
+                storyText: 'Inside the freezing, damp tents of Gaza, newly amputated children endure unimaginable pain, forced to sleep on the bare dirt where their surgical wounds face constant danger of infection. Refusing to let our wounded suffer, Gaza Hope rose from the rubble—pulling buried iron bars from destroyed buildings to reshape and hand-bind them into sturdy, elevated emergency beds. Every iron bar we restore becomes a literal lifeline, lifting a wounded body off the dirt and creating a safe space to heal. With every bed delivered, we provide an essential care pack of food, clean water, and warmth. A newly amputated survivor is waiting in a cold tent right now—help us build their bed today and turn ashes into hope.',
                 tiersHeader: '⚡ Select Your Direct Impact Tier & Preferred Payment Method:',
-                t1Text: 'Provides welding fuel & cutting blades to extract iron from rubble',
-                t2Text: 'Provides extra rebar iron bars & thermal insulation pack for the bed',
-                t3Text: 'Sponsor the full welding & fabrication of an emergency bed',
+                t1Text: 'Provides manual cutting & binding tools to extract and prepare iron',
+                t2Text: 'Provides extra iron bars, heavy-duty binding wires & insulation pack',
+                t3Text: 'Sponsor the full hand-binding & fabrication of an emergency bed',
                 t4Text: 'Full bed sponsorship + complete family food & relief care package',
                 c1: 'Emergency Beds Target Goal',
                 c2: 'Amputees & Children to Shelter',
                 c3: 'Rebar Iron Bars Being Salvaged',
                 c4: 'Relief Packs Target Goal',
-                usdtDesc: 'Fastest direct method to buy raw iron and wood instantly',
+                usdtDesc: 'Fastest direct method to buy binding wires and raw materials instantly',
                 cardDesc: 'Donate 100% securely via Credit Card or Apple Pay without complex registration',
                 copyBtnText: 'Copy Wallet Address',
                 cardBtnText: 'Donate via Card (MoonPay)',
@@ -648,6 +694,13 @@
                 stickyUsdt: 'USDT',
                 stickyCard: 'Pay with Card',
                 stickyShare: 'Share Campaign',
+                faqHeader: '❓ Frequently Asked Questions / الأسئلة الشائعة',
+                faqQ1: '🛏️ How are the emergency beds produced? / كيف يتم تصنيع الأسِرّة؟',
+                faqA1: 'We salvage buried iron rebar directly from destroyed rubble in Gaza. Amid total power blackouts, our local team hand-binds and tightly secures this salvaged iron using heavy-duty binding wire to craft sturdy, elevated bed frames fitted with insulated platforms to lift amputated children off the freezing, wet dirt floor.',
+                faqQ2: '🚚 How do you ensure direct delivery? / كيف تضمنون التوزيع المباشر؟',
+                faqA2: 'Our field team conducts daily assessments inside displacement camps. Beds are hand-delivered and assembled directly inside the tents of newly amputated children and severely wounded patients.',
+                faqQ3: '💡 Why USDT / Crypto Donations? / لماذا التبرع بالكريبتو (USDT)؟',
+                faqA3: '<strong>Immediate Field Cash & Zero Banking Blockades:</strong><br>Traditional wire transfers to Gaza face severe delays, bank freezes, and platform restrictions. USDT provides <strong>instant liquidity</strong> directly to our field wallet. This allows us to instantly withdraw cash on the ground to purchase hand-binding wire, manual tools, and raw materials without relying on third-party banking delays.',
                 toastUsdt: 'USDT Address copied successfully!',
                 toastShare: 'Campaign link copied! Share it with your friends.'
             }
@@ -688,6 +741,13 @@
             document.getElementById('stickyUsdt').innerText = data.stickyUsdt;
             document.getElementById('stickyCard').innerText = data.stickyCard;
             document.getElementById('stickyShare').innerText = data.stickyShare;
+            document.getElementById('faqHeader').innerText = data.faqHeader;
+            document.getElementById('faqQ1').innerText = data.faqQ1;
+            document.getElementById('faqA1').innerHTML = data.faqA1;
+            document.getElementById('faqQ2').innerText = data.faqQ2;
+            document.getElementById('faqA2').innerHTML = data.faqA2;
+            document.getElementById('faqQ3').innerText = data.faqQ3;
+            document.getElementById('faqA3').innerHTML = data.faqA3;
         }
 
         /* SMART DIRECT WHATSAPP LAUNCHER */
@@ -714,7 +774,7 @@
         function shareCampaign() {
             const shareData = {
                 title: 'GAZA HOPE | أمل غزة',
-                text: 'ساهم معنا في لحام أسرّة طوارئ لحماية الأطفال والمبتورين في غزة من برودة التراب!',
+                text: 'ساهم معنا في تجهيز أسرّة طوارئ لحماية الأطفال والمبتورين في غزة من برودة التراب!',
                 url: window.location.href
             };
 
@@ -768,7 +828,6 @@
             { title: "فاعل خير من قطر 🇶🇦", desc: "تبرع بـ $50 لكفالة سرير طوارئ" }
         ];
 
-        // تايمر انسيابي وعشوائي جمالي
         function triggerRandomNotification() {
             const randomItem = donationsList[Math.floor(Math.random() * donationsList.length)];
             document.getElementById('popupTitle').innerText = randomItem.title;
