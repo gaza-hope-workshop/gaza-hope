@@ -888,24 +888,22 @@
         /* DYNAMIC DATA LOADER FROM data.json */
         function loadLiveImpactData() {
             fetch('data.json')
-                .then(response => {
-                    if (!response.ok) throw new Error('data.json not found');
-                    return response.json();
-                })
+                .then(response => response.json())
                 .then(data => {
                     document.getElementById('update-date').innerText = data.last_updated;
-                    animateCounter('beds-counter', data.beds_made, '+');
-                    animateCounter('people-counter', data.people_sheltered, '+');
-                    animateCounter('tons-counter', data.tons_recycled, ' Tons');
+                    animateCounter('beds-counter', data.beds_made, '');
+                    animateCounter('people-counter', data.people_sheltered, '');
+                    animateCounter('tons-counter', data.rebar_kg, ' Kg');
                 })
                 .catch(() => {
-                    // Fallback numbers if data.json is not pushed yet
                     document.getElementById('update-date').innerText = 'August 2026';
-                    document.getElementById('beds-counter').innerText = '135+';
-                    document.getElementById('people-counter').innerText = '540+';
-                    document.getElementById('tons-counter').innerText = '4.2 Tons';
+                    document.getElementById('beds-counter').innerText = '2';
+                    document.getElementById('people-counter').innerText = '2';
+                    document.getElementById('tons-counter').innerText = '60 Kg';
                 });
         }
+               
+     
 
         function animateCounter(id, target, suffix = '') {
             const element = document.getElementById(id);
