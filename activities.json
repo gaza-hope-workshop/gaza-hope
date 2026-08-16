@@ -1,4 +1,4 @@
-{
+
   "activities": [
     {
       "date": "2026-08-16T11:19:15.218319+00:00",
@@ -7,6 +7,20 @@
       "title_en": "Photo description here",
       "youtube_id": null,
       "image": "activities/2026_08_09_12_16_IMG_7267.JPG"
+    },
+    {
+      "date": "2026-08-16T11:41:41.612240+00:00",
+      "type": "album",
+      "title_ar": "عائلة أحمد - تسليم سرير",
+      "title_en": "The Ahmad Family",
+      "cover": "activities/ahmad-family/cover.jpg",
+      "images": [
+        "activities/ahmad-family/img_01.jpg",
+        "activities/ahmad-family/img_02.jpg",
+        "activities/ahmad-family/img_03.jpg",
+        "activities/ahmad-family/img_04.jpg",
+        "activities/ahmad-family/img_05.jpg"
+      ]
     }
   ]
 }
