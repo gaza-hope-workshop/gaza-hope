@@ -101,6 +101,7 @@ let currentLang = localStorage.getItem('ghLang') || 'ar';
                 activitiesLoadingText: 'جارٍ تحميل الأنشطة...',
                 activityVideoBadge: '🎥 فيديو',
                 activityPhotoBadge: '📷 صورة',
+                activityAlbumBadge: '📁 ألبوم صور',
 
 
                 /* Contact page */
@@ -206,6 +207,7 @@ let currentLang = localStorage.getItem('ghLang') || 'ar';
                 activitiesLoadingText: 'Loading activities...',
                 activityVideoBadge: '🎥 Video',
                 activityPhotoBadge: '📷 Photo',
+                activityAlbumBadge: '📁 Photo Album',
 
 
                 /* Contact page */
@@ -497,10 +499,23 @@ let currentLang = localStorage.getItem('ghLang') || 'ar';
             }
             setText('activitiesEmptyState', '');
             const locale = currentLang === 'ar' ? 'ar-EG-u-nu-latn' : 'en-US';
-            grid.innerHTML = activitiesData.map(function(item) {
+            grid.innerHTML = activitiesData.map(function(item, index) {
                 const d = new Date(item.date);
                 const formatted = d.toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' });
                 const title = currentLang === 'ar' ? (item.title_ar || item.title_en || '') : (item.title_en || item.title_ar || '');
+
+                if (item.type === 'album' && Array.isArray(item.images) && item.images.length > 0) {
+                    const cover = item.cover || item.images[0];
+                    const count = item.images.length;
+                    const countLabel = currentLang === 'ar' ? (count + ' صورة') : (count + (count === 1 ? ' photo' : ' photos'));
+                    return '<article class="activity-card album-card" onclick="openAlbum(' + index + ')">' +
+                        '<div class="album-cover-wrap"><img src="' + cover + '" alt="' + title.replace(/"/g, '') + '" class="activity-photo" loading="lazy">' +
+                        '<span class="album-count-badge"><i class="fa-solid fa-images"></i> ' + countLabel + '</span></div>' +
+                        '<div class="activity-body"><span class="activity-date">' + formatted + '</span>' +
+                        '<div class="activity-title">' + title + '</div>' +
+                        '<div class="activity-type-badge">' + t.activityAlbumBadge + '</div></div></article>';
+                }
+
                 const isVideo = item.type === 'video' && item.youtube_id;
                 const media = isVideo
                     ? '<div class="video-embed-wrap"><iframe src="' + youtubeEmbedUrl(item.youtube_id) + '" title="' + title.replace(/"/g, '') + '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>'
@@ -512,6 +527,48 @@ let currentLang = localStorage.getItem('ghLang') || 'ar';
                     '<div class="activity-type-badge">' + badge + '</div></div></article>';
             }).join('');
         }
+
+        /* ALBUM LIGHTBOX — full-size images are only fetched from the network the moment
+           the visitor actually opens an album and navigates to them, never all at once. */
+        let lightboxAlbum = null;
+        let lightboxIndex = 0;
+
+        function openAlbum(activityIndex) {
+            const item = activitiesData[activityIndex];
+            if (!item || !Array.isArray(item.images)) return;
+            lightboxAlbum = item;
+            lightboxIndex = 0;
+            renderLightbox();
+            document.getElementById('lightboxOverlay').classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightboxOverlay').classList.remove('active');
+            lightboxAlbum = null;
+        }
+
+        function lightboxNav(direction) {
+            if (!lightboxAlbum) return;
+            const total = lightboxAlbum.images.length;
+            lightboxIndex = (lightboxIndex + direction + total) % total;
+            renderLightbox();
+        }
+
+        function renderLightbox() {
+            if (!lightboxAlbum) return;
+            const t = translations[currentLang];
+            const title = currentLang === 'ar' ? (lightboxAlbum.title_ar || lightboxAlbum.title_en || '') : (lightboxAlbum.title_en || lightboxAlbum.title_ar || '');
+            document.getElementById('lightboxImage').src = lightboxAlbum.images[lightboxIndex];
+            setText('lightboxTitle', title);
+            setText('lightboxCounter', (lightboxIndex + 1) + ' / ' + lightboxAlbum.images.length);
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (!lightboxAlbum) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') lightboxNav(currentLang === 'ar' ? 1 : -1);
+            if (e.key === 'ArrowRight') lightboxNav(currentLang === 'ar' ? -1 : 1);
+        });
 
         async function loadActivities() {
             const grid = document.getElementById('activitiesGrid');

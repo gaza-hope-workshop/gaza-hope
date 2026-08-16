@@ -53,6 +53,19 @@
         <div class="activities-grid" id="activitiesGrid"></div>
     </div>
 
+    <div class="lightbox-overlay" id="lightboxOverlay" onclick="if(event.target===this) closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+        <button class="lightbox-nav lightbox-prev" onclick="lightboxNav(-1)" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="lightbox-content">
+            <img id="lightboxImage" src="" alt="">
+            <div class="lightbox-caption">
+                <span id="lightboxTitle"></span>
+                <span class="lightbox-counter" id="lightboxCounter"></span>
+            </div>
+        </div>
+        <button class="lightbox-nav lightbox-next" onclick="lightboxNav(1)" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+
     <footer class="site-footer">
         <img src="logo.jpg" alt="Gaza Hope Logo" onerror="this.style.display='none'">
         <p id="footerTagline">من قلب الركام، نصنع الأمل.</p>
