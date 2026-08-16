@@ -1,8 +1,8 @@
 {
-  "beds_delivered": 0,
-  "meals_delivered": 0,
-  "families_reached": 0,
+  "beds_delivered": 3,
+  "meals_delivered": 1,
+  "families_reached": 2,
   "total_raised_usd": 0,
   "goal_usd": 50000,
-  "last_updated": "2026-08-15T12:58:24.672707+00:00"
+  "last_updated": "2026-08-16T10:22:11.868614+00:00"
 }
