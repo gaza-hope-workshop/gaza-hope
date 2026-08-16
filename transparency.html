@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الشفافية | Gaza Hope</title>
+    <meta name="description" content="كل وسيلة تحقق مالي متاحة لمتبرعي حملة أمل غزة: عنوان المحفظة، رابط التحقق من البلوك تشين، والأرقام الحية.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <meta property="og:title" content="الشفافية | Gaza Hope Workshop">
+    <meta property="og:description" content="كل وسيلة تحقق مالي متاحة لك كمتبرع، بدون أي وسيط.">
+    <meta property="og:image" content="https://gaza-hope-workshop.github.io/gaza-hope/logo.jpg">
+    <meta property="og:url" content="https://gaza-hope-workshop.github.io/gaza-hope/transparency.html">
+</head>
+<body>
+
+    <div id="toast" class="toast">تم النسخ بنجاح!</div>
+
+    <header>
+        <a href="index.html" class="brand">
+            <img src="logo.jpg" alt="أمل غزة - Gaza Hope Logo" onerror="this.src='https://gaza-hope-workshop.github.io/gaza-hope/logo.png'">
+            <div class="brand-text">
+                <h2 id="brandTitle">أمل غزة</h2>
+                <span id="brandSub">GAZA HOPE</span>
+            </div>
+        </a>
+        <nav class="site-nav">
+            <a href="index.html"><span id="navHome">الرئيسية</span></a>
+            <a href="about.html"><span id="navAbout">من نحن</span></a>
+            <a href="activities.html"><span id="navActivities">الأنشطة والفيديوهات</span></a>
+            <a href="transparency.html" class="active"><span id="navTransparency">الشفافية</span></a>
+            <a href="updates.html"><span id="navUpdates">آخر التحديثات</span></a>
+            <a href="contact.html"><span id="navContact">تواصل معنا</span></a>
+        </nav>
+        <div class="header-actions">
+            <a href="index.html#donate" class="nav-donate-btn"><span id="navDonate">تبرع الآن</span></a>
+            <button class="lang-btn" onclick="toggleLanguage()">
+                <i class="fa-solid fa-globe"></i> <span id="langLabel">English</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="page-section">
+        <h1 class="page-title" id="transPageTitle">الشفافية والتوثيق المالي</h1>
+
+        <div class="page-block">
+            <p id="transIntro">نؤمن إن الشفافية المالية أهم من أي شعار. هذي الصفحة تجمع كل وسيلة تحقق متاحة لك كمتبرع، بدون أي وسيط.</p>
+        </div>
+
+        <div class="page-block" style="text-align: center;">
+            <h3 id="transWalletTitle">محفظة USDT الرسمية (TRC20)</h3>
+            <div class="wallet-address-box" id="usdtAddress">TMC7JcAkXGDvYYBByPRUgX6rsZC5LZTa4T</div>
+            <button class="btn-action btn-usdt" onclick="copyCryptoAddress()" style="max-width: 320px; margin: 10px auto 0;">
+                <i class="fa-regular fa-copy"></i> <span id="copyBtnText">نسخ عنوان المحفظة</span>
+            </button>
+            <br>
+            <a href="https://tronscan.org/#/address/TMC7JcAkXGDvYYBByPRUgX6rsZC5LZTa4T" target="_blank" class="verify-link" id="verifyLink">
+                <i class="fa-solid fa-magnifying-glass-dollar"></i> <span id="verifyLinkText">تحقق من كل معاملة مباشرة على البلوك تشين (Tronscan)</span>
+            </a>
+            <p class="wallet-note" id="walletNote">🔒 هذا العنوان مخصص حصرياً لحملة أمل غزة، ولا يُستخدم لأي غرض آخر.</p>
+        </div>
+    </div>
+
+    <section class="stats-section" id="statsSection">
+        <h3 id="statsTitle">📊 أرقامنا الحية — محدّثة دورياً</h3>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <i class="fa-solid fa-bed stat-icon"></i>
+                <div class="stat-value" id="statBeds">—</div>
+                <div class="stat-label" id="statBedsLabel">سرير تم تسليمه</div>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-bowl-food stat-icon"></i>
+                <div class="stat-value" id="statMeals">—</div>
+                <div class="stat-label" id="statMealsLabel">وجبة غذائية وُزّعت</div>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-people-roof stat-icon"></i>
+                <div class="stat-value" id="statFamilies">—</div>
+                <div class="stat-label" id="statFamiliesLabel">عائلة تم الوصول إليها</div>
+            </div>
+        </div>
+        <div class="progress-wrap">
+            <div class="progress-labels">
+                <span id="statRaised">$0</span>
+                <span id="statGoalLabel"><span id="statGoalPrefix">من هدف</span> <span id="statGoal">$50,000</span></span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+        </div>
+        <p class="stats-updated" id="statsUpdated">آخر تحديث: —</p>
+    </section>
+
+    <div class="page-section">
+        <div class="page-block">
+            <h3 id="transReportsTitle">التقارير الدورية</h3>
+            <p id="transReportsText">نلتزم بنشر تحديث موثق (صور + أرقام) عند كل دفعة أسِرّة يتم تسليمها. تابع صفحة "آخر التحديثات" للاطلاع على كل تقرير بتاريخه.</p>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <img src="logo.jpg" alt="Gaza Hope Logo" onerror="this.style.display='none'">
+        <p id="footerTagline">من قلب الركام، نصنع الأمل.</p>
+        <div class="footer-nav">
+            <a href="index.html" id="navHomeFooter">الرئيسية</a>
+            <a href="about.html" id="navAboutFooter">من نحن</a>
+            <a href="activities.html" id="navActivitiesFooter">الأنشطة والفيديوهات</a>
+            <a href="transparency.html" id="navTransparencyFooter">الشفافية</a>
+            <a href="updates.html" id="navUpdatesFooter">آخر التحديثات</a>
+            <a href="contact.html" id="navContactFooter">تواصل معنا</a>
+        </div>
+        <p>© 2026 Gaza Hope Workshop — <span id="footerRights">جميع الحقوق محفوظة</span></p>
+    </footer>
+
+    <a href="javascript:void(0);" onclick="openWhatsAppDirect()" class="whatsapp-float" title="WhatsApp Support">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="main.js"></script>
+</body>
+</html>

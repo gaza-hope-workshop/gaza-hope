@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gaza-hope-workshop.github.io/gaza-hope/sitemap.xml

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaza Hope | أمل غزة</title>
+    <meta name="description" content="مبادرة أمل غزة - ننتشل حديد التسليح من المباني المدمرة لنربطه يدوياً بإتقان متين ونبني أسرّة طوارئ مرتفعة تحمي أطفال غزة الجرحى والمبتورين من برودة التراب.">
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Social Media Preview (Open Graph) -->
+    <meta property="og:title" content="Gaza Hope | أمل غزة - أسرّة طوارئ للأطفال والمبتورين">
+    <meta property="og:description" content="ننتشل حديد المباني المدمرة ونربطه يدوياً لنصنع أسرّة طوارئ تحمي أطفالنا الجرحى من برودة التراب.">
+    <meta property="og:image" content="https://gaza-hope-workshop.github.io/gaza-hope/logo.jpg">
+    <meta property="og:url" content="https://gaza-hope-workshop.github.io/gaza-hope/">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Structured Data (Schema.org) for search engine understanding -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Gaza Hope Workshop | ورشة أمل غزة",
+        "alternateName": "Gaza Hope",
+        "url": "https://gaza-hope-workshop.github.io/gaza-hope/",
+        "logo": "https://gaza-hope-workshop.github.io/gaza-hope/logo.jpg",
+        "description": "مبادرة ميدانية من داخل غزة تصنع أسِرّة طوارئ من حديد الركام لحماية الأطفال والمبتورين، مع وجبة غذائية ترافق كل سرير.",
+        "sameAs": [
+            "https://www.facebook.com/profile.php?id=61592733151920",
+            "https://www.instagram.com/gaza_hope_workshop",
+            "https://www.tiktok.com/@gaza_hope_workshop",
+            "https://x.com/GazaHopeCraft",
+            "https://www.reddit.com/user/GazaHopeWorkshop"
+        ]
+    }
+    </script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="toast" class="toast">تم النسخ بنجاح!</div>
+
+    <div class="top-alert" id="topAlert">
+        🔥 طفل يرتجف على الأرض الباردة الآن! | 🔥 A child is freezing on the cold ground right now!
+    </div>
+
+    <header>
+        <a href="index.html" class="brand">
+            <img src="logo.jpg" alt="أمل غزة - Gaza Hope Logo" onerror="this.src='https://gaza-hope-workshop.github.io/gaza-hope/logo.png'">
+            <div class="brand-text">
+                <h2 id="brandTitle">أمل غزة</h2>
+                <span id="brandSub">GAZA HOPE</span>
+            </div>
+        </a>
+        <nav class="site-nav">
+            <a href="index.html" class="active"><span id="navHome">الرئيسية</span></a>
+            <a href="about.html"><span id="navAbout">من نحن</span></a>
+            <a href="activities.html"><span id="navActivities">الأنشطة والفيديوهات</span></a>
+            <a href="transparency.html"><span id="navTransparency">الشفافية</span></a>
+            <a href="updates.html"><span id="navUpdates">آخر التحديثات</span></a>
+            <a href="contact.html"><span id="navContact">تواصل معنا</span></a>
+        </nav>
+        <div class="header-actions">
+            <a href="index.html#donate" class="nav-donate-btn"><span id="navDonate">تبرع الآن</span></a>
+            <button class="lang-btn" onclick="toggleLanguage()">
+                <i class="fa-solid fa-globe"></i> <span id="langLabel">English</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="top-hero-actions">
+        <a href="#donate" class="btn-top-action btn-usdt">
+            <i class="fa-solid fa-wallet"></i> <span>تبرع USDT</span>
+        </a>
+        <a href="#card-donate" class="btn-top-action btn-card-pay">
+            <i class="fa-solid fa-credit-card"></i> <span>دفع بالبطاقة</span>
+        </a>
+        <button onclick="shareCampaign()" class="btn-top-action btn-share">
+            <i class="fa-solid fa-share-nodes"></i> <span id="topShareText">أنشر الحملة</span>
+        </button>
+    </div>
+
+    <div class="hero-wrapper">
+        <section class="hero">
+            <div class="hero-content">
+                
+                <div class="hero-badge" id="heroBadge">
+                    <i class="fa-solid fa-fire"></i> استغاثة ميدانية عاجلة لإنقاذ الأطفال والمبتورين
+                </div>
+
+                <h1>
+                    <span id="title1">من تحت الأنقاض..</span><br>
+                    <span class="gradient" id="title2">نصنع أسرّة تحمي أجساد أطفالنا الجرحى</span>
+                </h1>
+
+                <p class="lead" id="leadText" style="color: #cbd5e1; font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
+                    مشروع ميداني قيد التطوير والعمل المستمر؛ نستخرج حديد التسليح من المباني المدمرة بنيران الحرب، ونعيد تشكيله وتربيطه يدوياً بإتقان متين لنصنع أسرّة طوارئ مرتفعة تحمي الأطفال والمبتورين في غزة من الموت برداً على التراب المباشر.
+                </p>
+
+                <div class="story-box">
+                    <span class="story-tag" id="storyTag">🔥 المعركة الحية من قلب الخيام</span>
+                    <p class="story-text" id="storyText">
+                        طفل بعمر عشر سنوات، خرج للتو من عملية بتر، ينام على تراب بارد ورطب داخل خيمة تهتز مع كل انفجار قريب. هذا يتكرر كل ليلة في غزة.<br><br>
+                        مع كل موجة قصف، يطول عدد الأطفال والشباب الذين بُترت أطرافهم. النوم المباشر على الأرض يهدد جروحهم المفتوحة بالالتهاب والألم المضاعف.<br><br>
+                        <strong>نحن في "ورشة أمل غزة" رفضنا أن ينام جرحانا على التراب.</strong><br><br>
+                        من قلب الركام، نستخرج حديد التسليح المدفون تحت المباني المهدمة، ونعيد تشكيله ولحامه يدوياً ليتحول إلى سرير مرتفع ومتين يحمي الجرح ويمنحه فرصة حقيقية للشفاء بدل الالتهاب.<br><br>
+                        <strong>ومع كل سرير، وجبة غذائية دافئة</strong> — لأن جسداً يتعافى من بتر يحتاج طاقة ليقاوم، لا مجرد مكان للنوم.<br><br>
+                        🔗 <strong>طفل مبتور ينتظر سريراً ووجبة دافئة الليلة. ساعدنا نصله قبل الفجر.</strong>
+                    </p>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <section class="trust-section">
+        <div class="trust-grid">
+            <div class="trust-card">
+                <i class="fa-solid fa-users trust-icon"></i>
+                <h4 id="trustWhoTitle">من نحن</h4>
+                <p id="trustWhoText">فريق ميداني صغير من داخل غزة، نعمل يدوياً على استخراج الحديد من الركام وتحويله لأسِرّة طوارئ. نوثّق كل مرحلة من عملنا بالصوت والصورة على قنواتنا الرسمية أدناه، ونرحب بأي تواصل أو استفسار مباشر عبر واتساب.</p>
+            </div>
+            <div class="trust-card">
+                <i class="fa-solid fa-shield-halved trust-icon"></i>
+                <h4 id="trustTransTitle">التزامنا بالشفافية</h4>
+                <p id="trustTransText">عنوان محفظتنا ثابت ومعلن، وكل معاملة تصلها قابلة للتحقق مباشرة عبر مستكشف البلوك تشين (رابط Tronscan أعلاه). نلتزم بنشر تحديثات دورية موثقة بالصور لكل دفعة أسِرّة يتم تسليمها.</p>
+            </div>
+            <div class="trust-card">
+                <i class="fa-solid fa-heart-circle-check trust-icon"></i>
+                <h4 id="trustConsentTitle">كرامة من نصورهم</h4>
+                <p id="trustConsentText">الصور المستخدمة في هذه الحملة تُنشر بموافقة صريحة من الأشخاص الظاهرين فيها أو ذويهم، احتراماً لخصوصيتهم وكرامتهم في أصعب الظروف.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section" id="statsSection">
+        <h3 id="statsTitle">📊 أرقامنا الحية — محدّثة دورياً</h3>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <i class="fa-solid fa-bed stat-icon"></i>
+                <div class="stat-value" id="statBeds">—</div>
+                <div class="stat-label" id="statBedsLabel">سرير تم تسليمه</div>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-bowl-food stat-icon"></i>
+                <div class="stat-value" id="statMeals">—</div>
+                <div class="stat-label" id="statMealsLabel">وجبة غذائية وُزّعت</div>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-people-roof stat-icon"></i>
+                <div class="stat-value" id="statFamilies">—</div>
+                <div class="stat-label" id="statFamiliesLabel">عائلة تم الوصول إليها</div>
+            </div>
+        </div>
+        <div class="progress-wrap">
+            <div class="progress-labels">
+                <span id="statRaised">$0</span>
+                <span id="statGoalLabel"><span id="statGoalPrefix">من هدف</span> <span id="statGoal">$50,000</span></span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+        </div>
+        <p class="stats-updated" id="statsUpdated">آخر تحديث: —</p>
+    </section>
+
+    <div class="tiers-section">
+        <h3 class="tiers-title" id="tiersHeader">⚡ حدد مساهمتك المباشرة بأسلوب الدفع المناسب لك:</h3>
+        <div class="tiers-grid">
+            
+            <div class="tier-card">
+                <div class="tier-amount">$10</div>
+                <div class="tier-impact" id="t1Text">يوفر أدوات التقطيع والشد اليدوي لاستخراج وتجهيز الحديد من الركام</div>
+                <div class="tier-btn-group">
+                    <a href="https://www.moonpay.com/buy/usdt" target="_blank" class="btn-tier-pay btn-card-pay">
+                        <i class="fa-solid fa-credit-card"></i> بالبطاقة
+                    </a>
+                    <a href="#donate" class="btn-tier-pay btn-usdt">
+                        <i class="fa-solid fa-wallet"></i> USDT
+                    </a>
+                </div>
+            </div>
+
+            <div class="tier-card popular">
+                <div class="tier-badge">الأكثر تأثيراً 🔥</div>
+                <div class="tier-amount">$25</div>
+                <div class="tier-impact" id="t2Text">يوفر أسيّاخ حديد إضافية وأسلاك تربيط مقواة وحزمة عزل حراري للسرير</div>
+                <div class="tier-btn-group">
+                    <a href="https://www.moonpay.com/buy/usdt" target="_blank" class="btn-tier-pay btn-card-pay">
+                        <i class="fa-solid fa-credit-card"></i> بالبطاقة
+                    </a>
+                    <a href="#donate" class="btn-tier-pay btn-usdt">
+                        <i class="fa-solid fa-wallet"></i> USDT
+                    </a>
+                </div>
+            </div>
+
+            <div class="tier-card">
+                <div class="tier-amount">$50</div>
+                <div class="tier-impact" id="t3Text">تكفّل بتصنيع وتربيط سرير طوارئ مرتفع بالكامل يدوياً لطفل جريح</div>
+                <div class="tier-btn-group">
+                    <a href="https://www.moonpay.com/buy/usdt" target="_blank" class="btn-tier-pay btn-card-pay">
+                        <i class="fa-solid fa-credit-card"></i> بالبطاقة
+                    </a>
+                    <a href="#donate" class="btn-tier-pay btn-usdt">
+                        <i class="fa-solid fa-wallet"></i> USDT
+                    </a>
+                </div>
+            </div>
+
+            <div class="tier-card">
+                <div class="tier-amount">$100</div>
+                <div class="tier-impact" id="t4Text">كفالة سرير مكتمل + حزمة إغاثية وغذائية مرافقة للعائلة</div>
+                <div class="tier-btn-group">
+                    <a href="https://www.moonpay.com/buy/usdt" target="_blank" class="btn-tier-pay btn-card-pay">
+                        <i class="fa-solid fa-credit-card"></i> بالبطاقة
+                    </a>
+                    <a href="#donate" class="btn-tier-pay btn-usdt">
+                        <i class="fa-solid fa-wallet"></i> USDT
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <section class="donate-section" id="donate">
+        <div class="security-banner" id="securityBanner">
+            <i class="fa-solid fa-lock"></i>
+            <span id="securityBannerText">لن نطلب منك أبداً رقم بطاقتك، رمز CVV، أو كلمة مرور محفظتك عبر أي رسالة أو مكالمة. تبرعك يتم فقط عبر إرسال USDT لعنوان المحفظة المعلن هنا، أو عبر بوابات الدفع الموثقة أدناه.</span>
+        </div>
+        <div class="donate-grid">
+            
+            <div class="donate-card">
+                <h3 style="color: #38bdf8;"><i class="fa-solid fa-wallet"></i> USDT (TRC20 Network)</h3>
+                <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 5px;" id="usdtDesc">الوسيلة الأسرع لشراء أسلاك التربيط والمواد الخام فوراً</p>
+                
+                <div class="qr-box">
+                    <img src="qr.jpg" alt="USDT TRC20 QR Code" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=TMC7JcAkXGDvYYBByPRUgX6rsZC5LZTa4T'">
+                </div>
+
+                <div class="wallet-address-box" id="usdtAddress">TMC7JcAkXGDvYYBByPRUgX6rsZC5LZTa4T</div>
+
+                <button class="btn-action btn-usdt" onclick="copyCryptoAddress()">
+                    <i class="fa-regular fa-copy"></i> <span id="copyBtnText">نسخ عنوان المحفظة</span>
+                </button>
+
+                <a href="https://tronscan.org/#/address/TMC7JcAkXGDvYYBByPRUgX6rsZC5LZTa4T" target="_blank" class="verify-link" id="verifyLink">
+                    <i class="fa-solid fa-magnifying-glass-dollar"></i> <span id="verifyLinkText">تحقق من كل معاملة مباشرة على البلوك تشين (Tronscan)</span>
+                </a>
+                <p class="wallet-note" id="walletNote">🔒 هذا العنوان مخصص حصرياً لحملة أمل غزة، ولا يُستخدم لأي غرض آخر.</p>
+            </div>
+
+            <div class="donate-card featured" id="card-donate">
+                <h3 style="color: var(--brand-green);"><i class="fa-solid fa-credit-card"></i> Visa / Mastercard / Apple Pay</h3>
+                <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 5px;" id="cardDesc">بما أنه لا يوجد حساب بنكي يستقبل تحويلات مباشرة، التبرع بالبطاقة يتم عبر خطوتين بسيطتين:</p>
+
+                <ol class="card-steps" id="cardSteps">
+                    <li><span class="step-num">1</span> <span id="cardStep1">اشترِ USDT ببطاقتك عبر أحد بوابات الدفع الموثوقة أدناه (تذهب العملة أولاً إلى محفظتك الشخصية)</span></li>
+                    <li><span class="step-num">2</span> <span id="cardStep2">انسخ عنوان محفظتنا من الأعلى وأرسل مبلغ التبرع إليه من محفظتك عبر شبكة TRC20</span></li>
+                </ol>
+
+                <div style="margin: 12px 0;">
+                    <i class="fa-brands fa-cc-visa fa-3x" style="color: #94a3b8; margin: 0 6px;"></i>
+                    <i class="fa-brands fa-cc-mastercard fa-3x" style="color: #94a3b8; margin: 0 6px;"></i>
+                    <i class="fa-brands fa-apple-pay fa-3x" style="color: #94a3b8; margin: 0 6px;"></i>
+                </div>
+
+                <a href="https://www.moonpay.com/buy/usdt" target="_blank" class="btn-action btn-card-pay">
+                    <i class="fa-solid fa-shield-halved"></i> <span id="cardBtnText">الخطوة 1: شراء USDT عبر MoonPay</span>
+                </a>
+
+                <div class="gateway-providers">
+                    <span style="font-size: 0.75rem; color: var(--text-muted); width: 100%; text-align: center; margin-bottom: 4px;" id="altGatewaysText">بوابات دفع إضافية مدمجة:</span>
+                    <a href="https://banxa.com/" target="_blank" class="provider-link"><i class="fa-solid fa-bolt"></i> Banxa</a>
+                    <a href="https://transak.com/" target="_blank" class="provider-link"><i class="fa-solid fa-globe"></i> Transak</a>
+                </div>
+
+                <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 10px;" id="cardFootnote">⚠️ هذه بوابات دفع خارجية مستقلة وليست جزءاً من حملتنا — تأكد من إرسال المبلغ بعدها لعنوان محفظتنا يدوياً (الخطوة 2).</p>
+
+                <button class="btn-action btn-share" onclick="shareCampaign()" style="margin-top: 10px;">
+                    <i class="fa-solid fa-share-nodes"></i> <span id="shareBtnMainText">أنشر الحملة وكن سبباً في النجاة</span>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section">
+        <h3 style="text-align: center; font-size: 1.5rem; font-weight: 900; margin-bottom: 25px; color: var(--brand-orange);" id="faqHeader">
+            ❓ Frequently Asked Questions / الأسئلة الشائعة
+        </h3>
+        
+        <div class="faq-container">
+            
+            <details class="faq-card">
+                <summary>
+                    <span id="faqQ1">🛏️ How are the emergency beds produced? / كيف يتم تصنيع الأسِرّة؟</span>
+                    <i class="fa-solid fa-chevron-down" style="color: var(--brand-orange);"></i>
+                </summary>
+                <p id="faqA1">
+                    ننتشل حديد التسليح مباشرة من تحت أنقاض المباني المدمرة في غزة. يقوم فريقنا المحلي بتقويم الحديد وقطعه وتربيطه يدوياً بأسلاك مقواة وبإتقان متين جداً لإنشاء هياكل أسرّة مرتفعة ومتينة، مزودة بقواعد معزولة لرفع الأطفال المبتورين والرجال الجرحى عن التراب البارد والمبتل، وذلك في ظل انقطاع الكهرباء التام.
+                </p>
+            </details>
+
+            <details class="faq-card">
+                <summary>
+                    <span id="faqQ2">🚚 How do you ensure direct delivery? / كيف تضمنون التوزيع المباشر؟</span>
+                    <i class="fa-solid fa-chevron-down" style="color: var(--brand-orange);"></i>
+                </summary>
+                <p id="faqA2">
+                    يعمل فريقنا الميداني مباشرة داخل مخيمات النزوح. نُجري تقييمات يومية لتحديد حالات البتر الجديدة والأطفال الجرحى الذين يُجبرون على النوم على التراب العاري. يتم تسليم الأسِرّة وتركيبها يدوياً داخل خيامهم مباشرة برفقة حزمة إغاثية مرافقة للعائلة.
+                </p>
+            </details>
+
+            <details class="faq-card featured-crypto" open>
+                <summary>
+                    <span id="faqQ3">💡 Why USDT / Crypto Donations? / لماذا التبرع بالكريبتو (USDT)؟</span>
+                    <i class="fa-solid fa-chevron-down" style="color: var(--brand-blue);"></i>
+                </summary>
+                <p id="faqA3">
+                    <strong>سيولة ميدانية فورية وصفر قيود بنكية:</strong><br>
+                    بسبب الانهيار الشديد في النظام البنكي والقيود الصارمة على التحويلات إلى غزة، تتعرض الأموال التقليدية لتعطيل طويل أو حظر على المنصات. يوفر USDT سيولة فورية ومباشرة لمحفظتنا المحلية، مما يتيح لنا سحب الكاش فوراً في الميدان لشراء أدوات الشد، أسلاك التربيط، والمواد الخام دون الاعتماد على وسطاء أو التعرض لمخاطر حظر الحملة.
+                </p>
+            </details>
+
+        </div>
+    </section>
+
+    <section class="social-section">
+        <h3 id="socialTitle">تابع وثّق إنجازات الورشة الميدانية</h3>
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61592733151920" target="_blank" class="social-icon" title="Facebook" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46H15.2c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.9h-2.34V22c4.78-.79 8.43-4.94 8.43-9.94z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/gaza_hope_workshop" target="_blank" class="social-icon" title="Instagram" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2c2.7 0 3.05.01 4.12.06 1.06.05 1.79.22 2.43.47.66.25 1.21.6 1.77 1.15.55.56.9 1.11 1.15 1.77.25.64.42 1.37.47 2.43.05 1.07.06 1.41.06 4.12s-.01 3.05-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.64.25-1.37.42-2.43.47-1.07.05-1.41.06-4.12.06s-3.05-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.25-.64-.42-1.37-.47-2.43C2.01 15.05 2 14.7 2 12s.01-3.05.06-4.12c.05-1.06.22-1.79.47-2.43.25-.66.6-1.21 1.15-1.77A4.9 4.9 0 0 1 5.45.53C6.09.28 6.82.11 7.88.06 8.95.01 9.3 0 12 0zm0 5.35a4.65 4.65 0 1 0 0 9.3 4.65 4.65 0 0 0 0-9.3zm0 7.68a3.03 3.03 0 1 1 0-6.06 3.03 3.03 0 0 1 0 6.06zm5.92-7.86a1.09 1.09 0 1 1-2.17 0 1.09 1.09 0 0 1 2.17 0z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@gaza_hope_workshop" target="_blank" class="social-icon" title="TikTok" aria-label="TikTok">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M16.6 5.82c-1-.9-1.55-2.16-1.55-3.5h-3.1v13.4a2.6 2.6 0 1 1-1.86-2.5V9.9a5.7 5.7 0 1 0 4.96 5.65V9.1a7 7 0 0 0 4.15 1.36V7.4c-.86 0-1.85-.3-2.6-1.58z"/></svg>
+            </a>
+            <a href="https://x.com/GazaHopeCraft" target="_blank" class="social-icon" title="X (Twitter)" aria-label="X">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18.24 2h3.3l-7.2 8.24L23 22h-6.63l-5.2-6.8L5.2 22H1.9l7.7-8.8L1 2h6.8l4.7 6.2L18.24 2zm-1.16 18h1.83L7.03 3.9H5.06L17.08 20z"/></svg>
+            </a>
+            <a href="https://www.reddit.com/user/GazaHopeWorkshop" target="_blank" class="social-icon" title="Reddit" aria-label="Reddit">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M22 12.2a2 2 0 0 0-3.4-1.4 9.6 9.6 0 0 0-5.1-1.6l.9-4 2.8.6a1.4 1.4 0 1 0 .1-.9l-3.2-.7a.4.4 0 0 0-.5.3l-1 4.6a9.6 9.6 0 0 0-5.1 1.6A2 2 0 1 0 4.9 14a3.6 3.6 0 0 0 0 .5c0 2.7 3.2 5 7.1 5s7.1-2.2 7.1-5c0-.2 0-.3 0-.5A2 2 0 0 0 22 12.2zM8.4 13.8a1.2 1.2 0 1 1 2.4 0 1.2 1.2 0 0 1-2.4 0zm7.5 3a4.8 4.8 0 0 1-3.9 1.4 4.8 4.8 0 0 1-3.9-1.4.4.4 0 0 1 .6-.6 4 4 0 0 0 3.3 1.2 4 4 0 0 0 3.3-1.2.4.4 0 1 1 .6.6zm-.3-1.8a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4z"/></svg>
+            </a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <img src="logo.jpg" alt="Gaza Hope Logo" onerror="this.style.display='none'">
+        <p id="footerTagline">من قلب الركام، نصنع الأمل.</p>
+        <div class="footer-nav">
+            <a href="index.html" id="navHomeFooter">الرئيسية</a>
+            <a href="about.html" id="navAboutFooter">من نحن</a>
+            <a href="activities.html" id="navActivitiesFooter">الأنشطة والفيديوهات</a>
+            <a href="transparency.html" id="navTransparencyFooter">الشفافية</a>
+            <a href="updates.html" id="navUpdatesFooter">آخر التحديثات</a>
+            <a href="contact.html" id="navContactFooter">تواصل معنا</a>
+        </div>
+        <p>© 2026 Gaza Hope Workshop — <span id="footerRights">جميع الحقوق محفوظة</span></p>
+    </footer>
+
+    <div class="sticky-bottom-bar">
+        <a href="#donate" class="btn-sticky btn-usdt">
+            <i class="fa-solid fa-wallet"></i> <span id="stickyUsdt">USDT</span>
+        </a>
+        <a href="#card-donate" class="btn-sticky btn-card-pay">
+            <i class="fa-solid fa-credit-card"></i> <span id="stickyCard">دفع بالبطاقة</span>
+        </a>
+        <button onclick="shareCampaign()" class="btn-sticky btn-share">
+            <i class="fa-solid fa-share-nodes"></i> <span id="stickyShare">أنشر الحملة</span>
+        </button>
+    </div>
+
+    <!-- SMART WHATSAPP LAUNCHER BUTTON -->
+    <a href="javascript:void(0);" onclick="openWhatsAppDirect()" class="whatsapp-float" title="WhatsApp Support">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="main.js"></script>
+</body>
+</html>

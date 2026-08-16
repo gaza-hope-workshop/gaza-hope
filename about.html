@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن | Gaza Hope</title>
+    <meta name="description" content="تعرّف على ورشة أمل غزة، فريقنا الميداني، وكيف نصنع أسِرّة طوارئ للأطفال والمبتورين من حديد الركام.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <meta property="og:title" content="من نحن | Gaza Hope Workshop">
+    <meta property="og:description" content="فريق ميداني من داخل غزة يصنع أسِرّة طوارئ من حديد الركام لحماية الأطفال والمبتورين.">
+    <meta property="og:image" content="https://gaza-hope-workshop.github.io/gaza-hope/logo.jpg">
+    <meta property="og:url" content="https://gaza-hope-workshop.github.io/gaza-hope/about.html">
+</head>
+<body>
+
+    <div id="toast" class="toast">تم النسخ بنجاح!</div>
+
+    <header>
+        <a href="index.html" class="brand">
+            <img src="logo.jpg" alt="أمل غزة - Gaza Hope Logo" onerror="this.src='https://gaza-hope-workshop.github.io/gaza-hope/logo.png'">
+            <div class="brand-text">
+                <h2 id="brandTitle">أمل غزة</h2>
+                <span id="brandSub">GAZA HOPE</span>
+            </div>
+        </a>
+        <nav class="site-nav">
+            <a href="index.html"><span id="navHome">الرئيسية</span></a>
+            <a href="about.html" class="active"><span id="navAbout">من نحن</span></a>
+            <a href="activities.html"><span id="navActivities">الأنشطة والفيديوهات</span></a>
+            <a href="transparency.html"><span id="navTransparency">الشفافية</span></a>
+            <a href="updates.html"><span id="navUpdates">آخر التحديثات</span></a>
+            <a href="contact.html"><span id="navContact">تواصل معنا</span></a>
+        </nav>
+        <div class="header-actions">
+            <a href="index.html#donate" class="nav-donate-btn"><span id="navDonate">تبرع الآن</span></a>
+            <button class="lang-btn" onclick="toggleLanguage()">
+                <i class="fa-solid fa-globe"></i> <span id="langLabel">English</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="page-section">
+        <h1 class="page-title" id="aboutPageTitle">من نحن</h1>
+
+        <div class="page-block">
+            <p id="aboutIntro">ورشة أمل غزة فريق ميداني صغير من داخل غزة، تشكّل استجابةً مباشرة لأزمة إنسانية متفاقمة: أطفال وشباب فقدوا أطرافهم تحت القصف، ولا يجدون حتى مكاناً آمناً للنوم أثناء تعافيهم. قررنا نتصرف بدل ما ننتظر.</p>
+        </div>
+
+        <div class="page-block">
+            <h3 id="aboutProcessTitle">كيف نعمل؟</h3>
+            <p id="aboutProcessText">مع انعدام أي مواد خام بالقطاع، نلجأ للركام نفسه: نسحب أسياخ الحديد المدفونة تحت المباني المهدمة، نعيد تشكيلها بأيدينا، ونلحمها قطعة قطعة لتتحول إلى سرير مرتفع ومتين. نستخدم وحدات طاقة شمسية لتشغيل معدات اللحام رغم انقطاع الكهرباء الكامل. ومع كل سرير، نُرفق وجبة غذائية دافئة وكاملة.</p>
+        </div>
+
+        <div class="page-block">
+            <h3 id="aboutConsentTitle">كرامة من نوثّقهم</h3>
+            <p id="aboutConsentText">كل صورة أو فيديو ننشره من عملنا الميداني يُنشر بموافقة صريحة من الأشخاص الظاهرين فيه أو ذويهم. نؤمن إن التوثيق الصادق لا يتعارض مع احترام خصوصية وكرامة من نخدمهم.</p>
+        </div>
+
+        <div class="page-block">
+            <h3 id="aboutContactTitle">تواصل مباشر معنا</h3>
+            <p id="aboutContactText">أي استفسار عن عملنا، أو لو حابب تتحقق من أي تفصيل بنفسك، نرحب بتواصلك المباشر عبر واتساب أو البريد الإلكتروني — انتقل لصفحة التواصل.</p>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <img src="logo.jpg" alt="Gaza Hope Logo" onerror="this.style.display='none'">
+        <p id="footerTagline">من قلب الركام، نصنع الأمل.</p>
+        <div class="footer-nav">
+            <a href="index.html" id="navHomeFooter">الرئيسية</a>
+            <a href="about.html" id="navAboutFooter">من نحن</a>
+            <a href="activities.html" id="navActivitiesFooter">الأنشطة والفيديوهات</a>
+            <a href="transparency.html" id="navTransparencyFooter">الشفافية</a>
+            <a href="updates.html" id="navUpdatesFooter">آخر التحديثات</a>
+            <a href="contact.html" id="navContactFooter">تواصل معنا</a>
+        </div>
+        <p>© 2026 Gaza Hope Workshop — <span id="footerRights">جميع الحقوق محفوظة</span></p>
+    </footer>
+
+    <a href="javascript:void(0);" onclick="openWhatsAppDirect()" class="whatsapp-float" title="WhatsApp Support">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="main.js"></script>
+</body>
+</html>

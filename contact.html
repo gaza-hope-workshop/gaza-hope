@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا | Gaza Hope</title>
+    <meta name="description" content="تواصل مباشرة مع فريق ورشة أمل غزة عبر واتساب أو البريد الإلكتروني أو وسائل التواصل الاجتماعي.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <meta property="og:title" content="تواصل معنا | Gaza Hope Workshop">
+    <meta property="og:description" content="تواصل مباشر مع فريقنا الميداني.">
+    <meta property="og:image" content="https://gaza-hope-workshop.github.io/gaza-hope/logo.jpg">
+    <meta property="og:url" content="https://gaza-hope-workshop.github.io/gaza-hope/contact.html">
+</head>
+<body>
+
+    <div id="toast" class="toast">تم النسخ بنجاح!</div>
+
+    <header>
+        <a href="index.html" class="brand">
+            <img src="logo.jpg" alt="أمل غزة - Gaza Hope Logo" onerror="this.src='https://gaza-hope-workshop.github.io/gaza-hope/logo.png'">
+            <div class="brand-text">
+                <h2 id="brandTitle">أمل غزة</h2>
+                <span id="brandSub">GAZA HOPE</span>
+            </div>
+        </a>
+        <nav class="site-nav">
+            <a href="index.html"><span id="navHome">الرئيسية</span></a>
+            <a href="about.html"><span id="navAbout">من نحن</span></a>
+            <a href="activities.html"><span id="navActivities">الأنشطة والفيديوهات</span></a>
+            <a href="transparency.html"><span id="navTransparency">الشفافية</span></a>
+            <a href="updates.html"><span id="navUpdates">آخر التحديثات</span></a>
+            <a href="contact.html" class="active"><span id="navContact">تواصل معنا</span></a>
+        </nav>
+        <div class="header-actions">
+            <a href="index.html#donate" class="nav-donate-btn"><span id="navDonate">تبرع الآن</span></a>
+            <button class="lang-btn" onclick="toggleLanguage()">
+                <i class="fa-solid fa-globe"></i> <span id="langLabel">English</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="page-section">
+        <h1 class="page-title" id="contactPageTitle">تواصل معنا</h1>
+
+        <div class="page-block">
+            <p id="contactIntro">أي سؤال، استفسار، أو حتى لو حابب تتحقق من أي معلومة بنفسك قبل التبرع — تواصلنا مفتوح ونرحب فيه.</p>
+
+            <div class="contact-btn-row">
+                <button class="contact-whatsapp-btn" onclick="openWhatsAppDirect()">
+                    <i class="fa-brands fa-whatsapp"></i> <span id="contactWhatsappBtn">تواصل عبر واتساب</span>
+                </button>
+            </div>
+
+            <p style="margin-top: 18px;">
+                <span id="contactEmailLabel">أو راسلنا عبر البريد الإلكتروني:</span>
+                <a href="mailto:contact@gazahope.org" class="contact-email">contact@gazahope.org</a>
+            </p>
+        </div>
+
+        <div class="page-block" style="text-align: center;">
+            <h3 id="contactSocialTitle">تابعنا على وسائل التواصل</h3>
+            <div class="social-links" style="margin-top: 12px;">
+                <a href="https://www.facebook.com/profile.php?id=61592733151920" target="_blank" class="social-icon" title="Facebook" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46H15.2c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.9h-2.34V22c4.78-.79 8.43-4.94 8.43-9.94z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/gaza_hope_workshop" target="_blank" class="social-icon" title="Instagram" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2c2.7 0 3.05.01 4.12.06 1.06.05 1.79.22 2.43.47.66.25 1.21.6 1.77 1.15.55.56.9 1.11 1.15 1.77.25.64.42 1.37.47 2.43.05 1.07.06 1.41.06 4.12s-.01 3.05-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.64.25-1.37.42-2.43.47-1.07.05-1.41.06-4.12.06s-3.05-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.25-.64-.42-1.37-.47-2.43C2.01 15.05 2 14.7 2 12s.01-3.05.06-4.12c.05-1.06.22-1.79.47-2.43.25-.66.6-1.21 1.15-1.77A4.9 4.9 0 0 1 5.45.53C6.09.28 6.82.11 7.88.06 8.95.01 9.3 0 12 0zm0 5.35a4.65 4.65 0 1 0 0 9.3 4.65 4.65 0 0 0 0-9.3zm0 7.68a3.03 3.03 0 1 1 0-6.06 3.03 3.03 0 0 1 0 6.06zm5.92-7.86a1.09 1.09 0 1 1-2.17 0 1.09 1.09 0 0 1 2.17 0z"/></svg>
+                </a>
+                <a href="https://www.tiktok.com/@gaza_hope_workshop" target="_blank" class="social-icon" title="TikTok" aria-label="TikTok">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M16.6 5.82c-1-.9-1.55-2.16-1.55-3.5h-3.1v13.4a2.6 2.6 0 1 1-1.86-2.5V9.9a5.7 5.7 0 1 0 4.96 5.65V9.1a7 7 0 0 0 4.15 1.36V7.4c-.86 0-1.85-.3-2.6-1.58z"/></svg>
+                </a>
+                <a href="https://x.com/GazaHopeCraft" target="_blank" class="social-icon" title="X (Twitter)" aria-label="X">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18.24 2h3.3l-7.2 8.24L23 22h-6.63l-5.2-6.8L5.2 22H1.9l7.7-8.8L1 2h6.8l4.7 6.2L18.24 2zm-1.16 18h1.83L7.03 3.9H5.06L17.08 20z"/></svg>
+                </a>
+                <a href="https://www.reddit.com/user/GazaHopeWorkshop" target="_blank" class="social-icon" title="Reddit" aria-label="Reddit">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M22 12.2a2 2 0 0 0-3.4-1.4 9.6 9.6 0 0 0-5.1-1.6l.9-4 2.8.6a1.4 1.4 0 1 0 .1-.9l-3.2-.7a.4.4 0 0 0-.5.3l-1 4.6a9.6 9.6 0 0 0-5.1 1.6A2 2 0 1 0 4.9 14a3.6 3.6 0 0 0 0 .5c0 2.7 3.2 5 7.1 5s7.1-2.2 7.1-5c0-.2 0-.3 0-.5A2 2 0 0 0 22 12.2zM8.4 13.8a1.2 1.2 0 1 1 2.4 0 1.2 1.2 0 0 1-2.4 0zm7.5 3a4.8 4.8 0 0 1-3.9 1.4 4.8 4.8 0 0 1-3.9-1.4.4.4 0 0 1 .6-.6 4 4 0 0 0 3.3 1.2 4 4 0 0 0 3.3-1.2.4.4 0 1 1 .6.6zm-.3-1.8a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <img src="logo.jpg" alt="Gaza Hope Logo" onerror="this.style.display='none'">
+        <p id="footerTagline">من قلب الركام، نصنع الأمل.</p>
+        <div class="footer-nav">
+            <a href="index.html" id="navHomeFooter">الرئيسية</a>
+            <a href="about.html" id="navAboutFooter">من نحن</a>
+            <a href="activities.html" id="navActivitiesFooter">الأنشطة والفيديوهات</a>
+            <a href="transparency.html" id="navTransparencyFooter">الشفافية</a>
+            <a href="updates.html" id="navUpdatesFooter">آخر التحديثات</a>
+            <a href="contact.html" id="navContactFooter">تواصل معنا</a>
+        </div>
+        <p>© 2026 Gaza Hope Workshop — <span id="footerRights">جميع الحقوق محفوظة</span></p>
+    </footer>
+
+    <a href="javascript:void(0);" onclick="openWhatsAppDirect()" class="whatsapp-float" title="WhatsApp Support">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="main.js"></script>
+</body>
+</html>
