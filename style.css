@@ -143,6 +143,52 @@
             color: var(--text-muted); margin-top: 6px;
         }
 
+        /* Album cards */
+        .album-card { cursor: pointer; }
+        .album-cover-wrap { position: relative; }
+        .album-count-badge {
+            position: absolute; bottom: 10px; inset-inline-end: 10px;
+            background: rgba(9, 14, 23, 0.85); color: #fff; font-size: 0.75rem; font-weight: 800;
+            padding: 5px 12px; border-radius: 20px; display: inline-flex; align-items: center; gap: 6px;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Lightbox viewer */
+        .lightbox-overlay {
+            display: none; position: fixed; inset: 0; background: rgba(5, 8, 14, 0.96);
+            z-index: 10000; align-items: center; justify-content: center; padding: 20px;
+        }
+        .lightbox-overlay.active { display: flex; }
+        .lightbox-content { max-width: 90vw; max-height: 85vh; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .lightbox-content img {
+            max-width: 90vw; max-height: 75vh; object-fit: contain; border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+        }
+        .lightbox-caption { text-align: center; color: #e2e8f0; }
+        .lightbox-caption span#lightboxTitle { font-weight: 800; font-size: 0.95rem; display: block; }
+        .lightbox-counter { font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; display: block; }
+
+        .lightbox-close {
+            position: absolute; top: 18px; inset-inline-end: 18px; background: rgba(255,255,255,0.08);
+            border: 1px solid var(--border); color: #fff; width: 42px; height: 42px; border-radius: 50%;
+            font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center;
+        }
+        .lightbox-close:hover { background: rgba(255,255,255,0.18); }
+
+        .lightbox-nav {
+            background: rgba(255,255,255,0.08); border: 1px solid var(--border); color: #fff;
+            width: 48px; height: 48px; border-radius: 50%; font-size: 1.2rem; cursor: pointer;
+            flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+        }
+        .lightbox-nav:hover { background: rgba(255,255,255,0.18); }
+        .lightbox-prev { margin-inline-end: 10px; }
+        .lightbox-next { margin-inline-start: 10px; }
+
+        @media (max-width: 700px) {
+            .lightbox-nav { width: 40px; height: 40px; font-size: 1rem; }
+            .lightbox-close { width: 36px; height: 36px; top: 10px; inset-inline-end: 10px; }
+        }
+
         .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff; }
         .brand img { width: 48px; height: 48px; border-radius: 50%; border: 2px solid var(--brand-green); object-fit: cover; box-shadow: 0 0 15px rgba(72, 130, 55, 0.4); }
         .brand-text h2 { font-size: 1.2rem; font-weight: 900; color: #fff; }
