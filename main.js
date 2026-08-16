@@ -378,7 +378,7 @@ let currentLang = localStorage.getItem('ghLang') || 'ar';
         let statsData = null;
 
         function formatNumber(n) {
-            return new Intl.NumberFormat(currentLang === 'ar' ? 'ar-EG' : 'en-US').format(n);
+            return new Intl.NumberFormat(currentLang === 'ar' ? 'ar-EG-u-nu-latn' : 'en-US').format(n);
         }
 
         function animateValue(id, target) {
@@ -419,7 +419,7 @@ let currentLang = localStorage.getItem('ghLang') || 'ar';
 
             if (statsData.last_updated) {
                 const d = new Date(statsData.last_updated);
-                const formatted = d.toLocaleDateString(currentLang === 'ar' ? 'ar-EG' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+                const formatted = d.toLocaleDateString(currentLang === 'ar' ? 'ar-EG-u-nu-latn' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' });
                 setText('statsUpdated', t.statsUpdatedPrefix + ' ' + formatted);
             }
         }
@@ -449,7 +449,7 @@ let currentLang = localStorage.getItem('ghLang') || 'ar';
                 return;
             }
             setText('updatesEmptyState', '');
-            const locale = currentLang === 'ar' ? 'ar-EG' : 'en-US';
+            const locale = currentLang === 'ar' ? 'ar-EG-u-nu-latn' : 'en-US';
             list.innerHTML = updatesData.map(function(item) {
                 const d = new Date(item.date);
                 const formatted = d.toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' });
@@ -496,7 +496,7 @@ let currentLang = localStorage.getItem('ghLang') || 'ar';
                 return;
             }
             setText('activitiesEmptyState', '');
-            const locale = currentLang === 'ar' ? 'ar-EG' : 'en-US';
+            const locale = currentLang === 'ar' ? 'ar-EG-u-nu-latn' : 'en-US';
             grid.innerHTML = activitiesData.map(function(item) {
                 const d = new Date(item.date);
                 const formatted = d.toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' });
